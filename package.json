@@ -1,13 +1,13 @@
 {
-  "name": "love",
+  "name": "ethanyangcx",
   "version": "1.0.0",
-  "description": "love",
+  "description": "Ethan Yang Chenxi",
   "keywords": [
     "react",
     "starter"
   ],
   "main": "src/index.js",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
