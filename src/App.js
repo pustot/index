@@ -9,6 +9,9 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Avatar, Button, CardActionArea, CardActions } from '@mui/material';
+import hanpoly from './assets/hanpoly.png'
+import qieyunAutoderiver from './assets/qieyun-autoderiver.png'
+import love from './assets/love.png'
 
 export default function App() {
 
@@ -23,7 +26,7 @@ export default function App() {
         </Typography>
 
         <PostCard 
-          image="/qieyun-autoderiver.png"
+          image={qieyunAutoderiver}
           alt="Ethan Yang"
           title="Qieyun Autoderiver with Ttomni Rimduk"
           main="Forked from https://github.com/nk2028/qieyun-autoderiver, with my own
@@ -32,7 +35,7 @@ export default function App() {
         />
 
         <PostCard 
-          image="/love.png"
+          image={love}
           alt="Ethan Yang"
           title="Blogs of my love with Yuran He"
           main="Recording what we have experienced together."
@@ -40,7 +43,7 @@ export default function App() {
         />
 
         <PostCard 
-          image="/hanpoly.png"
+          image={hanpoly}
           alt="Ethan Yang"
           title="HanPoly"
           main="Find the pronunciation of a Chinese character in multiple languages and dialects."
