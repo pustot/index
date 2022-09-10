@@ -23,7 +23,7 @@ export default function App() {
         </Typography>
 
         <PostCard 
-          image="qieyun-autoderiver.png"
+          image="/qieyun-autoderiver.png"
           alt="Ethan Yang"
           title="Qieyun Autoderiver with Ttomni Rimduk"
           main="Forked from https://github.com/nk2028/qieyun-autoderiver, with my own
@@ -32,7 +32,7 @@ export default function App() {
         />
 
         <PostCard 
-          image="love.png"
+          image="/love.png"
           alt="Ethan Yang"
           title="Blogs of my love with Yuran He"
           main="Recording what we have experienced together."
@@ -40,7 +40,7 @@ export default function App() {
         />
 
         <PostCard 
-          image="hanpoly.png"
+          image="/hanpoly.png"
           alt="Ethan Yang"
           title="HanPoly"
           main="Find the pronunciation of a Chinese character in multiple languages and dialects."
