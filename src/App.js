@@ -27,16 +27,16 @@ export default function App() {
           alt="Ethan Yang"
           title="Qieyun Autoderiver with Ttomni Rimduk"
           main="Forked from https://github.com/nk2028/qieyun-autoderiver, with my own
-                Ttomni Rimduk (OQeVD8FA), which is used by my own TTomni language."
+                Ttomni Rimduk (OQeVD8FA), which is used by my own Ttomni language."
           toLink={domain + "qieyun-autoderiver"} 
         />
 
-      <PostCard 
+        <PostCard 
           image="Rebels-6698-48.png"
           alt="Ethan Yang"
-          title="Blogs of my love with Fannette He Yuran"
-          main="Test"
-          toLink="https://drasgarden.on.fleek.co/" 
+          title="Blogs of my love with Yuran He"
+          main="Recording what we have experienced together."
+          toLink={domain + "love"}
         />
 
       </Stack>
