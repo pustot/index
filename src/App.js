@@ -12,6 +12,7 @@ import { Avatar, Button, CardActionArea, CardActions } from '@mui/material';
 import hanpoly from './assets/hanpoly.png'
 import qieyunAutoderiver from './assets/qieyun-autoderiver.png'
 import love from './assets/love.png'
+import MyAvatar from './assets/Rebels-6698-192.png'
 
 import CssBaseline from '@mui/material/CssBaseline';
 import IconButton from '@mui/material/IconButton';
@@ -19,6 +20,12 @@ import Box from '@mui/material/Box';
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import SchoolIcon from '@mui/icons-material/School';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
+
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -53,8 +60,44 @@ function App() {
           </Box>
       </Stack>
       <Stack spacing={2}>
-        <Typography  variant="h1">
-          Chenxi Yang
+        <Stack direction="row"  spacing={2}>
+
+        <Avatar
+          alt="Ethan Yang Chenxi"
+          src={MyAvatar}
+          sx={{ width: 192, height: 192 }}
+        />
+        
+        <Stack>
+          <Typography  variant="h4">
+            Chenxi Yang
+          </Typography>
+          <Typography  variant="body1">
+            <SchoolIcon/> MSc Computer Science student in the University of Edinburgh (expected to graduate in November 2022)
+          </Typography>
+          <Typography  variant="body1">
+          <SchoolIcon/> BEng Vehicle Engineering in Tongji University
+          </Typography>
+
+          <Stack direction="row">
+            <IconButton href="https://github.com/EthanYangCX">
+              <GitHubIcon/>
+            </IconButton>
+            <IconButton href="https://www.linkedin.com/in/yang-chenxi/">
+              <LinkedInIcon/>
+            </IconButton>
+            <IconButton href="https://twitter.com/ethanyangcx">
+              <TwitterIcon/>
+            </IconButton>
+            <IconButton href="https://www.instagram.com/ethanyangcx/">
+              <InstagramIcon/>
+            </IconButton>
+          </Stack>
+        </Stack>
+        </Stack>
+
+        <Typography  variant="h2">
+            Web Apps
         </Typography>
 
         <PostCard 
