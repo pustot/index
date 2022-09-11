@@ -65,7 +65,7 @@ function App() {
         <Avatar
           alt="Ethan Yang Chenxi"
           src={MyAvatar}
-          sx={{ width: 192, height: 192 }}
+          sx={{ width: "50%", height: "50%" }}
         />
         
         <Stack>
@@ -73,7 +73,7 @@ function App() {
             Chenxi Yang
           </Typography>
           <Typography  variant="body1">
-            <SchoolIcon/> MSc Computer Science student in the University of Edinburgh (expected to graduate in November 2022)
+            <SchoolIcon/> MSc Computer Science student in the University of Edinburgh (expected to graduate in Nov. 2022)
           </Typography>
           <Typography  variant="body1">
           <SchoolIcon/> BEng Vehicle Engineering in Tongji University
