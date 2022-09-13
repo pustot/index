@@ -8,7 +8,7 @@ import PostCard from "./components/PostCard";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import { Avatar, Button, CardActionArea, CardActions } from '@mui/material';
+import { Avatar, Button, CardActionArea, CardActions, Icon, Grid } from '@mui/material';
 import hanpoly from './assets/hanpoly.png'
 import qieyunAutoderiver from './assets/qieyun-autoderiver.png'
 import love from './assets/love.png'
@@ -26,6 +26,13 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
+import { ReactComponent as ZhihuLogo } from "./assets/zhihu.svg";
+import { SvgIcon } from '@mui/material';
+import Zhihu from "./assets/zhihu.png";
+import Zhihu4Light from "./assets/zhihu4light.png";
+import Zhihu4Dark from "./assets/zhihu4dark.png";
+import LinkTree from "./assets/LinkTree.webp";
+
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -35,10 +42,11 @@ function App() {
 
   const domain = "http://yangcx.tk/";
 
+
   return (
     <div>
       
-
+      
       <Container maxWidth="sm">
       <Stack direction="row" justifyContent="flex-end">
           <Box
@@ -74,7 +82,7 @@ function App() {
             </Typography>
             
 
-            <Stack direction="row">
+            <Grid>
               <IconButton href="https://github.com/EthanYangCX">
                 <GitHubIcon/>
               </IconButton>
@@ -87,9 +95,20 @@ function App() {
               <IconButton href="https://www.instagram.com/ethanyangcx/">
                 <InstagramIcon/>
               </IconButton>
-            </Stack>
+
+              <IconButton href="https://www.zhihu.com/people/donew">
+                <img alt="Zhihu" src={theme.palette.mode === 'dark' ? Zhihu4Dark : Zhihu4Light} height="24" width="24" />
+              </IconButton>
+
+              <IconButton href="https://linktr.ee/smartdramo">
+                <img alt="Zhihu" src={LinkTree} height="24" width="24" />
+              </IconButton>
+            </Grid>
+
           </Stack>
         </Stack>
+
+        
 
         <Typography  variant="body1">
             <SchoolIcon/> MSc Computer Science student in <a href="https://www.ed.ac.uk/"> the University of Edinburgh </a> (expected to graduate in Nov. 2022)
