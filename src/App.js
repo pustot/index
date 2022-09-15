@@ -1,5 +1,6 @@
+import "purecss/build/pure.css";
 import React, { useState, useEffect } from "react";
-// import "./styles.css";
+import "./styles.scss";
 import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
@@ -48,24 +49,14 @@ function App() {
       
       
       <Container maxWidth="sm">
-      <Stack direction="row" justifyContent="flex-end">
-          <Box
-          sx={{
-            display: 'flex',
-            width: '100%',
-            alignItems: 'center',
-            justifyContent: 'end',
-            bgcolor: 'background.default',
-            color: 'text.primary',
-            borderRadius: 1,
-            p: 3,
-          }}
-          >
-            {theme.palette.mode} mode
-            <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
-              {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
-          </Box>
+      <Stack direction="row" justifyContent="flex-end" sx={{p: 3}}>
+        <Button variant="outlined" 
+              onClick={colorMode.toggleColorMode}
+              color="inherit"
+              startIcon={theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}>
+          Theme
+        </Button>
+
       </Stack>
       <Stack spacing={2}>
         <Stack direction="row"  spacing={2}>
@@ -111,10 +102,10 @@ function App() {
         
 
         <Typography  variant="body1">
-            <SchoolIcon/> MSc Computer Science student in <a href="https://www.ed.ac.uk/"> the University of Edinburgh </a> (expected to graduate in Nov. 2022)
+            <SchoolIcon/> MSc Computer Science student in <a href="https://www.ed.ac.uk/"> the University of Edinburgh</a> (expected to graduate in Nov. 2022)
         </Typography>
         <Typography  variant="body1">
-          <SchoolIcon/> BEng Vehicle Engineering in <a href="https://en.tongji.edu.cn/"> Tongji University </a>
+          <SchoolIcon/> BEng Vehicle Engineering in <a href="https://en.tongji.edu.cn/"> Tongji University</a> 我们的爱憂鬱的臺灣烏龜
         </Typography>
 
         <Typography  variant="h2">
