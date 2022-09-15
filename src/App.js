@@ -49,7 +49,7 @@ function App() {
       
       
       <Container maxWidth="sm">
-      <Stack direction="row" justifyContent="flex-end" sx={{p: 3}}>
+      <Stack direction="row" spacing={2} justifyContent="flex-end" sx={{p: 3}}>
         <Button variant="outlined" 
               onClick={colorMode.toggleColorMode}
               color="inherit"
