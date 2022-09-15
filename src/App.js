@@ -105,7 +105,7 @@ function App() {
             <SchoolIcon/> MSc Computer Science student in <a href="https://www.ed.ac.uk/"> the University of Edinburgh</a> (expected to graduate in Nov. 2022)
         </Typography>
         <Typography  variant="body1">
-          <SchoolIcon/> BEng Vehicle Engineering in <a href="https://en.tongji.edu.cn/"> Tongji University</a> 我们的爱憂鬱的臺灣烏龜
+          <SchoolIcon/> BEng Vehicle Engineering in <a href="https://en.tongji.edu.cn/"> Tongji University</a>
         </Typography>
 
         <Typography  variant="h2">
