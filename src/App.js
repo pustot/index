@@ -1,23 +1,17 @@
 import "purecss/build/pure.css";
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
-import Chip from '@mui/material/Chip';
-import Container from '@mui/material/Container';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 import PostCard from "./components/PostCard";
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import { Avatar, Button, CardActionArea, CardActions, Icon, Grid } from '@mui/material';
+import { 
+  Button, Container, CssBaseline, FormControl, 
+  Grid, Icon, IconButton, InputLabel, MenuItem, Select, Stack, Typography 
+} from '@mui/material';
+
 import hanpoly from './assets/hanpoly.png'
 import qieyunAutoderiver from './assets/qieyun-autoderiver.png'
 import love from './assets/love.png'
 import MyAvatar from './assets/my-avatar.jpg'
 
-import CssBaseline from '@mui/material/CssBaseline';
-import IconButton from '@mui/material/IconButton';
-import Box from '@mui/material/Box';
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
@@ -27,9 +21,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
-import { ReactComponent as ZhihuLogo } from "./assets/zhihu.svg";
-import { SvgIcon } from '@mui/material';
-import Zhihu from "./assets/zhihu.png";
 import Zhihu4Light from "./assets/zhihu4light.png";
 import Zhihu4Dark from "./assets/zhihu4dark.png";
 import LinkTree from "./assets/LinkTree.webp";
@@ -40,6 +31,16 @@ const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 function App() {
   const theme = useTheme();
   const colorMode = React.useContext(ColorModeContext);
+
+  const [lang, setLang] = React.useState('en');
+
+  const handleLangChange = (event) => {
+    setLang(event.target.value);
+  };
+
+  const getLocaleText = (i18nText, language) => {
+    return language in i18nText? i18nText[language] : i18nText["en"];
+  }
 
   const domain = "http://yangcx.tk/";
 
@@ -53,9 +54,30 @@ function App() {
         <Button variant="outlined" 
               onClick={colorMode.toggleColorMode}
               color="inherit"
+              sx={{textTransform: "none"}}
               startIcon={theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}>
-          Theme
+          {getLocaleText(
+            {"en": "Theme", "zh-tra": "主題", "zh-sim": "主题", "tto-bro": "Tvo2D8ae", "tto": "VvaH"}, 
+            lang
+            )}
         </Button>
+
+        <FormControl >
+          <InputLabel id="demo-simple-select-label">Language</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={lang}
+            label="Language"
+            onChange={handleLangChange}
+          >
+            <MenuItem value={"en"}>English</MenuItem>
+            <MenuItem value={"zh-tra"}>繁體中文</MenuItem>
+            <MenuItem value={"zh-sim"}>简体中文</MenuItem>
+            <MenuItem value={"tto-bro"}>b8Q7Z2D.</MenuItem>
+            <MenuItem value={"tto"}>mim</MenuItem>
+          </Select>
+        </FormControl>
 
       </Stack>
       <Stack spacing={2}>
@@ -69,7 +91,10 @@ function App() {
         
           <Stack>
             <Typography  variant="h5">
-              Chenxi Yang
+            {getLocaleText(
+              {"en": "Chenxi Yang", "zh-tra": "楊晨曦", "zh-sim": "杨晨曦", "tto-bro": "EeRZ T8eHXQea", "tto": "hFCmo mAFKRHm"}, 
+              lang
+            )}
             </Typography>
             
 
@@ -102,14 +127,70 @@ function App() {
         
 
         <Typography  variant="body1">
-            <SchoolIcon/> MSc Computer Science student in <a href="https://www.ed.ac.uk/"> the University of Edinburgh</a> (expected to graduate in Nov. 2022)
+            <SchoolIcon/> {getLocaleText(
+              {"en": "MSc Computer Science student in ", 
+              "zh-tra": "計算機科學碩士生，就讀於", 
+              "zh-sim": "计算机科学硕士生，就读于", 
+              "tto-bro": "Yae3CFRH3Yde AF7X8Q7A T8eLAG8d2WQeLZ, 98dF3D8FA Oei ", 
+              // "tto": "Fab RhSe"
+            }, 
+              lang
+            )} 
+            <a href="https://www.ed.ac.uk/">
+            {getLocaleText(
+              {"en": " the University of Edinburgh ", 
+              "zh-tra": "愛丁堡大學", 
+              "zh-sim": "爱丁堡大学", 
+              "tto-bro": "Oae3D8aH D8RQ3X8Q7A", 
+              // "tto": "Fab RhSe"
+            }, 
+              lang
+            )}
+            </a> {getLocaleText(
+              {"en": " (expected to graduate in Nov. 2022)", 
+              "zh-tra": "（預計 2022 年 11 月畢業）", 
+              "zh-sim": "（预计 2022 年 11 月毕业）", 
+              "tto-bro": " (Eei3Yae3 2022 HaH 11 Zvom bemZeih)", 
+              // "tto": "Fab RhSe"
+            }, 
+              lang
+            )}{}
         </Typography>
         <Typography  variant="body1">
-          <SchoolIcon/> BEng Vehicle Engineering in <a href="https://en.tongji.edu.cn/"> Tongji University</a>
+          <SchoolIcon/> {getLocaleText(
+              {"en": "BEng Vehicle Engineering in ", 
+              "zh-tra": "車輛工程工學學士，畢業於", 
+              "zh-sim": "车辆工程工学学士，毕业于", 
+              "tto-bro": "BeRSeRZ3 YFZD8leLZ YFZX8Q7A X8Q7AG8d2, bemZeih Oei ", 
+              // "tto": "Fab RhSe"
+            }, 
+              lang
+            )} 
+          <a href={getLocaleText(
+              {"en": "https://en.tongji.edu.cn/", 
+              "zh-tra": "https://www.tongji.edu.cn/", 
+              "zh-sim": "https://www.tongji.edu.cn/",
+              "de": "https://de.tongji.edu.cn/"
+            }, 
+              lang
+            )}>
+          {getLocaleText(
+              {"en": "Toneji University", 
+              "zh-tra": "同濟大學", 
+              "zh-sim": "同济大学", 
+              "tto-bro": "D8FZ9ae3 D8RQ3X8Q7A", 
+              // "tto": "Fab RhSe"
+            }, 
+              lang
+            )}
+          </a>
         </Typography>
 
         <Typography  variant="h2">
-            Web Apps
+        {getLocaleText(
+              {"en": "Web Apps", "zh-tra": "Web 應用", "zh-sim": "Web 应用", "tto-bro": "Fab OeZ3Ee7Z3", "tto": "Fab RhSe"}, 
+              lang
+            )}
         </Typography>
 
         <PostCard 
