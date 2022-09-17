@@ -50,7 +50,7 @@ function App() {
       
       
       <Container maxWidth="sm">
-      <Stack spacing={4} px={2}>
+      <Stack spacing={4} px={2} pb={4}>
         <Stack direction="row" spacing={2} justifyContent="flex-end" sx={{p: 3}}>
           <Button variant="outlined" 
                 onClick={colorMode.toggleColorMode}
@@ -64,7 +64,10 @@ function App() {
           </Button>
 
           <FormControl >
-            <InputLabel id="demo-simple-select-label">Language</InputLabel>
+            <InputLabel id="demo-simple-select-label">{getLocaleText(
+              {"en": "Language", "zh-tra": "語言", "zh-sim": "语言", "tto-bro": "Zei2ZeiH", "tto": "SRHM"}, 
+              lang
+              )}</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
@@ -197,7 +200,15 @@ function App() {
         <PostCard 
           image={qieyunAutoderiver}
           alt="Ethan Yang"
-          title="Qieyun Autoderiver with Ttomni Rimduk"
+          title={getLocaleText(
+            {"en": "Qieyun Autoderiver with Ttomni Rimduk", 
+            "zh-tra": "切韻音系自動推導器（含丌通語音讀）", 
+            "zh-sim": "切韵音系自动推导器（含丌通语音读）", 
+            "tto-bro": "camFH3 OQeVX8ae3 98e3D8FZ2 moeD8RF3AQe3 (X8iV Y8dmFZZei2 OQeVD8FA)", 
+            // "tto": "Fab RhSe"
+          }, 
+            lang
+          )}
           main="Forked from https://github.com/nk2028/qieyun-autoderiver, with my own
                 Ttomni Rimduk (OQeVD8FA), which is used by my own Ttomni language."
           toLink={domain + "qieyun-autoderiver"} 
@@ -206,7 +217,15 @@ function App() {
         <PostCard 
           image={love}
           alt="Ethan Yang"
-          title="Blogs of my love with Yuran He"
+          title={getLocaleText(
+            {"en": "Blogs of my love with Yuran He", 
+            "zh-tra": "與然小姐姐的戀愛記錄", 
+            "zh-sim": "与然小姐姐的恋爱记录", 
+            "tto-bro": "Eei2 X87 Zei2HMeaH DaA SvaH3Oie3 Yd3Se7A", 
+            // "tto": "Fab RhSe"
+          }, 
+            lang
+          )}
           main="Recording what we have experienced together."
           toLink={domain + "love"}
         />
@@ -214,7 +233,15 @@ function App() {
         <PostCard 
           image={hanpoly}
           alt="Ethan Yang"
-          title="HanPoly"
+          title={getLocaleText(
+            {"en": "HanPoly", 
+            "zh-tra": "漢諸", 
+            "zh-sim": "汉诸", 
+            "tto-bro": "XRH3Tei", 
+            // "tto": "Fab RhSe"
+          }, 
+            lang
+          )}
           main="Find the pronunciation of a Chinese character in multiple languages and dialects."
           toLink={domain + "hanpoly"}
         />
