@@ -50,37 +50,38 @@ function App() {
       
       
       <Container maxWidth="sm">
-      <Stack direction="row" spacing={2} justifyContent="flex-end" sx={{p: 3}}>
-        <Button variant="outlined" 
-              onClick={colorMode.toggleColorMode}
-              color="inherit"
-              sx={{textTransform: "none"}}
-              startIcon={theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}>
-          {getLocaleText(
-            {"en": "Theme", "zh-tra": "主題", "zh-sim": "主题", "tto-bro": "Tvo2D8ae", "tto": "VvaH"}, 
-            lang
-            )}
-        </Button>
+      <Stack spacing={4} px={2}>
+        <Stack direction="row" spacing={2} justifyContent="flex-end" sx={{p: 3}}>
+          <Button variant="outlined" 
+                onClick={colorMode.toggleColorMode}
+                color="inherit"
+                sx={{textTransform: "none"}}
+                startIcon={theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}>
+            {getLocaleText(
+              {"en": "Theme", "zh-tra": "主題", "zh-sim": "主题", "tto-bro": "Tvo2D8ae", "tto": "VvaH"}, 
+              lang
+              )}
+          </Button>
 
-        <FormControl >
-          <InputLabel id="demo-simple-select-label">Language</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={lang}
-            label="Language"
-            onChange={handleLangChange}
-          >
-            <MenuItem value={"en"}>English</MenuItem>
-            <MenuItem value={"zh-tra"}>繁體中文</MenuItem>
-            <MenuItem value={"zh-sim"}>简体中文</MenuItem>
-            <MenuItem value={"tto-bro"}>b8Q7Z2D.</MenuItem>
-            <MenuItem value={"tto"}>mim</MenuItem>
-          </Select>
-        </FormControl>
+          <FormControl >
+            <InputLabel id="demo-simple-select-label">Language</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={lang}
+              label="Language"
+              onChange={handleLangChange}
+            >
+              <MenuItem value={"en"}>English</MenuItem>
+              <MenuItem value={"zh-tra"}>繁體中文</MenuItem>
+              <MenuItem value={"zh-sim"}>简体中文</MenuItem>
+              <MenuItem value={"tto-bro"}>b8Q7Z2D.</MenuItem>
+              <MenuItem value={"tto"}>mim</MenuItem>
+            </Select>
+          </FormControl>
 
-      </Stack>
-      <Stack spacing={2}>
+        </Stack>
+      
         <Stack direction="row"  spacing={2}>
 
           <img
