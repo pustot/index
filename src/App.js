@@ -179,7 +179,7 @@ function App() {
               lang
             )}>
           {getLocaleText(
-              {"en": "Toneji University", 
+              {"en": "Tongji University", 
               "zh-tra": "同濟大學", 
               "zh-sim": "同济大学", 
               "tto-bro": "D8FZ9ae3 D8RQ3X8Q7A", 
@@ -238,7 +238,7 @@ function App() {
             "zh-tra": "漢諸", 
             "zh-sim": "汉诸", 
             "tto-bro": "XRH3Tei", 
-            // "tto": "Fab RhSe"
+            "tto": "XRHhoSe"
           }, 
             lang
           )}
