@@ -11,6 +11,7 @@ import hanpoly from './assets/hanpoly.png'
 import qieyunAutoderiver from './assets/qieyun-autoderiver.png'
 import love from './assets/love.png'
 import MyAvatar from './assets/my-avatar.jpg'
+import khmerStarter from './assets/khmer-starter.png'
 
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
@@ -132,10 +133,10 @@ function App() {
 
         <Typography  variant="body1">
             <SchoolIcon/> {getLocaleText(
-              {"en": "MSc Computer Science student in ", 
-              "zh-tra": "計算機科學碩士生，就讀於", 
-              "zh-sim": "计算机科学硕士生，就读于", 
-              "tto-bro": "Yae3CFRH3Yde AF7X8Q7A T8eLAG8d2WQeLZ, 98dF3D8FA Oei ", 
+              {"en": "MSc Computer Science in ", 
+              "zh-tra": "計算機科學碩士，畢業於", 
+              "zh-sim": "计算机科学硕士，毕业于", 
+              "tto-bro": "Yae3CFRH3Yde AF7X8Q7A T8eLAG8d2, bemZeih Oei ", 
               // "tto": "Fab RhSe"
             }, 
               lang
@@ -150,15 +151,7 @@ function App() {
             }, 
               lang
             )}
-            </a> {getLocaleText(
-              {"en": " (expected to graduate in Nov. 2022)", 
-              "zh-tra": "（預計 2022 年 11 月畢業）", 
-              "zh-sim": "（预计 2022 年 11 月毕业）", 
-              "tto-bro": " (Eei3Yae3 2022 HaH 11 Zvom bemZeih)", 
-              // "tto": "Fab RhSe"
-            }, 
-              lang
-            )}{}
+            </a> 
         </Typography>
         <Typography  variant="body1">
           <SchoolIcon/> {getLocaleText(
@@ -228,6 +221,22 @@ function App() {
           )}
           main="Recording what we have experienced together."
           toLink={domain + "love"}
+        />
+
+        <PostCard 
+          image={khmerStarter}
+          alt="Ethan Yang"
+          title={getLocaleText(
+            {"en": "Khmer Starter", 
+            "zh-tra": "高棉語啟輝器", 
+            "zh-sim": "高棉语启辉器", 
+            "tto-bro": "YRFVeaHZei2 Aae2XFeAQe3", 
+            "tto": "AVRa Aae"
+          }, 
+            lang
+          )}
+          main="Split Khmer sentences into words and then look up its romanization, pronunciation and meaning (later) in Wiktionary."
+          toLink={domain + "khmer-starter"}
         />
 
         <PostCard 
