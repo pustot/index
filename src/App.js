@@ -12,6 +12,7 @@ import qieyunAutoderiver from './assets/qieyun-autoderiver.png'
 import love from './assets/love.png'
 import MyAvatar from './assets/my-avatar.jpg'
 import khmerStarter from './assets/khmer-starter.png'
+import cantoneseFlashcard from './assets/cantonese-flashcard.png'
 
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
@@ -221,6 +222,21 @@ function App() {
           )}
           main="Recording what we have experienced together."
           toLink={domain + "love"}
+        />
+
+        <PostCard 
+          image={cantoneseFlashcard}
+          alt="Cantonese Flashcard Screenshot"
+          title={getLocaleText(
+            {"en": "Cantonese Flashcard", 
+            "zh-tra": "粵語字卡", 
+            "zh-sim": "粤语字卡",
+            "tto": "vmv ARD"
+          }, 
+            lang
+          )}
+          main="Display flashcards with Chinese characters and Jyutping with your comfortable speed."
+          toLink={domain + "cantonese-flashcard"}
         />
 
         <PostCard 
