@@ -193,23 +193,6 @@ function App() {
         </Typography>
 
         <PostCard 
-          image={qieyunAutoderiver}
-          alt="Ethan Yang"
-          title={getLocaleText(
-            {"en": "Qieyun Autoderiver with Ttomni Rimduk", 
-            "zh-tra": "切韻音系自動推導器（含丌通語音讀）", 
-            "zh-sim": "切韵音系自动推导器（含丌通语音读）", 
-            "tto-bro": "camFH3 OQeVX8ae3 98e3D8FZ2 moeD8RF3AQe3 (X8iV Y8dmFZZei2 OQeVD8FA)", 
-            // "tto": "Fab RhSe"
-          }, 
-            lang
-          )}
-          main="Forked from https://github.com/nk2028/qieyun-autoderiver, with my own
-                Ttomni Rimduk (OQeVD8FA), which is used by my own Ttomni language."
-          toLink={domain + "qieyun-autoderiver"} 
-        />
-
-        <PostCard 
           image={love}
           alt="Ethan Yang"
           title={getLocaleText(
@@ -284,6 +267,23 @@ function App() {
           )}
           main="Look up the word in Wiktionary with some additional functionalities."
           toLink={domain + "word-lookuper"}
+        />
+
+        <PostCard 
+          image={qieyunAutoderiver}
+          alt="Ethan Yang"
+          title={getLocaleText(
+            {"en": "Qieyun Autoderiver with Ttomni Rimduk", 
+            "zh-tra": "切韻音系自動推導器（含丌通語音讀）", 
+            "zh-sim": "切韵音系自动推导器（含丌通语音读）", 
+            "tto-bro": "camFH3 OQeVX8ae3 98e3D8FZ2 moeD8RF3AQe3 (X8iV Y8dmFZZei2 OQeVD8FA)", 
+            // "tto": "Fab RhSe"
+          }, 
+            lang
+          )}
+          main="Forked from https://github.com/nk2028/qieyun-autoderiver, with my own
+                Ttomni Rimduk (OQeVD8FA), which is used by my own Ttomni language."
+          toLink={domain + "qieyun-autoderiver"} 
         />
 
       </Stack>
