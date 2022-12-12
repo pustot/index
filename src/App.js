@@ -13,6 +13,7 @@ import love from './assets/love.png'
 import MyAvatar from './assets/my-avatar.jpg'
 import khmerStarter from './assets/khmer-starter.png'
 import cantoneseFlashcard from './assets/cantonese-flashcard.png'
+import wordLookuper from './assets/word-lookuper.png'
 
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
@@ -269,6 +270,20 @@ function App() {
           )}
           main="Find the pronunciation of a Chinese character in multiple languages and dialects."
           toLink={domain + "hanpoly"}
+        />
+
+        <PostCard 
+          image={wordLookuper}
+          alt="Screenshot of Word Lookup"
+          title={getLocaleText(
+            {"en": "Word Lookup", 
+            "zh-tra": "查詞", 
+            "zh-sim": "查词"
+          }, 
+            lang
+          )}
+          main="Look up the word in Wiktionary with some additional functionalities."
+          toLink={domain + "word-lookuper"}
         />
 
       </Stack>
