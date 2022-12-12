@@ -136,9 +136,9 @@ function App() {
         <Typography  variant="body1">
             <SchoolIcon/> {getLocaleText(
               {"en": "MSc Computer Science in ", 
-              "zh-tra": "計算機科學碩士，畢業於", 
-              "zh-sim": "计算机科学硕士，毕业于", 
-              "tto-bro": "Yae3CFRH3Yde AF7X8Q7A T8eLAG8d2, bemZeih Oei ", 
+              "zh-tra": "計算機科學理學碩士，畢業於", 
+              "zh-sim": "计算机科学理学硕士，毕业于", 
+              "tto-bro": "Yae3CFRH3Yde AF7X8Q7A Sd2X8Q7A T8eLAG8d2, bemZeih Oei ", 
               // "tto": "Fab RhSe"
             }, 
               lang
