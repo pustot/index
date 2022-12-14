@@ -23,6 +23,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 
 import Zhihu4Light from "./assets/zhihu4light.png";
 import Zhihu4Dark from "./assets/zhihu4dark.png";
@@ -185,12 +187,34 @@ function App() {
           </a>
         </Typography>
 
+
         <Typography  variant="h2">
         {getLocaleText(
               {"en": "Web Apps", "zh-tra": "Web 應用", "zh-sim": "Web 应用", "tto-bro": "Fab OeZ3Ee7Z3", "tto": "Fab RhSe"}, 
               lang
             )}
         </Typography>
+
+        <Grid>
+              <IconButton href={domain + "love"}>
+                <FavoriteIcon/>
+              </IconButton>
+              <IconButton href={domain + "cantonese-flashcard"}>
+                粵
+              </IconButton>
+              <IconButton href={domain + "khmer-starter"}>
+                ក	
+              </IconButton>
+              <IconButton href={domain + "hanpoly"}>
+                漢
+              </IconButton>
+              <IconButton href={domain + "word-lookuper"}>
+                <TravelExploreIcon/>
+              </IconButton>
+              <IconButton href={domain + "qieyun-autoderiver"}>
+                韻
+              </IconButton>
+            </Grid>
 
         <PostCard 
           image={love}
