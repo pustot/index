@@ -47,7 +47,7 @@ function App() {
     return language in i18nText? i18nText[language] : i18nText["en"];
   }
 
-  const domain = "http://yangcx.tk/";
+  const domain = "http://yangcxyo.com/";
 
 
   return (
