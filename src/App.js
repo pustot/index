@@ -4,8 +4,14 @@ import "./styles.scss";
 import PostCard from "./components/PostCard";
 import { 
   Button, Container, CssBaseline, FormControl, 
-  Grid, Icon, IconButton, InputLabel, MenuItem, Select, Stack, Typography 
+  Grid, Icon, IconButton, InputLabel, MenuItem, Select, Stack, Typography,
+  Box, Drawer, List, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText,
+  AppBar, Toolbar
 } from '@mui/material';
+
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import hanpoly from './assets/hanpoly.png'
 import qieyunAutoderiver from './assets/qieyun-autoderiver.png'
@@ -21,10 +27,13 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import SchoolIcon from '@mui/icons-material/School';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import LanguageIcon from '@mui/icons-material/Language';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
 
 import Zhihu4Light from "./assets/zhihu4light.png";
 import Zhihu4Dark from "./assets/zhihu4dark.png";
@@ -38,8 +47,11 @@ function App() {
   const colorMode = React.useContext(ColorModeContext);
 
   const [lang, setLang] = React.useState('en');
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+  const [pageName, setPageName] = React.useState('home');
 
   const handleLangChange = (event) => {
+    console.log(event.target);
     setLang(event.target.value);
   };
 
@@ -49,48 +61,137 @@ function App() {
 
   const domain = "http://yangcxyo.com/";
 
+  const toggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setIsDrawerOpen(open);
+  }
+
+  const handlePageHome = (event) => {
+    setPageName('home');
+  }
+
+  const handlePageAbout = (event) => {
+    setPageName('about');
+  }
+
+  const IndexDrawer = () => (
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <List>
+
+          <ListItem key="home" disablePadding>
+            <ListItemButton value={"home"} onClick={handlePageHome}>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              Home
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem key="about" disablePadding>
+            <ListItemButton  value={"about"} onClick={handlePageAbout}>
+              <ListItemIcon>
+                <InfoIcon />
+              </ListItemIcon>
+              About
+            </ListItemButton>
+          </ListItem>
+
+      </List>
+
+      <Divider />
+
+      <List>
+        
+        <ListItem key="theme" disablePadding>
+          <ListItemButton
+                onClick={colorMode.toggleColorMode}>
+                  <ListItemIcon>
+                      {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                  </ListItemIcon>
+                {getLocaleText(
+                  {"en": "Colour Theme", "zh-tra": "主題", "zh-sim": "主题", "tto-bro": "Tvo2D8ae", "tto": "VvaH"}, 
+                  lang
+                  )}
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem key="page-language">
+          <ListItemIcon> <LanguageIcon/> </ListItemIcon>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={lang}
+            label="Language"
+            onChange={handleLangChange}
+          >
+            <MenuItem value={"en"}>English</MenuItem>
+            <MenuItem value={"zh-tra"}>繁體中文</MenuItem>
+            <MenuItem value={"zh-sim"}>简体中文</MenuItem>
+            <MenuItem value={"tto-bro"}>b8Q7Z2D.</MenuItem>
+            <MenuItem value={"tto"}>mim</MenuItem>
+          </Select>
+        </ListItem>
+
+      </List>
+    </Box>
+  );
+
 
   return (
     <div>
+
+          <AppBar position="fixed" color="primary">
+            <Toolbar>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                onClick={toggleDrawer(true)}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                Ethan Yang Chenxi
+              </Typography>
+            </Toolbar>
+          </AppBar>
       
+      <br/>
+
+      <Drawer
+          anchor="left"
+          open={isDrawerOpen}
+          onClose={toggleDrawer(false)}
+        >
+          {IndexDrawer()}
+        </Drawer>
       
       <Container maxWidth="sm">
+
+        <br/>
+        <br/>
+        <br/>
+        
+        {pageName=='home'?(
       <Stack spacing={4} px={2} pb={4}>
-        <Stack direction="row" spacing={2} justifyContent="flex-end" sx={{p: 3}}>
-          <Button variant="outlined" 
-                onClick={colorMode.toggleColorMode}
-                color="inherit"
-                sx={{textTransform: "none"}}
-                startIcon={theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}>
-            {getLocaleText(
-              {"en": "Theme", "zh-tra": "主題", "zh-sim": "主题", "tto-bro": "Tvo2D8ae", "tto": "VvaH"}, 
-              lang
-              )}
-          </Button>
 
-          <FormControl >
-            <InputLabel id="demo-simple-select-label">{getLocaleText(
-              {"en": "Language", "zh-tra": "語言", "zh-sim": "语言", "tto-bro": "Zei2ZeiH", "tto": "SRHM"}, 
-              lang
-              )}</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={lang}
-              label="Language"
-              onChange={handleLangChange}
-            >
-              <MenuItem value={"en"}>English</MenuItem>
-              <MenuItem value={"zh-tra"}>繁體中文</MenuItem>
-              <MenuItem value={"zh-sim"}>简体中文</MenuItem>
-              <MenuItem value={"tto-bro"}>b8Q7Z2D.</MenuItem>
-              <MenuItem value={"tto"}>mim</MenuItem>
-            </Select>
-          </FormControl>
+        
 
-        </Stack>
+        
       
-        <Stack direction="row"  spacing={2}>
+        
+        
+          <Stack direction="row"  spacing={2}>
 
           <img
             alt="Ethan Yang Chenxi"
@@ -134,7 +235,7 @@ function App() {
         </Stack>
 
         
-
+        
         <Typography  variant="body1">
             <SchoolIcon/> {getLocaleText(
               {"en": "MSc Computer Science in ", 
@@ -309,8 +410,42 @@ function App() {
                 Ttomni Rimduk (OQeVD8FA), which is used by my own Ttomni language."
           toLink={domain + "qieyun-autoderiver"} 
         />
+        
 
       </Stack>
+      ):(
+        <Stack spacing={4} px={2} pb={4}>
+          Yang Chenxi Yo! <br/><br/>
+
+          Hello, my name is Chenxi Yang (楊晨曦) and here is my protfolio. 
+          By the way, my English name is Ethan if you prefer the English name. 
+          I chose the English name mostly because E-Than-Yang sounds like Xi-Chen-Yang and Hei-San-Yeung,
+          which are Mandarin and Cantonese pronunciations of my Chinese name reversed.
+          <br/><br/>
+
+          The domain name "yangcxyo" consists of my surname Yang (楊), the abbreviation of my given name Chen-xi 
+          (Chen (晨) and Xi (曦) are two characters), and "yo".
+          It is chosen firstly because the names "yang", "yangcx", "cxyang", 
+          "chenxiyang", "yangchenxi", "ethanyang" are all taken, and I had to add some thing to my most preferred 
+          domain names.
+          The additional "yo" can be first understood as cool greetings to all of you coming to my website.
+          It means "I" in Spanish.
+          It is also related to my surname, 楊. In Japanese, 楊 is pronounced exactly as Yō (よう), and since Japanese 
+          is my third language and I enjoyed the time when I did my minor degree in Japanese and called Yō-sensei 
+          (not in the strict meaning), it is worthwhile add this part in memory. Besides, 楊 is pronounced in many 
+          languages and dialects in different but interrelated ways, for what Yang and Yo are very representative:
+          most of them have a semivowel or an approximant consonant at beginning, with a main vowel somewhat open and back, 
+          and a nasal element that could be implemented with a back nasal consonant in the end, or nasalization
+          of the main vowel, or just lost in history. Examples are /iaŋ/ in Putonghua (杨, yáng) and many other Northern variants of 
+          Mandarin Chinese, /jaŋ/ (양) in Korean,
+          /jɨɐŋ/ (reconstructed) in Guangyun (廣韻, Middle Chinese), /iã/ in some Southwestern Mandarin, /ɦiã/ in Shanghai Wu Chinese,
+          /ɦi/ in Wenzhou Wu Chinese, /jœŋ/ in Canton and Hong Kong Cantonese, /iũ/, /tsʰiũ/ or /iɔŋ/ in many variants of Hokkien,
+          /iẽ/ or /iaŋ/ in Teochew, /ioŋ/ in Meizhou Hakka, /ʝa/ in Hmong, /jaɴ/ (ရန်) in Burmese,
+          /joː/ (よう) (historically /jau/ (やう)) in Japanese, /zɨəŋ/ (Dương) in Vietnam, etc. Yang and Yo reflect 
+          the most important similarities of most of the variants, especially their romanizations, and yo is one of the 
+          shortest ones that is easy to use in my domain name, so it is selected. 
+        </Stack>
+      )}
       </Container>
     </div>
   );
