@@ -153,7 +153,7 @@ function App() {
   return (
     <div>
 
-          <AppBar position="fixed" color="primary">
+          <AppBar position="sticky" color="primary">
             <Toolbar>
               <IconButton
                 size="large"
@@ -166,7 +166,7 @@ function App() {
                 <MenuIcon />
               </IconButton>
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                Ethan Yang Chenxi
+                Yang
               </Typography>
             </Toolbar>
           </AppBar>
@@ -183,9 +183,7 @@ function App() {
       
       <Container maxWidth="md">
 
-        <br/>
-        <br/>
-        <br/>
+
         
         {pageName=='home'?(
       <Stack spacing={4} px={2} pb={4}>
@@ -420,6 +418,9 @@ function App() {
       </Stack>
       ):(
         <MuiMarkdown overrides={{
+          h6: { props: { style: { scrollMarginTop: "50px" }, }, },
+          h5: { props: { style: { scrollMarginTop: "50px" }, }, },
+          h4: { props: { style: { scrollMarginTop: "50px" }, }, },
           h3: {
             props: {
               style: { fontSize: 38 },
@@ -432,7 +433,7 @@ function App() {
           },
           h1: {
             props: {
-              style: { fontSize: 56 },
+              style: { fontSize: 56, scrollMarginTop: "50px" },
             },
           }
         }}>{markdown}</MuiMarkdown>
