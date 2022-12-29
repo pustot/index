@@ -1,6 +1,7 @@
 import "purecss/build/pure.css";
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
+// import "./pandoc.css"
 import PostCard from "./components/PostCard";
 import { 
   Button, Container, CssBaseline, FormControl, 
@@ -8,9 +9,10 @@ import {
   Box, Drawer, List, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText,
   AppBar, Toolbar
 } from '@mui/material';
+import ReactMarkdown from 'react-markdown'
+import MuiMarkdown from 'mui-markdown';
+import remarkGfm from 'remark-gfm'
 
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 
 import hanpoly from './assets/hanpoly.png'
@@ -49,6 +51,7 @@ function App() {
   const [lang, setLang] = React.useState('en');
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const [pageName, setPageName] = React.useState('home');
+  const [markdown, setMarkdown] = React.useState('Loading');
 
   const handleLangChange = (event) => {
     console.log(event.target);
@@ -73,8 +76,10 @@ function App() {
     setPageName('home');
   }
 
-  const handlePageAbout = (event) => {
+  const handlePageAbout = async (event) => {
     setPageName('about');
+    const text = await (await fetch(process.env.PUBLIC_URL + 'articles/' + 'about.md')).text();
+    setMarkdown(text);
   }
 
   const IndexDrawer = () => (
@@ -176,7 +181,7 @@ function App() {
           {IndexDrawer()}
         </Drawer>
       
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
 
         <br/>
         <br/>
@@ -414,38 +419,26 @@ function App() {
 
       </Stack>
       ):(
-        <Stack spacing={4} px={2} pb={4}>
-          Yang Chenxi Yo! <br/><br/>
-
-          Hello, my name is Chenxi Yang (楊晨曦) and here is my protfolio. 
-          By the way, my English name is Ethan if you prefer the English name. 
-          I chose the English name mostly because E-Than-Yang sounds like Xi-Chen-Yang and Hei-San-Yeung,
-          which are Mandarin and Cantonese pronunciations of my Chinese name reversed.
-          <br/><br/>
-
-          The domain name "yangcxyo" consists of my surname Yang (楊), the abbreviation of my given name Chen-xi 
-          (Chen (晨) and Xi (曦) are two characters), and "yo".
-          It is chosen firstly because the names "yang", "yangcx", "cxyang", 
-          "chenxiyang", "yangchenxi", "ethanyang" are all taken, and I had to add some thing to my most preferred 
-          domain names.
-          The additional "yo" can be first understood as cool greetings to all of you coming to my website.
-          It means "I" in Spanish.
-          It is also related to my surname, 楊. In Japanese, 楊 is pronounced exactly as Yō (よう), and since Japanese 
-          is my third language and I enjoyed the time when I did my minor degree in Japanese and called Yō-sensei 
-          (not in the strict meaning), it is worthwhile add this part in memory. Besides, 楊 is pronounced in many 
-          languages and dialects in different but interrelated ways, for what Yang and Yo are very representative:
-          most of them have a semivowel or an approximant consonant at beginning, with a main vowel somewhat open and back, 
-          and a nasal element that could be implemented with a back nasal consonant in the end, or nasalization
-          of the main vowel, or just lost in history. Examples are /iaŋ/ in Putonghua (杨, yáng) and many other Northern variants of 
-          Mandarin Chinese, /jaŋ/ (양) in Korean,
-          /jɨɐŋ/ (reconstructed) in Guangyun (廣韻, Middle Chinese), /iã/ in some Southwestern Mandarin, /ɦiã/ in Shanghai Wu Chinese,
-          /ɦi/ in Wenzhou Wu Chinese, /jœŋ/ in Canton and Hong Kong Cantonese, /iũ/, /tsʰiũ/ or /iɔŋ/ in many variants of Hokkien,
-          /iẽ/ or /iaŋ/ in Teochew, /ioŋ/ in Meizhou Hakka, /ʝa/ in Hmong, /jaɴ/ (ရန်) in Burmese,
-          /joː/ (よう) (historically /jau/ (やう)) in Japanese, /zɨəŋ/ (Dương) in Vietnam, etc. Yang and Yo reflect 
-          the most important similarities of most of the variants, especially their romanizations, and yo is one of the 
-          shortest ones that is easy to use in my domain name, so it is selected. 
-        </Stack>
+        <MuiMarkdown overrides={{
+          h3: {
+            props: {
+              style: { fontSize: 38 },
+            },
+          },
+          h2: {
+            props: {
+              style: { fontSize: 46 },
+            },
+          },
+          h1: {
+            props: {
+              style: { fontSize: 56 },
+            },
+          }
+        }}>{markdown}</MuiMarkdown>
       )}
+      <br/>
+      <br/>
       </Container>
     </div>
   );

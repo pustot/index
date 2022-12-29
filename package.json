@@ -1,6 +1,6 @@
 {
   "name": "ethanyangcx",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Ethan Yang Chenxi Home Page",
   "keywords": [
     "react",
@@ -15,11 +15,14 @@
     "@mui/icons-material": "^5.10.3",
     "axios": "^0.27.2",
     "purecss": "^2.0.6",
+    "mui-markdown": "0.5.6",
     "node-sass": "^6.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "8.0.4",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "remark-gfm": "3.0.1"
   },
   "devDependencies": {
     "typescript": "^4.7.4"
