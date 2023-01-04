@@ -212,16 +212,16 @@ function App() {
             
 
             <Grid>
-              <IconButton href="https://github.com/EthanYangCX">
+              <IconButton href="https://github.com/yangchnx">
                 <GitHubIcon/>
               </IconButton>
               <IconButton href="https://www.linkedin.com/in/yang-chenxi/">
                 <LinkedInIcon/>
               </IconButton>
-              <IconButton href="https://twitter.com/ethanyangcx">
+              <IconButton href="https://twitter.com/yangchnx">
                 <TwitterIcon/>
               </IconButton>
-              <IconButton href="https://www.instagram.com/ethanyangcx/">
+              <IconButton href="https://www.instagram.com/yangchnx">
                 <InstagramIcon/>
               </IconButton>
 
