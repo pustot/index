@@ -26,6 +26,8 @@ export default function BlogArticle({ lang }) {
 
     return (
           <Container maxWidth="md">
+            <Typography  variant="h3">{fileName.split('.')[2].replace('_', ' ')}</Typography>
+            <br/>
             <MuiMarkdown overrides={{
               h6: { props: { style: { scrollMarginTop: "50px" }, }, },
               h5: { props: { style: { scrollMarginTop: "50px" }, }, },
