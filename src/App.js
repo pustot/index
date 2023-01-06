@@ -2,7 +2,7 @@ import "purecss/build/pure.css";
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
 import { 
-  Button, Container, CssBaseline, FormControl, 
+  Button, Container, CssBaseline, FormControl, Link as MuiLink, 
   Grid, Icon, IconButton, InputLabel, MenuItem, Select, Stack, Typography,
   Box, Drawer, List, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText,
   AppBar, Toolbar
@@ -16,6 +16,9 @@ import LanguageIcon from '@mui/icons-material/Language';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import MenuIcon from '@mui/icons-material/Menu';
+import FeedIcon from '@mui/icons-material/Feed';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 
@@ -64,6 +67,25 @@ export default function App() {
     setIsDrawerOpen(open);
   }
 
+  const LanguageSelector = (color) => (
+    <Select
+      labelId="demo-simple-select-label"
+      id="demo-simple-select"
+      value={lang}
+      label="Language"
+      onChange={handleLangChange}
+      sx={{ color: color }}
+    >
+      <MenuItem value={"en"}>English</MenuItem>
+      <MenuItem value={"zh-Hans"}>简体中文</MenuItem>
+      <MenuItem value={"zh-Hant"}>繁體中文</MenuItem>
+      <MenuItem value={"ja"}>日本語</MenuItem>
+      <MenuItem value={"de"}>Deutsch</MenuItem>
+      <MenuItem value={"tto-bro"}>b8Q7Z2D.</MenuItem>
+      <MenuItem value={"tto"}>mim</MenuItem>
+    </Select>
+  );
+
   const IndexDrawer = () => (
     <Box
       sx={{ width: 250 }}
@@ -99,6 +121,32 @@ export default function App() {
             </ListItemButton>
           </ListItem>
 
+          <ListItem key="blog" disablePadding>
+            <ListItemButton component={Link} to="/blog">
+              <ListItemIcon>
+                <FeedIcon />
+              </ListItemIcon>
+              {getLocaleText(
+                  {"en": "Blog", "zh-Hant": "博客", "zh-Hans": "博客", "tto-bro": "b8Q7A", "tto": "bS7Y", 
+                   "ja": "ブログ", "de": "Blog"}, 
+                  lang
+                  )}
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem key="love" disablePadding>
+            <ListItemButton component={MuiLink} href="https://yangchnx.com/love/">
+              <ListItemIcon>
+                <FavoriteIcon />
+              </ListItemIcon>
+              {getLocaleText(
+                  {"en": "Love", "zh-Hant": "愛", "zh-Hans": "爱", "tto-bro": "Oie3", "tto": "Re", 
+                   "ja": "愛", "de": "Liebe"}, 
+                  lang
+                  )}
+            </ListItemButton>
+          </ListItem>
+
       </List>
 
       <Divider />
@@ -121,21 +169,7 @@ export default function App() {
 
         <ListItem key="page-language">
           <ListItemIcon> <LanguageIcon/> </ListItemIcon>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={lang}
-            label="Language"
-            onChange={handleLangChange}
-          >
-            <MenuItem value={"en"}>English</MenuItem>
-            <MenuItem value={"zh-Hans"}>简体中文</MenuItem>
-            <MenuItem value={"zh-Hant"}>繁體中文</MenuItem>
-            <MenuItem value={"ja"}>日本語</MenuItem>
-            <MenuItem value={"de"}>Deutsch</MenuItem>
-            <MenuItem value={"tto-bro"}>b8Q7Z2D.</MenuItem>
-            <MenuItem value={"tto"}>mim</MenuItem>
-          </Select>
+          <LanguageSelector/>
         </ListItem>
 
       </List>
@@ -149,22 +183,54 @@ export default function App() {
       <BrowserRouter>
 
         <AppBar position="sticky" color="primary">
-                <Toolbar>
-                  <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    sx={{ mr: 2 }}
-                    onClick={toggleDrawer(true)}
-                  >
-                    <MenuIcon />
-                  </IconButton>
-                  <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    Yang
-                  </Typography>
-                </Toolbar>
-              </AppBar>
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+              onClick={toggleDrawer(true)}
+            >
+              <MenuIcon />
+            </IconButton>
+
+            <Box sx={{ flexGrow: 1, display: 'flex', overflow: 'hidden' }}>
+              <Button variant="text" sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none', fontSize: 16 }}
+                      component={Link} to="/">{getLocaleText(
+                  {"en": "Home", "zh-Hant": "首頁", "zh-Hans": "首页", "tto-bro": "6dF2X8am", "tto": "XoV", 
+                   "ja": "ホーム", "de": "Startseite"}, 
+                  lang
+                  )}</Button>
+              <Button variant="text" sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none', fontSize: 16 }}
+                      component={Link} to="/about">{getLocaleText(
+                  {"en": "About", "zh-Hant": "關於", "zh-Hans": "关于", "tto-bro": "YQFRHOei", "tto": "aCmqSqv", 
+                   "ja": "私について", "de": "Über Mich"}, 
+                  lang
+                  )}</Button>
+              <Button variant="text" sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none', fontSize: 16 }}
+                      component={Link} to="/blog">{getLocaleText(
+                  {"en": "Blog", "zh-Hant": "博客", "zh-Hans": "博客", "tto-bro": "b8Q7A", "tto": "bS7Y", 
+                   "ja": "ブログ", "de": "Blog"}, 
+                  lang
+                  )}</Button>
+              <Button variant="text" sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none', fontSize: 16 }}
+                      component={MuiLink} href="https://yangchnx.com/love/">{getLocaleText(
+                  {"en": "Love", "zh-Hant": "愛", "zh-Hans": "爱", "tto-bro": "Oie3", "tto": "Re", 
+                   "ja": "愛", "de": "Liebe"}, 
+                  lang
+                  )}</Button>
+            </Box>
+
+            <Box sx={{ flexGrow: 0, display: { xs: 'block', md: 'flex' }, overflow: 'hidden' }}>
+              <IconButton onClick={colorMode.toggleColorMode} color="inherit">
+                        {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+              </IconButton>
+              <LanguageSelector color='white'/>
+            </Box>
+          </Toolbar>
+          
+        </AppBar>
           
           <br/>
     
