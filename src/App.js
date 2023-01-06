@@ -91,7 +91,16 @@ export default function App() {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-
+      <ListItem key="home" disablePadding>
+        <ListItemButton component={Link} to="/">
+            <ListItemText inset primary={getLocaleText(
+                {"en": "Chenxi Yang", "zh-Hant": "楊晨曦", "zh-Hans": "杨晨曦", "tto-bro": "EeRZ T8eHXQea", "tto": "hFCmo mAFKRHm",
+                 "ja": "楊晨曦", "de": "Chenxi Yang"}, 
+                lang
+              )} />
+        </ListItemButton>
+            
+        </ListItem>
         <ListItem key="home" disablePadding>
           <ListItemButton component={Link} to="/">
             <ListItemIcon>
