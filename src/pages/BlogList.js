@@ -51,26 +51,46 @@ export default function BlogList({ lang }) {
           <Container maxWidth="md">
             
             <Stack  spacing={4} px={2} pb={4}>
-                <Typography  variant="h3">Blog List</Typography>
+                <Typography  variant="h3">{getLocaleText(
+                            {
+                                "en": "Blog List", 
+                                "zh-Hant": "文章目錄", 
+                                "zh-Hans": "文章目录", 
+                                "tto-bro": "VFHTeRZ VeFASe7A", 
+                                "tto": "SeCm D bS7Y", 
+                                "ja": "ブログリスト", 
+                                "de": "Blogliste"}, 
+                            lang
+                            )}</Typography>
                 {ids&&ids.map(id => (
                     id in blogs ?
                     lang in blogs[id]? 
-                    (<MuiLink key={id} href={"/blog/" + blogs[id][lang][0]}>{blogs[id][lang][1] + ' (' + id.slice(0, 9) + ')'}</MuiLink>):
-                    (<MuiLink key={id} href={"/blog/" + blogs[id][fallbackLanguages.filter(l => l in blogs[id])[0]][0]}>
-                        {blogs[id][fallbackLanguages.filter(l => l in blogs[id])[0]][1] + ' (' + id.slice(0, 9) + ') '}
-                        {getLocaleText(
-                            {
-                                "en": "(Not in the current language)", 
-                                "zh-Hant": "（非當前語言）", 
-                                "zh-Hans": "（非当前语言）", 
-                                "tto-bro": "(bFe DRZ98aH Zei2ZeiH)", 
-                                "tto": "(Ve SRHM aHaH)", 
-                                "ja": "（今の言語ではありません）", 
-                                "de": "(Nicht auf die aktuelle Sprache)"}, 
-                            lang
-                            )}
-                        </MuiLink>)
-                    :<br/>
+                    (
+                        <div>
+                            <MuiLink key={id} href={"/blog/" + blogs[id][lang][0]}>{blogs[id][lang][1]}</MuiLink>
+                            <Typography variant='caption'>{' (' + id.slice(0, 9) + ')'}</Typography>
+                        </div>
+                    ):
+                    (
+                        <div>
+                            <MuiLink key={id} href={"/blog/" + blogs[id][fallbackLanguages.filter(l => l in blogs[id])[0]][0]}>
+                                {blogs[id][fallbackLanguages.filter(l => l in blogs[id])[0]][1]}
+                            </MuiLink>
+                            <Typography variant='caption'>
+                                {' (' + id.slice(0, 9) + ') ' + getLocaleText(
+                                {
+                                    "en": "(Not in the current language)", 
+                                    "zh-Hant": "（非當前語言）", 
+                                    "zh-Hans": "（非当前语言）", 
+                                    "tto-bro": "(bFe DRZ98aH Zei2ZeiH)", 
+                                    "tto": "(Ve SRHM aHaH)", 
+                                    "ja": "（今の言語ではありません）", 
+                                    "de": "(Nicht auf die aktuelle Sprache)"}, 
+                                lang
+                                )}
+                            </Typography>
+                        </div>
+                    ):<Typography variant='caption'>{'Loading'}</Typography>
                 ))}
             </Stack>
           </Container>

@@ -26,7 +26,7 @@ export default function BlogArticle({ lang }) {
 
     return (
           <Container maxWidth="md">
-            <Typography  variant="h3">{fileName.split('.')[2].replace('_', ' ')}</Typography>
+            <Typography  variant="h1" sx={{ fontSize: 56 }}>{fileName.split('.')[2].replace('_', ' ')}</Typography>
             <br/>
             <MuiMarkdown overrides={{
               h6: { props: { style: { scrollMarginTop: "50px" }, }, },
@@ -34,12 +34,12 @@ export default function BlogArticle({ lang }) {
               h4: { props: { style: { scrollMarginTop: "50px" }, }, },
               h3: {
                 props: {
-                  style: { fontSize: 38 },
+                  style: { fontSize: 38, scrollMarginTop: "50px" },
                 },
               },
               h2: {
                 props: {
-                  style: { fontSize: 46 },
+                  style: { fontSize: 46, scrollMarginTop: "50px" },
                 },
               },
               h1: {
