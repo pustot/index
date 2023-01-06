@@ -9,19 +9,7 @@ import {
   Box, Drawer, List, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText,
   AppBar, Toolbar
 } from '@mui/material';
-import ReactMarkdown from 'react-markdown'
 import MuiMarkdown from 'mui-markdown';
-import remarkGfm from 'remark-gfm'
-
-import MenuIcon from '@mui/icons-material/Menu';
-
-import hanpoly from './assets/hanpoly.png'
-import qieyunAutoderiver from './assets/qieyun-autoderiver.png'
-import love from './assets/love.png'
-import MyAvatar from './assets/my-avatar.jpg'
-import khmerStarter from './assets/khmer-starter.png'
-import cantoneseFlashcard from './assets/cantonese-flashcard.png'
-import wordLookuper from './assets/word-lookuper.png'
 
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
@@ -36,11 +24,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
-
-import Zhihu4Light from "./assets/zhihu4light.png";
-import Zhihu4Dark from "./assets/zhihu4dark.png";
-import LinkTree from "./assets/LinkTree.webp";
-
+import MenuIcon from '@mui/icons-material/Menu';
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -63,6 +47,7 @@ function App() {
   }
 
   const domain = "https://yangchnx.com/";
+  const picFolder = process.env.PUBLIC_URL + 'pic/';
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -198,7 +183,7 @@ function App() {
 
           <img
             alt="Ethan Yang Chenxi"
-            src={MyAvatar}
+            src={picFolder + 'my-avatar.jpg'}
             width="72" height="72"
           />
         
@@ -226,11 +211,13 @@ function App() {
               </IconButton>
 
               <IconButton href="https://www.zhihu.com/people/donew">
-                <img alt="Zhihu" src={theme.palette.mode === 'dark' ? Zhihu4Dark : Zhihu4Light} height="24" width="24" />
+                <img alt="Zhihu" src={theme.palette.mode === 'dark' ? 
+                      picFolder + 'zhihu4dark.png' : 
+                      picFolder + 'zhihu4light.png'} height="24" width="24" />
               </IconButton>
 
               <IconButton href="https://linktr.ee/smartdramo">
-                <img alt="Zhihu" src={LinkTree} height="24" width="24" />
+                <img alt="Zhihu" src={picFolder + 'LinkTree.webp'} height="24" width="24" />
               </IconButton>
             </Grid>
 
@@ -321,7 +308,7 @@ function App() {
             </Grid>
 
         <PostCard 
-          image={love}
+          image={picFolder + 'love.png'}
           alt="Ethan Yang"
           title={getLocaleText(
             {"en": "Blogs of my love with Yuran He", 
@@ -337,7 +324,7 @@ function App() {
         />
 
         <PostCard 
-          image={cantoneseFlashcard}
+          image={picFolder + 'cantonese-flashcard.png'}
           alt="Cantonese Flashcard Screenshot"
           title={getLocaleText(
             {"en": "Cantonese Flashcard", 
@@ -352,7 +339,7 @@ function App() {
         />
 
         <PostCard 
-          image={khmerStarter}
+          image={picFolder + 'khmer-starter.png'}
           alt="Ethan Yang"
           title={getLocaleText(
             {"en": "Khmer Starter", 
@@ -368,7 +355,7 @@ function App() {
         />
 
         <PostCard 
-          image={hanpoly}
+          image={picFolder + 'hanpoly.png'}
           alt="Ethan Yang"
           title={getLocaleText(
             {"en": "HanPoly", 
@@ -384,7 +371,7 @@ function App() {
         />
 
         <PostCard 
-          image={wordLookuper}
+          image={picFolder + 'word-lookuper.png'}
           alt="Screenshot of Word Lookup"
           title={getLocaleText(
             {"en": "Word Lookup", 
@@ -398,7 +385,7 @@ function App() {
         />
 
         <PostCard 
-          image={qieyunAutoderiver}
+          image={picFolder + 'qieyun-autoderiver.png'}
           alt="Ethan Yang"
           title={getLocaleText(
             {"en": "Qieyun Autoderiver with Ttomni Rimduk", 
