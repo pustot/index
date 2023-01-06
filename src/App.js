@@ -62,7 +62,7 @@ function App() {
     return language in i18nText? i18nText[language] : i18nText["en"];
   }
 
-  const domain = "http://yangchnx.com/";
+  const domain = "https://yangchnx.com/";
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
