@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./styles.scss";
 import { 
   Button, Container, CssBaseline, FormControl, Link as MuiLink, 
-  Grid, Icon, IconButton, InputLabel, MenuItem, Select, Stack, Typography,
+  Grid, Icon, IconButton, Menu, MenuItem, Select, Stack, Typography,
   Box, Drawer, List, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText,
   AppBar, Toolbar
 } from '@mui/material';
@@ -38,6 +38,14 @@ export default function App() {
     }),
     [],
   );
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const isLangMenuOpen = Boolean(anchorEl);
+  const handleLangMenuClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleLangMenuClose = () => {
+    setAnchorEl(null);
+  };
 
   const theme = React.useMemo(
     () =>
@@ -55,6 +63,12 @@ export default function App() {
     localStorage.setItem("yangchnx/0.1/lang", event.target.value);
   };
 
+  const handleLangMenuItemClick = (tar) => {
+    console.log(tar)
+    setLang(tar);
+    localStorage.setItem("yangchnx/0.1/lang", tar);
+  }
+
   const getLocaleText = (i18nText, language) => {
     return language in i18nText? i18nText[language] : i18nText["en"];
   }
@@ -67,25 +81,6 @@ export default function App() {
     setIsDrawerOpen(open);
   }
 
-  const LanguageSelector = (color) => (
-    <Select
-      labelId="demo-simple-select-label"
-      id="demo-simple-select"
-      value={lang}
-      label="Language"
-      onChange={handleLangChange}
-      sx={{ color: color }}
-    >
-      <MenuItem value={"en"}>English</MenuItem>
-      <MenuItem value={"zh-Hans"}>简体中文</MenuItem>
-      <MenuItem value={"zh-Hant"}>繁體中文</MenuItem>
-      <MenuItem value={"ja"}>日本語</MenuItem>
-      <MenuItem value={"de"}>Deutsch</MenuItem>
-      <MenuItem value={"tto-bro"}>b8Q7Z2D.</MenuItem>
-      <MenuItem value={"tto"}>mim</MenuItem>
-    </Select>
-  );
-
   const IndexDrawer = () => (
     <Box
       sx={{ width: 250 }}
@@ -95,57 +90,57 @@ export default function App() {
     >
       <List>
 
-          <ListItem key="home" disablePadding>
-            <ListItemButton component={Link} to="/">
-              <ListItemIcon>
-                <HomeIcon />
-              </ListItemIcon>
-              {getLocaleText(
-                  {"en": "Home", "zh-Hant": "首頁", "zh-Hans": "首页", "tto-bro": "6dF2X8am", "tto": "XoV", 
-                   "ja": "ホーム", "de": "Startseite"}, 
-                  lang
-                  )}
-            </ListItemButton>
-          </ListItem>
+        <ListItem key="home" disablePadding>
+          <ListItemButton component={Link} to="/">
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            {getLocaleText(
+                {"en": "Home", "zh-Hant": "首頁", "zh-Hans": "首页", "tto-bro": "6dF2X8am", "tto": "XoV", 
+                  "ja": "ホーム", "de": "Startseite"}, 
+                lang
+                )}
+          </ListItemButton>
+        </ListItem>
 
-          <ListItem key="about" disablePadding>
-            <ListItemButton component={Link} to="/about">
-              <ListItemIcon>
-                <InfoIcon />
-              </ListItemIcon>
-              {getLocaleText(
-                  {"en": "About", "zh-Hant": "關於", "zh-Hans": "关于", "tto-bro": "YQFRHOei", "tto": "aCmqSqv", 
-                   "ja": "私について", "de": "Über Mich"}, 
-                  lang
-                  )}
-            </ListItemButton>
-          </ListItem>
+        <ListItem key="about" disablePadding>
+          <ListItemButton component={Link} to="/about">
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            {getLocaleText(
+                {"en": "About", "zh-Hant": "關於", "zh-Hans": "关于", "tto-bro": "YQFRHOei", "tto": "aCmqSqv", 
+                  "ja": "私について", "de": "Über Mich"}, 
+                lang
+                )}
+          </ListItemButton>
+        </ListItem>
 
-          <ListItem key="blog" disablePadding>
-            <ListItemButton component={Link} to="/blog">
-              <ListItemIcon>
-                <FeedIcon />
-              </ListItemIcon>
-              {getLocaleText(
-                  {"en": "Blog", "zh-Hant": "博客", "zh-Hans": "博客", "tto-bro": "b8Q7A", "tto": "bS7Y", 
-                   "ja": "ブログ", "de": "Blog"}, 
-                  lang
-                  )}
-            </ListItemButton>
-          </ListItem>
+        <ListItem key="blog" disablePadding>
+          <ListItemButton component={Link} to="/blog">
+            <ListItemIcon>
+              <FeedIcon />
+            </ListItemIcon>
+            {getLocaleText(
+                {"en": "Blog", "zh-Hant": "博客", "zh-Hans": "博客", "tto-bro": "b8Q7A", "tto": "bS7Y", 
+                  "ja": "ブログ", "de": "Blog"}, 
+                lang
+                )}
+          </ListItemButton>
+        </ListItem>
 
-          <ListItem key="love" disablePadding>
-            <ListItemButton component={MuiLink} href="https://yangchnx.com/love/">
-              <ListItemIcon>
-                <FavoriteIcon />
-              </ListItemIcon>
-              {getLocaleText(
-                  {"en": "Love", "zh-Hant": "愛", "zh-Hans": "爱", "tto-bro": "Oie3", "tto": "Re", 
-                   "ja": "愛", "de": "Liebe"}, 
-                  lang
-                  )}
-            </ListItemButton>
-          </ListItem>
+        <ListItem key="love" disablePadding>
+          <ListItemButton component={MuiLink} href="https://yangchnx.com/love/">
+            <ListItemIcon>
+              <FavoriteIcon />
+            </ListItemIcon>
+            {getLocaleText(
+                {"en": "Love", "zh-Hant": "愛", "zh-Hans": "爱", "tto-bro": "Oie3", "tto": "Re", 
+                  "ja": "愛", "de": "Liebe"}, 
+                lang
+                )}
+          </ListItemButton>
+        </ListItem>
 
       </List>
 
@@ -155,21 +150,35 @@ export default function App() {
         
         <ListItem key="theme" disablePadding>
           <ListItemButton
-                onClick={colorMode.toggleColorMode}>
-                  <ListItemIcon>
-                      {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-                  </ListItemIcon>
-                {getLocaleText(
-                  {"en": "Colour Theme", "zh-Hant": "主題", "zh-Hans": "主题", "tto-bro": "Tvo2D8ae", "tto": "VvaH",
-                   "ja": "テーマ", "de": "Farbthema"}, 
-                  lang
-                  )}
+            onClick={colorMode.toggleColorMode}>
+              <ListItemIcon>
+                  {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+              </ListItemIcon>
+            {getLocaleText(
+              {"en": "Colour Theme", "zh-Hant": "主題", "zh-Hans": "主题", "tto-bro": "Tvo2D8ae", "tto": "VvaH",
+                "ja": "テーマ", "de": "Farbthema"}, 
+              lang
+              )}
           </ListItemButton>
         </ListItem>
 
         <ListItem key="page-language">
           <ListItemIcon> <LanguageIcon/> </ListItemIcon>
-          <LanguageSelector/>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={lang}
+            label="Language"
+            onChange={handleLangChange}
+          >
+            <MenuItem value={"en"}>English</MenuItem>
+            <MenuItem value={"zh-Hans"}>简体中文</MenuItem>
+            <MenuItem value={"zh-Hant"}>繁體中文</MenuItem>
+            <MenuItem value={"ja"}>日本語</MenuItem>
+            <MenuItem value={"de"}>Deutsch</MenuItem>
+            <MenuItem value={"tto-bro"}>b8Q7Z2D.</MenuItem>
+            <MenuItem value={"tto"}>mim</MenuItem>
+          </Select>
         </ListItem>
 
       </List>
@@ -226,31 +235,55 @@ export default function App() {
               <IconButton onClick={colorMode.toggleColorMode} color="inherit">
                         {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
               </IconButton>
-              <LanguageSelector color='white'/>
+              <IconButton
+                onClick={handleLangMenuClick}
+                size="small"
+                sx={{ ml: 2 }}
+                aria-controls={isLangMenuOpen ? 'account-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={isLangMenuOpen ? 'true' : undefined}
+                color="inherit"
+              >
+                <LanguageIcon/>
+              </IconButton>
+              <Menu
+                anchorEl={anchorEl}
+                id="account-menu"
+                open={isLangMenuOpen}
+                onClose={handleLangMenuClose}
+                onClick={handleLangMenuClose}>
+                <MenuItem onClick={() => {handleLangMenuItemClick('en')}}>English</MenuItem>
+                <MenuItem onClick={() => {handleLangMenuItemClick('zh-Hans')}}>简体中文</MenuItem>
+                <MenuItem onClick={() => {handleLangMenuItemClick('zh-Hant')}}>繁體中文</MenuItem>
+                <MenuItem onClick={() => {handleLangMenuItemClick('ja')}}>日本語</MenuItem>
+                <MenuItem onClick={() => {handleLangMenuItemClick('de')}}>Deutsch</MenuItem>
+                <MenuItem onClick={() => {handleLangMenuItemClick('tto-bro')}}>b8Q7Z2D.</MenuItem>
+                <MenuItem onClick={() => {handleLangMenuItemClick('tto')}}>mim</MenuItem>
+              </Menu>
             </Box>
           </Toolbar>
           
         </AppBar>
           
-          <br/>
-    
-          <Drawer
-              anchor="left"
-              open={isDrawerOpen}
-              onClose={toggleDrawer(false)}
-            >
-              {IndexDrawer()}
-            </Drawer>
+        <br/>
+  
+        <Drawer
+          anchor="left"
+          open={isDrawerOpen}
+          onClose={toggleDrawer(false)}
+        >
+          {IndexDrawer()}
+        </Drawer>
             
-              <Routes>
-              <Route path="/" element={<Home lang={lang} />} />
-                <Route path="/home" element={<Home lang={lang} />} />
-                <Route path="/about" element={<About lang={lang} />} />
-              </Routes>
+        <Routes>
+        <Route path="/" element={<Home lang={lang} />} />
+          <Route path="/home" element={<Home lang={lang} />} />
+          <Route path="/about" element={<About lang={lang} />} />
+        </Routes>
 
-              <br/>
-              <br/>
-            </BrowserRouter>
+        <br/>
+        <br/>
+      </BrowserRouter>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
