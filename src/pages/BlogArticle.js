@@ -2,36 +2,29 @@ import "purecss/build/pure.css";
 import React, { useState, useEffect } from "react";
 import "../styles.scss";
 import { 
-  Container
+  Container, Link as MuiLink, Stack, Typography
 } from '@mui/material';
+import {
+  useParams,
+} from 'react-router-dom';
 import MuiMarkdown from 'mui-markdown';
 
-export default function About({ lang }) {
-
+export default function BlogArticle({ lang }) {
     const [markdown, setMarkdown] = React.useState('Loading');
-    const fileName = {
-        'en': '2021-0915.about-me.About_Me.en.life.md',
-        'zh-Hans': '2021-0915.about-me.关于我.zh-Hans.life.md',
-        'zh-Hant': '2021-0915.about-me.關於我.zh-Hant.life.md',
-        'ja': '2021-0915.about-me.私について.ja.life.md',
-        'de': '2021-0915.about-me.Über_Mich.de.life.md',
-        'tto': '2021-0915.about-me.aCmqSqv.tto.life.md',
-        'tto-bro': '2021-0915.about-me.YQFRHOei_Z72.tto-bro.life.md'
-    };
+    const { fileName } = useParams();
 
-    const fetchAbout = async () => {
-        const text = await (await fetch('https://raw.githubusercontent.com/yangchnx/blog/main/' + fileName[lang])).text();
+    const fetchContent = async () => {
+        const text = await (await fetch('https://raw.githubusercontent.com/yangchnx/blog/main/' + fileName)).text();
+        if (text == '') return;
         setMarkdown(text);
         console.log("Markdown got")
     }
 
     useEffect(() => {
-        fetchAbout();
+        fetchContent();
     }, [lang]);
-    
+
     return (
-        <div>
-          
           <Container maxWidth="md">
             <MuiMarkdown overrides={{
               h6: { props: { style: { scrollMarginTop: "50px" }, }, },
@@ -54,6 +47,5 @@ export default function About({ lang }) {
               }
             }}>{markdown}</MuiMarkdown>
           </Container>
-        </div>
       );
 };

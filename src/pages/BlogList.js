@@ -2,14 +2,10 @@ import "purecss/build/pure.css";
 import React, { useState, useEffect } from "react";
 import "../styles.scss";
 import { 
-  Button, Container, CssBaseline, FormControl, Link as MuiLink, 
-  Grid, Icon, IconButton, Menu, MenuItem, Select, Stack, Typography,
-  Box, Drawer, List, Divider, ListItem, ListItemButton, ListItemIcon, ListItemText,
-  AppBar, Toolbar
+  Container, Link as MuiLink, Stack, Typography
 } from '@mui/material';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-export default function Blog({ lang }) {
+export default function BlogList({ lang }) {
     // date id -> [ lang name filename ]
     // so can display date, name, whether this lang, and fetch using filename
     let [ blogs, setBlogs ] = useState({});

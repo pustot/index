@@ -21,7 +21,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Blog from "./pages/Blog";
+import BlogList from "./pages/BlogList";
+import BlogArticle from "./pages/BlogArticle";
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -280,7 +281,8 @@ export default function App() {
         <Route path="/" element={<Home lang={lang} />} />
           <Route path="/home" element={<Home lang={lang} />} />
           <Route path="/about" element={<About lang={lang} />} />
-          <Route path="/blog" element={<Blog lang={lang} />} />
+          <Route path="/blog" element={<BlogList lang={lang} />} />
+          <Route path="/blog/:fileName" element={<BlogArticle lang={lang} />} />
         </Routes>
 
         <br/>
