@@ -22,13 +22,14 @@ import About from "./pages/About";
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 export default function App() {
-  const [lang, setLang] = React.useState('en');
+  const [lang, setLang] = React.useState(localStorage.getItem("yangchnx/0.1/lang") || 'en');
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const systemColor = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark' : 'light';
-  const [mode, setMode] = React.useState(systemColor);
+  const [mode, setMode] = React.useState(localStorage.getItem("yangchnx/0.1/mode") || systemColor);
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
+        localStorage.setItem("yangchnx/0.1/mode", mode === 'light' ? 'dark' : 'light');
         setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
       },
     }),
@@ -48,6 +49,7 @@ export default function App() {
   const handleLangChange = (event) => {
     console.log(event.target);
     setLang(event.target.value);
+    localStorage.setItem("yangchnx/0.1/lang", event.target.value);
   };
 
   const getLocaleText = (i18nText, language) => {
@@ -179,7 +181,7 @@ export default function App() {
                 <Route path="/home" element={<Home lang={lang} />} />
                 <Route path="/about" element={<About lang={lang} />} />
               </Routes>
-              
+
               <br/>
               <br/>
             </BrowserRouter>
