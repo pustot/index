@@ -1,14 +1,14 @@
 import "purecss/build/pure.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../styles.scss";
 import { 
   Container
 } from '@mui/material';
-import MuiMarkdown from 'mui-markdown';
+import MyMuiMarkdown from "../components/MyMuiMarkdown";
 
 export default function About({ lang }) {
 
-    const [markdown, setMarkdown] = React.useState('Loading');
+    const [markdown, setMarkdown] = useState('Loading');
     const fileName = {
         'en': '2021-0915.about-me.About_Me.en.life.md',
         'zh-Hans': '2021-0915.about-me.关于我.zh-Hans.life.md',
@@ -30,30 +30,8 @@ export default function About({ lang }) {
     }, [lang]);
     
     return (
-        <div>
-          
           <Container maxWidth="md">
-            <MuiMarkdown overrides={{
-              h6: { props: { style: { scrollMarginTop: "50px" }, }, },
-              h5: { props: { style: { scrollMarginTop: "50px" }, }, },
-              h4: { props: { style: { scrollMarginTop: "50px" }, }, },
-              h3: {
-                props: {
-                  style: { fontSize: 38 },
-                },
-              },
-              h2: {
-                props: {
-                  style: { fontSize: 46 },
-                },
-              },
-              h1: {
-                props: {
-                  style: { fontSize: 56, scrollMarginTop: "50px" },
-                },
-              }
-            }}>{markdown}</MuiMarkdown>
+            <MyMuiMarkdown markdown={markdown} />
           </Container>
-        </div>
       );
 };

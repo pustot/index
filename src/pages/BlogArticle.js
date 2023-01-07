@@ -7,7 +7,8 @@ import {
 import {
   useParams,
 } from 'react-router-dom';
-import MuiMarkdown from 'mui-markdown';
+import MyMuiMarkdown from "../components/MyMuiMarkdown";
+
 
 export default function BlogArticle({ lang }) {
     const [markdown, setMarkdown] = React.useState('Loading');
@@ -29,31 +30,7 @@ export default function BlogArticle({ lang }) {
           <Container maxWidth="md">
             <Typography  variant="h1" sx={{ fontSize: 56 }}>{fileName.split('.')[2].replaceAll('_', ' ')}</Typography>
             <br/>
-            <MuiMarkdown overrides={{
-              h6: { props: { style: { scrollMarginTop: "50px" }, }, },
-              h5: { props: { style: { scrollMarginTop: "50px" }, }, },
-              h4: { props: { style: { scrollMarginTop: "50px" }, }, },
-              h3: {
-                props: {
-                  style: { fontSize: 38, scrollMarginTop: "50px" },
-                },
-              },
-              h2: {
-                props: {
-                  style: { fontSize: 46, scrollMarginTop: "50px" },
-                },
-              },
-              h1: {
-                props: {
-                  style: { fontSize: 56, scrollMarginTop: "50px" },
-                },
-              },
-              img: {
-                props: {
-                  style: { maxWidth: '100%' }
-                }
-              }
-            }}>{markdown}</MuiMarkdown>
+            <MyMuiMarkdown markdown={markdown} />
           </Container>
       );
 };
