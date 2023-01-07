@@ -215,7 +215,7 @@ export default function App() {
               <MenuIcon />
             </IconButton>
 
-            <Box sx={{ flexGrow: 1, display: 'flex', overflow: 'hidden' }}>
+            <Box sx={{ flexGrow: 1, display: 'flex', overflow: 'auto' }}>
               <Button variant="text" sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none', fontSize: 16 }}
                       component={Link} to="/">{getLocaleText(
                   {"en": "Home", "zh-Hant": "首頁", "zh-Hans": "首页", "tto-bro": "6dF2X8am", "tto": "XoV", 
