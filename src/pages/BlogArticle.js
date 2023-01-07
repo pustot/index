@@ -14,8 +14,9 @@ export default function BlogArticle({ lang }) {
     const { fileName } = useParams();
 
     const fetchContent = async () => {
-        const text = await (await fetch('https://raw.githubusercontent.com/yangchnx/blog/main/' + fileName)).text();
+        let text = await (await fetch('https://raw.githubusercontent.com/yangchnx/blog/main/' + fileName)).text();
         if (text == '') return;
+        text = text.replaceAll('](./pic/', '](https://raw.githubusercontent.com/yangchnx/blog/main/pic/');
         setMarkdown(text);
         console.log("Markdown got")
     }
@@ -26,7 +27,7 @@ export default function BlogArticle({ lang }) {
 
     return (
           <Container maxWidth="md">
-            <Typography  variant="h1" sx={{ fontSize: 56 }}>{fileName.split('.')[2].replace('_', ' ')}</Typography>
+            <Typography  variant="h1" sx={{ fontSize: 56 }}>{fileName.split('.')[2].replaceAll('_', ' ')}</Typography>
             <br/>
             <MuiMarkdown overrides={{
               h6: { props: { style: { scrollMarginTop: "50px" }, }, },
@@ -46,6 +47,11 @@ export default function BlogArticle({ lang }) {
                 props: {
                   style: { fontSize: 56, scrollMarginTop: "50px" },
                 },
+              },
+              img: {
+                props: {
+                  style: { maxWidth: '100%' }
+                }
               }
             }}>{markdown}</MuiMarkdown>
           </Container>
