@@ -1,7 +1,21 @@
 import {
-    AppBar, Box, Button, Divider, Drawer, IconButton, Link as MuiLink, List, ListItem, ListItemButton,
-    ListItemIcon, ListItemText, Menu, MenuItem, Select, Toolbar
-} from '@mui/material';
+    AppBar,
+    Box,
+    Button,
+    Divider,
+    Drawer,
+    IconButton,
+    Link as MuiLink,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    Menu,
+    MenuItem,
+    Select,
+    Toolbar,
+} from "@mui/material";
 import "purecss/build/pure.css";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -9,14 +23,14 @@ import { ColorModeContext, LangContext } from "../App";
 import { getLocaleText } from "../data/I18n";
 import "../styles.scss";
 
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FeedIcon from '@mui/icons-material/Feed';
-import HomeIcon from '@mui/icons-material/Home';
-import InfoIcon from '@mui/icons-material/Info';
-import LanguageIcon from '@mui/icons-material/Language';
-import MenuIcon from '@mui/icons-material/Menu';
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FeedIcon from "@mui/icons-material/Feed";
+import HomeIcon from "@mui/icons-material/Home";
+import InfoIcon from "@mui/icons-material/Info";
+import LanguageIcon from "@mui/icons-material/Language";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function NavBarAndMenu({ theme, langSetter }) {
     const colorMode = React.useContext(ColorModeContext);
@@ -35,7 +49,10 @@ export default function NavBarAndMenu({ theme, langSetter }) {
     };
 
     const toggleDrawer = (open) => (event) => {
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+        if (
+            event.type === "keydown" &&
+            (event.key === "Tab" || event.key === "Shift")
+        ) {
             return;
         }
 
@@ -49,10 +66,10 @@ export default function NavBarAndMenu({ theme, langSetter }) {
     };
 
     const handleLangMenuItemClick = (tar) => {
-        console.log(tar)
+        console.log(tar);
         langSetter(tar);
         localStorage.setItem("yangchnx/0.1/lang", tar);
-    }
+    };
 
     const IndexDrawer = () => (
         <Box
@@ -64,15 +81,22 @@ export default function NavBarAndMenu({ theme, langSetter }) {
             <List>
                 <ListItem key="nameLogo" disablePadding>
                     <ListItemButton component={Link} to="/">
-                        <ListItemText inset primary={getLocaleText(
-                            {
-                                "en": "Chenxi Yang", "zh-Hant": "楊晨曦", "zh-Hans": "杨晨曦", "tto-bro": "EeRZ T8eHXQea", "tto": "hFCmo mAFKRHm",
-                                "ja": "楊晨曦", "de": "Chenxi Yang"
-                            },
-                            lang
-                        )} />
+                        <ListItemText
+                            inset
+                            primary={getLocaleText(
+                                {
+                                    en: "Chenxi Yang",
+                                    "zh-Hant": "楊晨曦",
+                                    "zh-Hans": "杨晨曦",
+                                    "tto-bro": "EeRZ T8eHXQea",
+                                    tto: "hFCmo mAFKRHm",
+                                    ja: "楊晨曦",
+                                    de: "Chenxi Yang",
+                                },
+                                lang
+                            )}
+                        />
                     </ListItemButton>
-
                 </ListItem>
                 <ListItem key="home" disablePadding>
                     <ListItemButton component={Link} to="/">
@@ -81,8 +105,13 @@ export default function NavBarAndMenu({ theme, langSetter }) {
                         </ListItemIcon>
                         {getLocaleText(
                             {
-                                "en": "Home", "zh-Hant": "首頁", "zh-Hans": "首页", "tto-bro": "6dF2X8am", "tto": "XoV",
-                                "ja": "ホーム", "de": "Startseite"
+                                en: "Home",
+                                "zh-Hant": "首頁",
+                                "zh-Hans": "首页",
+                                "tto-bro": "6dF2X8am",
+                                tto: "XoV",
+                                ja: "ホーム",
+                                de: "Startseite",
                             },
                             lang
                         )}
@@ -96,8 +125,13 @@ export default function NavBarAndMenu({ theme, langSetter }) {
                         </ListItemIcon>
                         {getLocaleText(
                             {
-                                "en": "About", "zh-Hant": "關於", "zh-Hans": "关于", "tto-bro": "YQFRHOei", "tto": "aCmqSqv",
-                                "ja": "私について", "de": "Über Mich"
+                                en: "About",
+                                "zh-Hant": "關於",
+                                "zh-Hans": "关于",
+                                "tto-bro": "YQFRHOei",
+                                tto: "aCmqSqv",
+                                ja: "私について",
+                                de: "Über Mich",
                             },
                             lang
                         )}
@@ -111,8 +145,13 @@ export default function NavBarAndMenu({ theme, langSetter }) {
                         </ListItemIcon>
                         {getLocaleText(
                             {
-                                "en": "Blog", "zh-Hant": "博客", "zh-Hans": "博客", "tto-bro": "b8Q7A", "tto": "bS7Y",
-                                "ja": "ブログ", "de": "Blog"
+                                en: "Blog",
+                                "zh-Hant": "博客",
+                                "zh-Hans": "博客",
+                                "tto-bro": "b8Q7A",
+                                tto: "bS7Y",
+                                ja: "ブログ",
+                                de: "Blog",
                             },
                             lang
                         )}
@@ -126,30 +165,41 @@ export default function NavBarAndMenu({ theme, langSetter }) {
                         </ListItemIcon>
                         {getLocaleText(
                             {
-                                "en": "Love", "zh-Hant": "愛", "zh-Hans": "爱", "tto-bro": "Oie3", "tto": "Re",
-                                "ja": "愛", "de": "Liebe"
+                                en: "Love",
+                                "zh-Hant": "愛",
+                                "zh-Hans": "爱",
+                                "tto-bro": "Oie3",
+                                tto: "Re",
+                                ja: "愛",
+                                de: "Liebe",
                             },
                             lang
                         )}
                     </ListItemButton>
                 </ListItem>
-
             </List>
 
             <Divider />
 
             <List>
-
                 <ListItem key="theme" disablePadding>
-                    <ListItemButton
-                        onClick={colorMode.toggleColorMode}>
+                    <ListItemButton onClick={colorMode.toggleColorMode}>
                         <ListItemIcon>
-                            {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                            {theme.palette.mode === "dark" ? (
+                                <Brightness7Icon />
+                            ) : (
+                                <Brightness4Icon />
+                            )}
                         </ListItemIcon>
                         {getLocaleText(
                             {
-                                "en": "Colour Theme", "zh-Hant": "主題", "zh-Hans": "主题", "tto-bro": "Tvo2D8ae", "tto": "VvaH",
-                                "ja": "テーマ", "de": "Farbthema"
+                                en: "Colour Theme",
+                                "zh-Hant": "主題",
+                                "zh-Hans": "主题",
+                                "tto-bro": "Tvo2D8ae",
+                                tto: "VvaH",
+                                ja: "テーマ",
+                                de: "Farbthema",
                             },
                             lang
                         )}
@@ -157,7 +207,10 @@ export default function NavBarAndMenu({ theme, langSetter }) {
                 </ListItem>
 
                 <ListItem key="page-language">
-                    <ListItemIcon> <LanguageIcon /> </ListItemIcon>
+                    <ListItemIcon>
+                        {" "}
+                        <LanguageIcon />{" "}
+                    </ListItemIcon>
                     <Select
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
@@ -174,7 +227,6 @@ export default function NavBarAndMenu({ theme, langSetter }) {
                         <MenuItem value={"tto"}>mim</MenuItem>
                     </Select>
                 </ListItem>
-
             </List>
         </Box>
     );
@@ -194,52 +246,130 @@ export default function NavBarAndMenu({ theme, langSetter }) {
                         <MenuIcon />
                     </IconButton>
 
-                    <Box sx={{ flexGrow: 1, display: 'flex', overflow: 'auto' }}>
-                        <Button variant="text" sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none', fontSize: 16 }}
-                            component={Link} to="/">{getLocaleText(
+                    <Box sx={{ flexGrow: 1, display: "flex", overflow: "auto" }}>
+                        <Button
+                            variant="text"
+                            sx={{
+                                my: 2,
+                                color: "white",
+                                display: "block",
+                                textTransform: "none",
+                                fontSize: 16,
+                            }}
+                            component={Link}
+                            to="/"
+                        >
+                            {getLocaleText(
                                 {
-                                    "en": "Home", "zh-Hant": "首頁", "zh-Hans": "首页", "tto-bro": "6dF2X8am", "tto": "XoV",
-                                    "ja": "ホーム", "de": "Startseite"
+                                    en: "Home",
+                                    "zh-Hant": "首頁",
+                                    "zh-Hans": "首页",
+                                    "tto-bro": "6dF2X8am",
+                                    tto: "XoV",
+                                    ja: "ホーム",
+                                    de: "Startseite",
                                 },
                                 lang
-                            )}</Button>
-                        <Button variant="text" sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none', fontSize: 16 }}
-                            component={Link} to="/about">{getLocaleText(
+                            )}
+                        </Button>
+                        <Button
+                            variant="text"
+                            sx={{
+                                my: 2,
+                                color: "white",
+                                display: "block",
+                                textTransform: "none",
+                                fontSize: 16,
+                            }}
+                            component={Link}
+                            to="/about"
+                        >
+                            {getLocaleText(
                                 {
-                                    "en": "About", "zh-Hant": "關於", "zh-Hans": "关于", "tto-bro": "YQFRHOei", "tto": "aCmqSqv",
-                                    "ja": "私について", "de": "Über Mich"
+                                    en: "About",
+                                    "zh-Hant": "關於",
+                                    "zh-Hans": "关于",
+                                    "tto-bro": "YQFRHOei",
+                                    tto: "aCmqSqv",
+                                    ja: "私について",
+                                    de: "Über Mich",
                                 },
                                 lang
-                            )}</Button>
-                        <Button variant="text" sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none', fontSize: 16 }}
-                            component={Link} to="/blog">{getLocaleText(
+                            )}
+                        </Button>
+                        <Button
+                            variant="text"
+                            sx={{
+                                my: 2,
+                                color: "white",
+                                display: "block",
+                                textTransform: "none",
+                                fontSize: 16,
+                            }}
+                            component={Link}
+                            to="/blog"
+                        >
+                            {getLocaleText(
                                 {
-                                    "en": "Blog", "zh-Hant": "博客", "zh-Hans": "博客", "tto-bro": "b8Q7A", "tto": "bS7Y",
-                                    "ja": "ブログ", "de": "Blog"
+                                    en: "Blog",
+                                    "zh-Hant": "博客",
+                                    "zh-Hans": "博客",
+                                    "tto-bro": "b8Q7A",
+                                    tto: "bS7Y",
+                                    ja: "ブログ",
+                                    de: "Blog",
                                 },
                                 lang
-                            )}</Button>
-                        <Button variant="text" sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none', fontSize: 16 }}
-                            component={MuiLink} href="https://yangchnx.com/love/">{getLocaleText(
+                            )}
+                        </Button>
+                        <Button
+                            variant="text"
+                            sx={{
+                                my: 2,
+                                color: "white",
+                                display: "block",
+                                textTransform: "none",
+                                fontSize: 16,
+                            }}
+                            component={MuiLink}
+                            href="https://yangchnx.com/love/"
+                        >
+                            {getLocaleText(
                                 {
-                                    "en": "Love", "zh-Hant": "愛", "zh-Hans": "爱", "tto-bro": "Oie3", "tto": "Re",
-                                    "ja": "愛", "de": "Liebe"
+                                    en: "Love",
+                                    "zh-Hant": "愛",
+                                    "zh-Hans": "爱",
+                                    "tto-bro": "Oie3",
+                                    tto: "Re",
+                                    ja: "愛",
+                                    de: "Liebe",
                                 },
                                 lang
-                            )}</Button>
+                            )}
+                        </Button>
                     </Box>
 
-                    <Box sx={{ flexGrow: 0, display: { xs: 'block', md: 'flex' }, overflow: 'hidden' }}>
+                    <Box
+                        sx={{
+                            flexGrow: 0,
+                            display: { xs: "block", md: "flex" },
+                            overflow: "hidden",
+                        }}
+                    >
                         <IconButton onClick={colorMode.toggleColorMode} color="inherit">
-                            {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                            {theme.palette.mode === "dark" ? (
+                                <Brightness7Icon />
+                            ) : (
+                                <Brightness4Icon />
+                            )}
                         </IconButton>
                         <IconButton
                             onClick={handleLangMenuClick}
                             size="small"
                             sx={{ ml: 2 }}
-                            aria-controls={isLangMenuOpen ? 'account-menu' : undefined}
+                            aria-controls={isLangMenuOpen ? "account-menu" : undefined}
                             aria-haspopup="true"
-                            aria-expanded={isLangMenuOpen ? 'true' : undefined}
+                            aria-expanded={isLangMenuOpen ? "true" : undefined}
                             color="inherit"
                         >
                             <LanguageIcon />
@@ -249,27 +379,65 @@ export default function NavBarAndMenu({ theme, langSetter }) {
                             id="account-menu"
                             open={isLangMenuOpen}
                             onClose={handleLangMenuClose}
-                            onClick={handleLangMenuClose}>
-                            <MenuItem onClick={() => { handleLangMenuItemClick('en') }}>English</MenuItem>
-                            <MenuItem onClick={() => { handleLangMenuItemClick('zh-Hans') }}>简体中文</MenuItem>
-                            <MenuItem onClick={() => { handleLangMenuItemClick('zh-Hant') }}>繁體中文</MenuItem>
-                            <MenuItem onClick={() => { handleLangMenuItemClick('ja') }}>日本語</MenuItem>
-                            <MenuItem onClick={() => { handleLangMenuItemClick('de') }}>Deutsch</MenuItem>
-                            <MenuItem onClick={() => { handleLangMenuItemClick('tto-bro') }}>b8Q7Z2D.</MenuItem>
-                            <MenuItem onClick={() => { handleLangMenuItemClick('tto') }}>mim</MenuItem>
+                            onClick={handleLangMenuClose}
+                        >
+                            <MenuItem
+                                onClick={() => {
+                                    handleLangMenuItemClick("en");
+                                }}
+                            >
+                                English
+                            </MenuItem>
+                            <MenuItem
+                                onClick={() => {
+                                    handleLangMenuItemClick("zh-Hans");
+                                }}
+                            >
+                                简体中文
+                            </MenuItem>
+                            <MenuItem
+                                onClick={() => {
+                                    handleLangMenuItemClick("zh-Hant");
+                                }}
+                            >
+                                繁體中文
+                            </MenuItem>
+                            <MenuItem
+                                onClick={() => {
+                                    handleLangMenuItemClick("ja");
+                                }}
+                            >
+                                日本語
+                            </MenuItem>
+                            <MenuItem
+                                onClick={() => {
+                                    handleLangMenuItemClick("de");
+                                }}
+                            >
+                                Deutsch
+                            </MenuItem>
+                            <MenuItem
+                                onClick={() => {
+                                    handleLangMenuItemClick("tto-bro");
+                                }}
+                            >
+                                b8Q7Z2D.
+                            </MenuItem>
+                            <MenuItem
+                                onClick={() => {
+                                    handleLangMenuItemClick("tto");
+                                }}
+                            >
+                                mim
+                            </MenuItem>
                         </Menu>
                     </Box>
                 </Toolbar>
-
             </AppBar>
 
             <br />
 
-            <Drawer
-                anchor="left"
-                open={isDrawerOpen}
-                onClose={toggleDrawer(false)}
-            >
+            <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)}>
                 {IndexDrawer()}
             </Drawer>
         </div>

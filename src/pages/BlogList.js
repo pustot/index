@@ -1,7 +1,7 @@
 import "purecss/build/pure.css";
 import React, { useState, useEffect } from "react";
 import "../styles.scss";
-import { Container, Link as MuiLink, Stack, Typography } from "@mui/material";
+import { Container, Stack, Typography } from "@mui/material";
 import BlogListItem from "../components/BlogListItem";
 import { getLocaleText } from "../data/I18n";
 
@@ -11,7 +11,6 @@ export default function BlogList({ lang }) {
     let [blogs, setBlogs] = useState({});
     let [ids, setIds] = useState([]);
     let [titleTranslations, setTitleTranslations] = useState();
-
 
     const fetchBlogList = async () => {
         const text = await (
@@ -70,7 +69,15 @@ export default function BlogList({ lang }) {
                     )}
                 </Typography>
                 {ids &&
-                    ids.map((id) => <BlogListItem key={id} id={id} blogs={blogs} lang={lang} titleTranslations={titleTranslations} />)}
+                    ids.map((id) => (
+                        <BlogListItem
+                            key={id}
+                            id={id}
+                            blogs={blogs}
+                            lang={lang}
+                            titleTranslations={titleTranslations}
+                        />
+                    ))}
             </Stack>
         </Container>
     );

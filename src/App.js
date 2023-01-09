@@ -1,7 +1,5 @@
-import {
-    CssBaseline
-} from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { CssBaseline } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "purecss/build/pure.css";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -13,22 +11,35 @@ import BlogArticle from "./pages/BlogArticle";
 import BlogList from "./pages/BlogList";
 import Home from "./pages/Home";
 
-export const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
+export const ColorModeContext = React.createContext({
+    toggleColorMode: () => { },
+});
 export const LangContext = React.createContext("en");
 
 export default function App() {
-    const [lang, setLang] = React.useState(localStorage.getItem("yangchnx/0.1/lang") || 'en');
+    const [lang, setLang] = React.useState(
+        localStorage.getItem("yangchnx/0.1/lang") || "en"
+    );
 
-    const systemColor = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    const [mode, setMode] = React.useState(localStorage.getItem("yangchnx/0.1/mode") || systemColor);
+    const systemColor =
+        window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+    const [mode, setMode] = React.useState(
+        localStorage.getItem("yangchnx/0.1/mode") || systemColor
+    );
     const colorMode = React.useMemo(
         () => ({
             toggleColorMode: () => {
-                localStorage.setItem("yangchnx/0.1/mode", mode === 'light' ? 'dark' : 'light');
-                setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+                localStorage.setItem(
+                    "yangchnx/0.1/mode",
+                    mode === "light" ? "dark" : "light"
+                );
+                setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
             },
         }),
-        [],
+        []
     );
 
     const theme = React.useMemo(
@@ -38,12 +49,12 @@ export default function App() {
                     mode,
                 },
             }),
-        [mode],
+        [mode]
     );
 
     const langSetter = (tar) => {
         setLang(tar);
-    }
+    };
 
     return (
         <ColorModeContext.Provider value={colorMode}>
@@ -51,7 +62,6 @@ export default function App() {
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
                     <BrowserRouter>
-
                         <NavBarAndMenu theme={theme} langSetter={langSetter} />
 
                         <Routes>
@@ -59,7 +69,10 @@ export default function App() {
                             <Route path="/home" element={<Home lang={lang} />} />
                             <Route path="/about" element={<About lang={lang} />} />
                             <Route path="/blog" element={<BlogList lang={lang} />} />
-                            <Route path="/blog/:fileName" element={<BlogArticle lang={lang} />} />
+                            <Route
+                                path="/blog/:fileName"
+                                element={<BlogArticle lang={lang} />}
+                            />
                         </Routes>
 
                         <br />
