@@ -9,7 +9,7 @@ export default function BlogListItem({ id, blogs, lang, titleTranslations }) {
     if (!(id in blogs))
         return <Typography variant="caption">{"Loading"}</Typography>;
 
-    const titleId = id.slice(9);
+    const [ date, titleId ] = [ id.slice(0, 9), id.slice(9) ];
 
     if (lang in blogs[id]) {
         return (
@@ -17,7 +17,7 @@ export default function BlogListItem({ id, blogs, lang, titleTranslations }) {
                 <MuiLink key={id} href={"/blog/" + blogs[id][lang][0]}>
                     {blogs[id][lang][1]}
                 </MuiLink>
-                <Typography variant="caption">{" (" + titleId + ")"}</Typography>
+                <Typography variant="caption">{" (" + date + ")"}</Typography>
             </div>
         );
     }
@@ -39,9 +39,7 @@ export default function BlogListItem({ id, blogs, lang, titleTranslations }) {
                 {titleTranslations[titleId][lang]}
             </MuiLink>
             <Typography variant="caption">
-                {" (" +
-                    id.slice(0, 9) +
-                    ") " +
+                {" (" + date + ") " +
                     getLocaleText(
                         {
                             en:
@@ -104,9 +102,7 @@ export default function BlogListItem({ id, blogs, lang, titleTranslations }) {
                 {targetFileTitle}
             </MuiLink>
             <Typography variant="caption">
-                {" (" +
-                    id.slice(0, 9) +
-                    ") " +
+                {" (" + date + ") " +
                     getLocaleText(
                         {
                             en: "(Not in the current language)",
