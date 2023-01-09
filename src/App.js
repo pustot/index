@@ -14,6 +14,7 @@ import BlogList from "./pages/BlogList";
 import Home from "./pages/Home";
 
 export const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
+export const LangContext = React.createContext("en");
 
 export default function App() {
     const [lang, setLang] = React.useState(localStorage.getItem("yangchnx/0.1/lang") || 'en');
@@ -40,38 +41,32 @@ export default function App() {
         [mode],
     );
 
-    const handleLangChange = (event) => {
-        console.log(event.target);
-        setLang(event.target.value);
-        localStorage.setItem("yangchnx/0.1/lang", event.target.value);
-    };
-
-    const handleLangMenuItemClick = (tar) => {
-        console.log(tar)
+    const langSetter = (tar) => {
         setLang(tar);
-        localStorage.setItem("yangchnx/0.1/lang", tar);
     }
 
     return (
         <ColorModeContext.Provider value={colorMode}>
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <BrowserRouter>
+            <LangContext.Provider value={lang}>
+                <ThemeProvider theme={theme}>
+                    <CssBaseline />
+                    <BrowserRouter>
 
-                    <NavBarAndMenu handleLangChange={handleLangChange} handleLangMenuItemClick={handleLangMenuItemClick} lang={lang} theme={theme} />
+                        <NavBarAndMenu theme={theme} langSetter={langSetter} />
 
-                    <Routes>
-                        <Route path="/" element={<Home lang={lang} />} />
-                        <Route path="/home" element={<Home lang={lang} />} />
-                        <Route path="/about" element={<About lang={lang} />} />
-                        <Route path="/blog" element={<BlogList lang={lang} />} />
-                        <Route path="/blog/:fileName" element={<BlogArticle lang={lang} />} />
-                    </Routes>
+                        <Routes>
+                            <Route path="/" element={<Home lang={lang} />} />
+                            <Route path="/home" element={<Home lang={lang} />} />
+                            <Route path="/about" element={<About lang={lang} />} />
+                            <Route path="/blog" element={<BlogList lang={lang} />} />
+                            <Route path="/blog/:fileName" element={<BlogArticle lang={lang} />} />
+                        </Routes>
 
-                    <br />
-                    <br />
-                </BrowserRouter>
-            </ThemeProvider>
+                        <br />
+                        <br />
+                    </BrowserRouter>
+                </ThemeProvider>
+            </LangContext.Provider>
         </ColorModeContext.Provider>
     );
 }

@@ -1,11 +1,11 @@
 import {
-    AppBar, Box, Button, Divider, Drawer, IconButton, Link as MuiLink, List, ListItem, ListItemButton, 
+    AppBar, Box, Button, Divider, Drawer, IconButton, Link as MuiLink, List, ListItem, ListItemButton,
     ListItemIcon, ListItemText, Menu, MenuItem, Select, Toolbar
 } from '@mui/material';
 import "purecss/build/pure.css";
 import React from "react";
 import { Link } from "react-router-dom";
-import { ColorModeContext } from "../App";
+import { ColorModeContext, LangContext } from "../App";
 import { getLocaleText } from "../data/I18n";
 import "../styles.scss";
 
@@ -18,8 +18,9 @@ import InfoIcon from '@mui/icons-material/Info';
 import LanguageIcon from '@mui/icons-material/Language';
 import MenuIcon from '@mui/icons-material/Menu';
 
-export default function NavBarAndMenu({ handleLangChange, handleLangMenuItemClick, lang, theme }) {
+export default function NavBarAndMenu({ theme, langSetter }) {
     const colorMode = React.useContext(ColorModeContext);
+    const lang = React.useContext(LangContext);
 
     const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -40,6 +41,18 @@ export default function NavBarAndMenu({ handleLangChange, handleLangMenuItemClic
 
         setIsDrawerOpen(open);
     };
+
+    const handleLangChange = (event) => {
+        console.log(event.target);
+        langSetter(event.target.value);
+        localStorage.setItem("yangchnx/0.1/lang", event.target.value);
+    };
+
+    const handleLangMenuItemClick = (tar) => {
+        console.log(tar)
+        langSetter(tar);
+        localStorage.setItem("yangchnx/0.1/lang", tar);
+    }
 
     const IndexDrawer = () => (
         <Box

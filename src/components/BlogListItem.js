@@ -1,8 +1,8 @@
+import { Link as MuiLink, Typography } from "@mui/material";
 import "purecss/build/pure.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { getFallbackLanguage, getLocaleText, languageCodeToLocale } from "../data/I18n";
 import "../styles.scss";
-import { Container, Link as MuiLink, Stack, Typography } from "@mui/material";
-import { fallbackLanguages, getFallbackLanguage, getLocaleText, languageCodeToLocale } from "../data/I18n";
 
 export default function BlogListItem({ id, blogs, lang, titleTranslations }) {
     // Blog List is still Loading
@@ -11,6 +11,7 @@ export default function BlogListItem({ id, blogs, lang, titleTranslations }) {
 
     const [ date, titleId ] = [ id.slice(0, 9), id.slice(9) ];
 
+    // Blog available in the current page language
     if (lang in blogs[id]) {
         return (
             <div>
@@ -31,10 +32,7 @@ export default function BlogListItem({ id, blogs, lang, titleTranslations }) {
         return <div>
             <MuiLink
                 key={id}
-                href={
-                    "/blog/" +
-                    targetFileName
-                }
+                href={ "/blog/" + targetFileName }
             >
                 {titleTranslations[titleId][lang]}
             </MuiLink>
@@ -47,13 +45,9 @@ export default function BlogListItem({ id, blogs, lang, titleTranslations }) {
                                 targetLanguageLocale +
                                 "): ",
                             "zh-Hant":
-                                "（非當前語言。原標題（" +
-                                targetLanguageLocale +
-                                "）：",
+                                "（非當前語言。原標題（" + targetLanguageLocale + "）：",
                             "zh-Hans":
-                                "（非当前语言。原标题（" +
-                                targetLanguageLocale +
-                                "）：",
+                                "（非当前语言。原标题（" + targetLanguageLocale + "）：",
                             "tto-bro":
                                 "(bFe DRZ98aH Zei2ZeiH. ZvoH beaFD8ae (" +
                                 targetLanguageLocale +
@@ -94,10 +88,7 @@ export default function BlogListItem({ id, blogs, lang, titleTranslations }) {
         <div>
             <MuiLink
                 key={id}
-                href={
-                    "/blog/" +
-                    targetFileName
-                }
+                href={ "/blog/" + targetFileName }
             >
                 {targetFileTitle}
             </MuiLink>
