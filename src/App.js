@@ -1,4 +1,4 @@
-import { CssBaseline } from "@mui/material";
+import { CssBaseline, Divider, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "purecss/build/pure.css";
 import React from "react";
@@ -10,6 +10,8 @@ import About from "./pages/About";
 import BlogArticle from "./pages/BlogArticle";
 import BlogList from "./pages/BlogList";
 import Home from "./pages/Home";
+
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 export const ColorModeContext = React.createContext({
     toggleColorMode: () => { },
@@ -76,6 +78,23 @@ export default function App() {
                         </Routes>
 
                         <br />
+                        <br />
+
+                        <Divider />
+                        <br />
+                        <footer>
+                            <Typography align="center"> 
+                                Chenxi Yang  <br/>
+                                <a href="https://github.com/yangchnx">
+                                    <img src={
+                                        "https://img.shields.io/badge/-@yangchnx-" +
+                                        (theme.palette.mode === "dark" ? '000000' : 'ffffff') +
+                                        "?style=flat-square&logo=github&logoColor=" +
+                                        (theme.palette.mode === "dark" ? 'white' : 'black')
+                                    }/>
+                                </a> 
+                            </Typography>
+                        </footer>
                         <br />
                     </BrowserRouter>
                 </ThemeProvider>
