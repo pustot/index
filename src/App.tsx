@@ -1,7 +1,7 @@
-import { CssBaseline, Divider, Typography } from "@mui/material";
+import { CssBaseline, Divider, PaletteMode, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "purecss/build/pure.css";
-import React from "react";
+import * as React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./styles.scss";
 
@@ -11,34 +11,22 @@ import BlogArticle from "./pages/BlogArticle";
 import BlogList from "./pages/BlogList";
 import Home from "./pages/Home";
 
-import GitHubIcon from "@mui/icons-material/GitHub";
-
 export const ColorModeContext = React.createContext({
-    toggleColorMode: () => { },
+    toggleColorMode: () => {},
 });
 export const LangContext = React.createContext("en");
 
 export default function App() {
-    const [lang, setLang] = React.useState(
-        localStorage.getItem("yangchnx/0.1/lang") || "en"
-    );
+    const [lang, setLang] = React.useState<string>(localStorage.getItem("yangchnx/0.1/lang") || "en");
 
-    const systemColor =
-        window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light";
-    const [mode, setMode] = React.useState(
-        localStorage.getItem("yangchnx/0.1/mode") || systemColor
-    );
+    const systemColor: string =
+        window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const [mode, setMode] = React.useState<string>(localStorage.getItem("yangchnx/0.1/mode") || systemColor);
     const colorMode = React.useMemo(
         () => ({
             toggleColorMode: () => {
-                localStorage.setItem(
-                    "yangchnx/0.1/mode",
-                    mode === "light" ? "dark" : "light"
-                );
-                setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+                localStorage.setItem("yangchnx/0.1/mode", mode === "light" ? "dark" : "light");
+                setMode(prevMode => (prevMode === "light" ? "dark" : "light"));
             },
         }),
         []
@@ -48,13 +36,13 @@ export default function App() {
         () =>
             createTheme({
                 palette: {
-                    mode,
+                    mode: mode as PaletteMode,
                 },
             }),
         [mode]
     );
 
-    const langSetter = (tar) => {
+    const langSetter = (tar: string) => {
         setLang(tar);
     };
 
@@ -71,10 +59,7 @@ export default function App() {
                             <Route path="/home" element={<Home lang={lang} />} />
                             <Route path="/about" element={<About lang={lang} />} />
                             <Route path="/blog" element={<BlogList lang={lang} />} />
-                            <Route
-                                path="/blog/:fileName"
-                                element={<BlogArticle lang={lang} />}
-                            />
+                            <Route path="/blog/:fileName" element={<BlogArticle lang={lang} />} />
                         </Routes>
 
                         <br />
@@ -83,16 +68,18 @@ export default function App() {
                         <Divider />
                         <br />
                         <footer>
-                            <Typography align="center"> 
-                                Chenxi Yang  <br/>
+                            <Typography align="center">
+                                Chenxi Yang <br />
                                 <a href="https://github.com/yangchnx">
-                                    <img src={
-                                        "https://img.shields.io/badge/-@yangchnx-" +
-                                        (theme.palette.mode === "dark" ? '000000' : 'ffffff') +
-                                        "?style=flat-square&logo=github&logoColor=" +
-                                        (theme.palette.mode === "dark" ? 'white' : 'black')
-                                    }/>
-                                </a> 
+                                    <img
+                                        src={
+                                            "https://img.shields.io/badge/-@yangchnx-" +
+                                            (theme.palette.mode === "dark" ? "000000" : "ffffff") +
+                                            "?style=flat-square&logo=github&logoColor=" +
+                                            (theme.palette.mode === "dark" ? "white" : "black")
+                                        }
+                                    />
+                                </a>
                             </Typography>
                         </footer>
                         <br />

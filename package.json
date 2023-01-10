@@ -6,7 +6,7 @@
         "react",
         "starter"
     ],
-    "main": "src/index.js",
+    "main": "src/index.tsx",
     "license": "GPL-3.0",
     "dependencies": {
         "@mui/icons-material": "5.11.0",
@@ -14,14 +14,20 @@
         "mui-markdown": "0.5.6",
         "node-sass": "8.0.0",
         "opencc-js": "1.0.5",
+        "prettier": "^2.3.0",
         "purecss": "3.0.0",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
         "react-router-dom": "6.6.1",
-        "react-scripts": "5.0.1"
+        "react-scripts": "5.0.1",
+        "typescript": "^4.9.4"
     },
     "devDependencies": {
-        "typescript": "4.9.4"
+        "source-map-loader": "^4.0.1",
+        "ts-loader": "^9.4.2",
+        "@types/node": "^12.20.13",
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0"
     },
     "scripts": {
         "start": "react-scripts start",
