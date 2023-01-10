@@ -14,13 +14,15 @@ import {
     Menu,
     MenuItem,
     Select,
+    SelectChangeEvent,
     Toolbar,
 } from "@mui/material";
+import { Theme } from "@mui/material/styles";
 import "purecss/build/pure.css";
-import React from "react";
+import * as React from "react";
 import { Link } from "react-router-dom";
 import { ColorModeContext, LangContext } from "../App";
-import { getLocaleText } from "../data/I18n";
+import { getLocaleText, LangCode } from "../data/I18n";
 import "../styles.scss";
 
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -32,40 +34,41 @@ import InfoIcon from "@mui/icons-material/Info";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export default function NavBarAndMenu({ theme, langSetter }) {
+export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.Dispatch<React.SetStateAction<LangCode>> }) {
+    const { theme, langSetter } = props;
     const colorMode = React.useContext(ColorModeContext);
     const lang = React.useContext(LangContext);
 
     const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = React.useState<(EventTarget & HTMLElement) | undefined>();
     const isLangMenuOpen = Boolean(anchorEl);
 
-    const handleLangMenuClick = (event) => {
+    const handleLangMenuClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
 
     const handleLangMenuClose = () => {
-        setAnchorEl(null);
+        setAnchorEl(undefined);
     };
 
-    const toggleDrawer = (open) => (event) => {
-        if (
-            event.type === "keydown" &&
-            (event.key === "Tab" || event.key === "Shift")
-        ) {
-            return;
-        }
+    const toggleDrawer = (open: boolean) => (event: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLDivElement>) => {
+        // if (
+        //     event.type === "keydown" &&
+        //     (event.key === "Tab" || event.key === "Shift")
+        // ) {
+        //     return;
+        // }
 
         setIsDrawerOpen(open);
     };
 
-    const handleLangChange = (event) => {
+    const handleLangChange = (event: SelectChangeEvent) => {
         console.log(event.target);
-        langSetter(event.target.value);
+        langSetter(event.target.value as LangCode);
         localStorage.setItem("yangchnx/0.1/lang", event.target.value);
     };
 
-    const handleLangMenuItemClick = (tar) => {
+    const handleLangMenuItemClick = (tar: LangCode) => {
         console.log(tar);
         langSetter(tar);
         localStorage.setItem("yangchnx/0.1/lang", tar);

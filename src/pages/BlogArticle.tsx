@@ -2,7 +2,7 @@ import { Container, Typography } from "@mui/material";
 import * as OpenCC from "opencc-js";
 import "purecss/build/pure.css";
 import * as React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MyMuiMarkdown from "../components/MyMuiMarkdown";
 import { LangCode } from "../data/I18n";
@@ -10,10 +10,10 @@ import "../styles.scss";
 
 export default function BlogArticle(props: { lang: LangCode }) {
     const { lang } = props;
-    const [markdown, setMarkdown] = React.useState("Loading");
+    const [markdown, setMarkdown] = useState<string>("Loading");
     
     const { fileName } = useParams();
-    const [ title, setTitle ] = React.useState((fileName || '').split(".")[2].replaceAll("_", " "));
+    const [ title, setTitle ] = useState((fileName || '').split(".")[2].replaceAll("_", " "));
 
     const fetchContent = async () => {
         let text = await (

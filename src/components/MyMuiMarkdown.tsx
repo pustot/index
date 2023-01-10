@@ -1,6 +1,8 @@
 import MuiMarkdown from 'mui-markdown';
+import * as React from 'react';
 
-export default function MyMuiMarkdown({markdown}) {
+export default function MyMuiMarkdown(props: {markdown: string}) {
+  const { markdown } = props;
     return (
         <MuiMarkdown options={{ 
             // cancel default slugify which removed all non-alphanumerical char

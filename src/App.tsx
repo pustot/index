@@ -1,5 +1,5 @@
 import { CssBaseline, Divider, PaletteMode, Typography } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { createTheme, ThemeProvider, Theme } from "@mui/material/styles";
 import "purecss/build/pure.css";
 import * as React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -35,7 +35,7 @@ export default function App() {
         []
     );
 
-    const theme = React.useMemo(
+    const theme: Theme = React.useMemo(
         () =>
             createTheme({
                 palette: {

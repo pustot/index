@@ -8,7 +8,7 @@ import { I18nText } from "../data/I18n";
 
 export default function About(props: { lang: keyof I18nText }) {
     const { lang } = props;
-    const [markdown, setMarkdown] = useState("Loading");
+    const [markdown, setMarkdown] = useState<string>("Loading");
     const fileName: I18nText = {
         en: "2021-0915.about-me.About_Me.en.life.md",
         "zh-Hans": "2021-0915.about-me.关于我.zh-Hans.life.md",
