@@ -2,7 +2,7 @@ export type LangCode = "en" | "zh-Hans" | "zh-Hant" | "ja" | "de" | "tto" | "tto
 
 export type I18nT<T> = {
     [key in LangCode]?: T;
-}
+};
 
 export type I18nText = I18nT<string>;
 
@@ -10,7 +10,7 @@ type I18nI18n = I18nT<I18nText>;
 
 export const fallbackLanguages: string[] = ["en", "zh-Hans", "zh-Hant", "ja", "de", "tto", "tto-bro"];
 
-export const getFallbackLanguage = (i18nText: I18nT<any> , pageLang: string): LangCode => {
+export const getFallbackLanguage = (i18nText: I18nT<any>, pageLang: string): LangCode => {
     if (pageLang in i18nText) {
         return pageLang as LangCode;
     } else {

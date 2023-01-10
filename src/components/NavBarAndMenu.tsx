@@ -34,7 +34,10 @@ import InfoIcon from "@mui/icons-material/Info";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.Dispatch<React.SetStateAction<LangCode>> }) {
+export default function NavBarAndMenu(props: {
+    theme: Theme;
+    langSetter: React.Dispatch<React.SetStateAction<LangCode>>;
+}) {
     const { theme, langSetter } = props;
     const colorMode = React.useContext(ColorModeContext);
     const lang = React.useContext(LangContext);
@@ -51,16 +54,17 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
         setAnchorEl(undefined);
     };
 
-    const toggleDrawer = (open: boolean) => (event: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLDivElement>) => {
-        // if (
-        //     event.type === "keydown" &&
-        //     (event.key === "Tab" || event.key === "Shift")
-        // ) {
-        //     return;
-        // }
+    const toggleDrawer =
+        (open: boolean) => (event: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLDivElement>) => {
+            // if (
+            //     event.type === "keydown" &&
+            //     (event.key === "Tab" || event.key === "Shift")
+            // ) {
+            //     return;
+            // }
 
-        setIsDrawerOpen(open);
-    };
+            setIsDrawerOpen(open);
+        };
 
     const handleLangChange = (event: SelectChangeEvent) => {
         console.log(event.target);
@@ -75,12 +79,7 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
     };
 
     const IndexDrawer = () => (
-        <Box
-            sx={{ width: 250 }}
-            role="presentation"
-            onClick={toggleDrawer(false)}
-            onKeyDown={toggleDrawer(false)}
-        >
+        <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
             <List>
                 <ListItem key="nameLogo" disablePadding>
                     <ListItemButton component={Link} to="/">
@@ -88,13 +87,13 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
                             inset
                             primary={getLocaleText(
                                 {
-                                    en: "Chenxi Yang",
+                                    "en": "Chenxi Yang",
                                     "zh-Hant": "楊晨曦",
                                     "zh-Hans": "杨晨曦",
                                     "tto-bro": "EeRZ T8eHXQea",
-                                    tto: "hFCmo mAFKRHm",
-                                    ja: "楊晨曦",
-                                    de: "Chenxi Yang",
+                                    "tto": "hFCmo mAFKRHm",
+                                    "ja": "楊晨曦",
+                                    "de": "Chenxi Yang",
                                 },
                                 lang
                             )}
@@ -108,13 +107,13 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
                         </ListItemIcon>
                         {getLocaleText(
                             {
-                                en: "Home",
+                                "en": "Home",
                                 "zh-Hant": "首頁",
                                 "zh-Hans": "首页",
                                 "tto-bro": "6dF2X8am",
-                                tto: "XoV",
-                                ja: "ホーム",
-                                de: "Startseite",
+                                "tto": "XoV",
+                                "ja": "ホーム",
+                                "de": "Startseite",
                             },
                             lang
                         )}
@@ -128,13 +127,13 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
                         </ListItemIcon>
                         {getLocaleText(
                             {
-                                en: "About",
+                                "en": "About",
                                 "zh-Hant": "關於",
                                 "zh-Hans": "关于",
                                 "tto-bro": "YQFRHOei",
-                                tto: "aCmqSqv",
-                                ja: "私について",
-                                de: "Über Mich",
+                                "tto": "aCmqSqv",
+                                "ja": "私について",
+                                "de": "Über Mich",
                             },
                             lang
                         )}
@@ -148,13 +147,13 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
                         </ListItemIcon>
                         {getLocaleText(
                             {
-                                en: "Blog",
+                                "en": "Blog",
                                 "zh-Hant": "博客",
                                 "zh-Hans": "博客",
                                 "tto-bro": "b8Q7A",
-                                tto: "bS7Y",
-                                ja: "ブログ",
-                                de: "Blog",
+                                "tto": "bS7Y",
+                                "ja": "ブログ",
+                                "de": "Blog",
                             },
                             lang
                         )}
@@ -168,13 +167,13 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
                         </ListItemIcon>
                         {getLocaleText(
                             {
-                                en: "Love",
+                                "en": "Love",
                                 "zh-Hant": "愛",
                                 "zh-Hans": "爱",
                                 "tto-bro": "Oie3",
-                                tto: "Re",
-                                ja: "愛",
-                                de: "Liebe",
+                                "tto": "Re",
+                                "ja": "愛",
+                                "de": "Liebe",
                             },
                             lang
                         )}
@@ -188,21 +187,17 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
                 <ListItem key="theme" disablePadding>
                     <ListItemButton onClick={colorMode.toggleColorMode}>
                         <ListItemIcon>
-                            {theme.palette.mode === "dark" ? (
-                                <Brightness7Icon />
-                            ) : (
-                                <Brightness4Icon />
-                            )}
+                            {theme.palette.mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
                         </ListItemIcon>
                         {getLocaleText(
                             {
-                                en: "Colour Theme",
+                                "en": "Colour Theme",
                                 "zh-Hant": "主題",
                                 "zh-Hans": "主题",
                                 "tto-bro": "Tvo2D8ae",
-                                tto: "VvaH",
-                                ja: "テーマ",
-                                de: "Farbthema",
+                                "tto": "VvaH",
+                                "ja": "テーマ",
+                                "de": "Farbthema",
                             },
                             lang
                         )}
@@ -264,13 +259,13 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
                         >
                             {getLocaleText(
                                 {
-                                    en: "Home",
+                                    "en": "Home",
                                     "zh-Hant": "首頁",
                                     "zh-Hans": "首页",
                                     "tto-bro": "6dF2X8am",
-                                    tto: "XoV",
-                                    ja: "ホーム",
-                                    de: "Startseite",
+                                    "tto": "XoV",
+                                    "ja": "ホーム",
+                                    "de": "Startseite",
                                 },
                                 lang
                             )}
@@ -289,13 +284,13 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
                         >
                             {getLocaleText(
                                 {
-                                    en: "About",
+                                    "en": "About",
                                     "zh-Hant": "關於",
                                     "zh-Hans": "关于",
                                     "tto-bro": "YQFRHOei",
-                                    tto: "aCmqSqv",
-                                    ja: "私について",
-                                    de: "Über Mich",
+                                    "tto": "aCmqSqv",
+                                    "ja": "私について",
+                                    "de": "Über Mich",
                                 },
                                 lang
                             )}
@@ -314,13 +309,13 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
                         >
                             {getLocaleText(
                                 {
-                                    en: "Blog",
+                                    "en": "Blog",
                                     "zh-Hant": "博客",
                                     "zh-Hans": "博客",
                                     "tto-bro": "b8Q7A",
-                                    tto: "bS7Y",
-                                    ja: "ブログ",
-                                    de: "Blog",
+                                    "tto": "bS7Y",
+                                    "ja": "ブログ",
+                                    "de": "Blog",
                                 },
                                 lang
                             )}
@@ -339,13 +334,13 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
                         >
                             {getLocaleText(
                                 {
-                                    en: "Love",
+                                    "en": "Love",
                                     "zh-Hant": "愛",
                                     "zh-Hans": "爱",
                                     "tto-bro": "Oie3",
-                                    tto: "Re",
-                                    ja: "愛",
-                                    de: "Liebe",
+                                    "tto": "Re",
+                                    "ja": "愛",
+                                    "de": "Liebe",
                                 },
                                 lang
                             )}
@@ -360,11 +355,7 @@ export default function NavBarAndMenu(props: { theme: Theme, langSetter: React.D
                         }}
                     >
                         <IconButton onClick={colorMode.toggleColorMode} color="inherit">
-                            {theme.palette.mode === "dark" ? (
-                                <Brightness7Icon />
-                            ) : (
-                                <Brightness4Icon />
-                            )}
+                            {theme.palette.mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
                         </IconButton>
                         <IconButton
                             onClick={handleLangMenuClick}

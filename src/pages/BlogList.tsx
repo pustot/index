@@ -1,10 +1,10 @@
+import { Container, Stack, Typography } from "@mui/material";
 import "purecss/build/pure.css";
 import * as React from "react";
-import { useState, useEffect } from "react";
-import "../styles.scss";
-import { Container, Stack, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 import BlogListItem from "../components/BlogListItem";
-import { getLocaleText, LangCode, I18nText } from "../data/I18n";
+import { getLocaleText, I18nText, LangCode } from "../data/I18n";
+import "../styles.scss";
 
 interface GithubContentsResp {
     name: string;
@@ -24,12 +24,12 @@ interface GithubContentsResp {
 }
 
 export type Lang2FNID = {
-    [key in LangCode]?: { fileName: string, title: string }
-}
+    [key in LangCode]?: { fileName: string; title: string };
+};
 
 export type TitleTranslationsResp = {
     [key in string]?: I18nText;
-}
+};
 
 export default function BlogList(props: { lang: keyof I18nText }) {
     const { lang } = props;
@@ -54,7 +54,7 @@ export default function BlogList(props: { lang: keyof I18nText }) {
                 ids.push(dateid);
             }
             let v: Lang2FNID = res.get(dateid) || {};
-            v[els[3] as LangCode] = { fileName: fileName, title: els[2].replaceAll("_", " ") }
+            v[els[3] as LangCode] = { fileName: fileName, title: els[2].replaceAll("_", " ") };
             res.set(dateid, v);
         }
         ids = ids.reverse();
@@ -91,7 +91,9 @@ export default function BlogList(props: { lang: keyof I18nText }) {
                         lang
                     )}
                 </Typography>
-                {ids && blogs && titleTranslations &&
+                {ids &&
+                    blogs &&
+                    titleTranslations &&
                     ids.map(id => (
                         <BlogListItem
                             key={id}

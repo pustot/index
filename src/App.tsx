@@ -1,16 +1,16 @@
 import { CssBaseline, Divider, PaletteMode, Typography } from "@mui/material";
-import { createTheme, ThemeProvider, Theme } from "@mui/material/styles";
+import { createTheme, Theme, ThemeProvider } from "@mui/material/styles";
 import "purecss/build/pure.css";
 import * as React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./styles.scss";
 
 import NavBarAndMenu from "./components/NavBarAndMenu";
+import { I18nText } from "./data/I18n";
 import About from "./pages/About";
 import BlogArticle from "./pages/BlogArticle";
 import BlogList from "./pages/BlogList";
 import Home from "./pages/Home";
-import { I18nText } from "./data/I18n";
 
 export const ColorModeContext = React.createContext({
     toggleColorMode: () => {},
