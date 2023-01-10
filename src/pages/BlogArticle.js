@@ -10,7 +10,7 @@ export default function BlogArticle({ lang }) {
     const [markdown, setMarkdown] = React.useState("Loading");
     
     const { fileName } = useParams();
-    const [title, setTitle] = React.useState(fileName.split(".")[2].replaceAll("_", " "));
+    const [ title, setTitle ] = React.useState(fileName.split(".")[2].replaceAll("_", " "));
 
     const fetchContent = async () => {
         let text = await (
@@ -23,18 +23,20 @@ export default function BlogArticle({ lang }) {
             "](./pic/",
             "](https://raw.githubusercontent.com/yangchnx/blog/main/pic/"
         );
+        let title = fileName.split(".")[2].replaceAll("_", " ");
 
         // TODO: Skip Filenames and CJKVs not in Chinese
         // OpenCC Chinese Converter
         if (fileName.split(".")[3] == "zh-Hans" && lang == "zh-Hant") {
             const converter = OpenCC.Converter({ from: "cn", to: "hk" });
             text = converter(text);
-            setTitle(converter(fileName.split(".")[2].replaceAll("_", " ")));
+            title = converter(title);
         } else if (fileName.split(".")[3] == "zh-Hant" && lang == "zh-Hans") {
             const converter = OpenCC.Converter({ from: "hk", to: "cn" });
             text = converter(text);
-            setTitle(converter(fileName.split(".")[2].replaceAll("_", " ")));
+            title = converter(title);
         }
+        setTitle(title)
         setMarkdown(text);
         console.log("Markdown got");
     };
