@@ -233,7 +233,7 @@ export default function NavBarAndMenu({ theme, langSetter }) {
 
     return (
         <div>
-            <AppBar position="sticky" color="primary">
+            <AppBar position="fixed" color="primary">
                 <Toolbar>
                     <IconButton
                         size="large"

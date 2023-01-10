@@ -10,6 +10,7 @@ import About from "./pages/About";
 import BlogArticle from "./pages/BlogArticle";
 import BlogList from "./pages/BlogList";
 import Home from "./pages/Home";
+import { I18nText } from "./data/I18n";
 
 export const ColorModeContext = React.createContext({
     toggleColorMode: () => {},
@@ -17,7 +18,9 @@ export const ColorModeContext = React.createContext({
 export const LangContext = React.createContext("en");
 
 export default function App() {
-    const [lang, setLang] = React.useState<string>(localStorage.getItem("yangchnx/0.1/lang") || "en");
+    const [lang, setLang] = React.useState<keyof I18nText>(
+        (localStorage.getItem("yangchnx/0.1/lang") as keyof I18nText) || ("en" as keyof I18nText)
+    );
 
     const systemColor: string =
         window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
@@ -42,7 +45,7 @@ export default function App() {
         [mode]
     );
 
-    const langSetter = (tar: string) => {
+    const langSetter = (tar: keyof I18nText) => {
         setLang(tar);
     };
 
@@ -53,6 +56,10 @@ export default function App() {
                     <CssBaseline />
                     <BrowserRouter>
                         <NavBarAndMenu theme={theme} langSetter={langSetter} />
+
+                        <br />
+                        <br />
+                        <br />
 
                         <Routes>
                             <Route path="/" element={<Home lang={lang} />} />

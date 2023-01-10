@@ -1,31 +1,21 @@
-interface I18nText {
-    "en"?: string;
-    "zh-Hans"?: string;
-    "zh-Hant"?: string;
-    "ja"?: string;
-    "de"?: string;
-    "tto"?: string;
-    "tto-bro"?: string;
+export type LangCode = "en" | "zh-Hans" | "zh-Hant" | "ja" | "de" | "tto" | "tto-bro";
+
+export type I18nT<T> = {
+    [key in LangCode]?: T;
 }
 
-interface I18nI18n {
-    "en"?: I18nText;
-    "zh-Hans"?: I18nText;
-    "zh-Hant"?: I18nText;
-    "ja"?: I18nText;
-    "de"?: I18nText;
-    "tto"?: I18nText;
-    "tto-bro"?: I18nText;
-}
+export type I18nText = I18nT<string>;
+
+type I18nI18n = I18nT<I18nText>;
 
 export const fallbackLanguages: string[] = ["en", "zh-Hans", "zh-Hant", "ja", "de", "tto", "tto-bro"];
 
-export const getFallbackLanguage = (i18nText: I18nText, pageLang: string): keyof I18nText => {
+export const getFallbackLanguage = (i18nText: I18nT<any> , pageLang: string): LangCode => {
     if (pageLang in i18nText) {
-        return pageLang as keyof I18nText;
+        return pageLang as LangCode;
     } else {
         for (let lang of fallbackLanguages) {
-            if (lang in i18nText) return lang as keyof I18nText;
+            if (lang in i18nText) return lang as LangCode;
         }
     }
     return "en";
@@ -102,5 +92,5 @@ const langNames: I18nI18n = {
 };
 
 export const languageCodeToLocale = (langCode: string, pageLang: string): string => {
-    return langNames[langCode as keyof I18nI18n]![pageLang as keyof I18nText] || "";
+    return langNames[langCode as LangCode]![pageLang as LangCode] || "";
 };

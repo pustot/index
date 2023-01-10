@@ -1,12 +1,15 @@
 import "purecss/build/pure.css";
+import * as React from "react";
 import { useState, useEffect } from "react";
 import "../styles.scss";
 import { Container } from "@mui/material";
 import MyMuiMarkdown from "../components/MyMuiMarkdown";
+import { I18nText } from "../data/I18n";
 
-export default function About({ lang }) {
+export default function About(props: { lang: keyof I18nText }) {
+    const { lang } = props;
     const [markdown, setMarkdown] = useState("Loading");
-    const fileName = {
+    const fileName: I18nText = {
         en: "2021-0915.about-me.About_Me.en.life.md",
         "zh-Hans": "2021-0915.about-me.关于我.zh-Hans.life.md",
         "zh-Hant": "2021-0915.about-me.關於我.zh-Hant.life.md",

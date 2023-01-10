@@ -1,16 +1,19 @@
 import { Container, Typography } from "@mui/material";
 import * as OpenCC from "opencc-js";
 import "purecss/build/pure.css";
-import React, { useEffect } from "react";
+import * as React from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import MyMuiMarkdown from "../components/MyMuiMarkdown";
+import { LangCode } from "../data/I18n";
 import "../styles.scss";
 
-export default function BlogArticle({ lang }) {
+export default function BlogArticle(props: { lang: LangCode }) {
+    const { lang } = props;
     const [markdown, setMarkdown] = React.useState("Loading");
     
     const { fileName } = useParams();
-    const [ title, setTitle ] = React.useState(fileName.split(".")[2].replaceAll("_", " "));
+    const [ title, setTitle ] = React.useState((fileName || '').split(".")[2].replaceAll("_", " "));
 
     const fetchContent = async () => {
         let text = await (
@@ -23,15 +26,15 @@ export default function BlogArticle({ lang }) {
             "](./pic/",
             "](https://raw.githubusercontent.com/yangchnx/blog/main/pic/"
         );
-        let title = fileName.split(".")[2].replaceAll("_", " ");
+        let title = (fileName || '').split(".")[2].replaceAll("_", " ");
 
         // TODO: Skip Filenames and CJKVs not in Chinese
         // OpenCC Chinese Converter
-        if (fileName.split(".")[3] == "zh-Hans" && lang == "zh-Hant") {
+        if ((fileName || '').split(".")[3] == "zh-Hans" && lang == "zh-Hant") {
             const converter = OpenCC.Converter({ from: "cn", to: "hk" });
             text = converter(text);
             title = converter(title);
-        } else if (fileName.split(".")[3] == "zh-Hant" && lang == "zh-Hans") {
+        } else if ((fileName || '').split(".")[3] == "zh-Hant" && lang == "zh-Hans") {
             const converter = OpenCC.Converter({ from: "hk", to: "cn" });
             text = converter(text);
             title = converter(title);

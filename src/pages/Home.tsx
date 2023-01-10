@@ -1,7 +1,9 @@
 import "purecss/build/pure.css";
-import React, { useState, useEffect } from "react";
+import * as React from "react";
+import { useState, useEffect } from "react";
 import "../styles.scss";
 import PostCard from "../components/PostCard";
+
 import {
     Container,
     Link as MuiLink,
@@ -19,11 +21,13 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
+import { I18nText } from "../data/I18n";
 
-export default function Home({ lang }) {
+export default function Home(props: { lang: keyof I18nText }) {
+    const { lang } = props;
     const theme = useTheme();
 
-    const getLocaleText = (i18nText, language) => {
+    const getLocaleText = (i18nText: I18nText, language: keyof I18nText) => {
         return language in i18nText ? i18nText[language] : i18nText["en"];
     };
 
@@ -101,14 +105,14 @@ export default function Home({ lang }) {
                         <SchoolIcon />{" "}
                         {getLocaleText(
                             {
-                                en: "MSc Computer Science at ",
+                                "en": "MSc Computer Science at ",
                                 "zh-Hant": "",
                                 "zh-Hans": "",
                                 "tto-bro":
                                     "Yae3CFRH3Yde AF7X8Q7A Sd2X8Q7A T8eLAG8d2, bemZeih Oei ",
                                 // "tto": "Fab RhSe"
-                                ja: "",
-                                de: "MSc Informatik in ",
+                                "ja": "",
+                                "de": "MSc Informatik in ",
                             },
                             lang
                         )}
