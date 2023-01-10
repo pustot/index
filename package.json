@@ -1,10 +1,9 @@
 {
     "name": "yangchnx",
-    "version": "2.2.0",
+    "version": "2.3.0",
     "description": "Ethan YANG Chenxi Home Page",
     "keywords": [
-        "react",
-        "starter"
+        "personal"
     ],
     "main": "src/index.tsx",
     "license": "GPL-3.0",

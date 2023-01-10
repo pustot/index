@@ -8,7 +8,9 @@ import "../styles.scss";
 
 export default function BlogArticle({ lang }) {
     const [markdown, setMarkdown] = React.useState("Loading");
+    
     const { fileName } = useParams();
+    const [title, setTitle] = React.useState(fileName.split(".")[2].replaceAll("_", " "));
 
     const fetchContent = async () => {
         let text = await (
@@ -27,9 +29,11 @@ export default function BlogArticle({ lang }) {
         if (fileName.split(".")[3] == "zh-Hans" && lang == "zh-Hant") {
             const converter = OpenCC.Converter({ from: "cn", to: "hk" });
             text = converter(text);
+            setTitle(converter(fileName.split(".")[2].replaceAll("_", " ")));
         } else if (fileName.split(".")[3] == "zh-Hant" && lang == "zh-Hans") {
             const converter = OpenCC.Converter({ from: "hk", to: "cn" });
             text = converter(text);
+            setTitle(converter(fileName.split(".")[2].replaceAll("_", " ")));
         }
         setMarkdown(text);
         console.log("Markdown got");
@@ -42,7 +46,7 @@ export default function BlogArticle({ lang }) {
     return (
         <Container maxWidth="md">
             <Typography variant="h1" sx={{ fontSize: 56 }}>
-                {fileName.split(".")[2].replaceAll("_", " ")}
+                {title}
             </Typography>
             <br />
             <MyMuiMarkdown markdown={markdown} />
