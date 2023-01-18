@@ -42,7 +42,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                         "zh-Hant": "楊晨曦",
                                         "zh-Hans": "杨晨曦",
                                         "tto-bro": "EeRZ T8eHXQea",
-                                        "tto": "hFCmo mAFKRHm",
+                                        "tto": "hFCmo mRFKRHm",
                                         "ja": "楊　晨曦（よう　しんぎ）",
                                         "de": "Chenxi Yang",
                                     },

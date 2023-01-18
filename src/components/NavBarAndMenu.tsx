@@ -91,7 +91,7 @@ export default function NavBarAndMenu(props: {
                                     "zh-Hant": "楊晨曦",
                                     "zh-Hans": "杨晨曦",
                                     "tto-bro": "EeRZ T8eHXQea",
-                                    "tto": "hFCmo mAFKRHm",
+                                    "tto": "hFCmo mRFKRHm",
                                     "ja": "楊晨曦",
                                     "de": "Chenxi Yang",
                                 },
