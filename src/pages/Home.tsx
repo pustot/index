@@ -288,8 +288,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                             },
                             lang
                         )}
-                        main="Find the pronunciation of a Chinese character in multiple languages and dialects."
-                        toLink={domain + "hanpoly"}
+                        main="Simulation of the three-body problem. Help the aliens with your findings!"
+                        toLink={domain + "three-body"}
                     />
 
                     <PostCard
