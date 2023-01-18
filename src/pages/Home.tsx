@@ -9,6 +9,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import ScatterPlotIcon from '@mui/icons-material/ScatterPlot';
 import SchoolIcon from "@mui/icons-material/School";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -194,6 +195,9 @@ export default function Home(props: { lang: keyof I18nText }) {
                         <IconButton href={domain + "cantonese-flashcard"}>粵</IconButton>
                         <IconButton href={domain + "khmer-starter"}>ក</IconButton>
                         <IconButton href={domain + "hanpoly"}>漢</IconButton>
+                        <IconButton href={domain + "three-body"}>
+                            <ScatterPlotIcon />
+                        </IconButton>
                         <IconButton href={domain + "word-lookuper"}>
                             <TravelExploreIcon />
                         </IconButton>
@@ -209,7 +213,9 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "zh-Hant": "與然小姐姐的戀愛記錄",
                                 "zh-Hans": "与然小姐姐的恋爱记录",
                                 "tto-bro": "Eei2 X87 Zei2HMeaH DaA SvaH3Oie3 Yd3Se7A",
-                                // "tto": "Fab RhSe"
+                                "tto": "Re",
+                                "ja": "然たんとの愛の物語",
+                                "de": "Blogs meiner Liebe mit Yuran He"
                             },
                             lang
                         )}
@@ -260,6 +266,25 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "zh-Hans": "汉诸",
                                 "tto-bro": "XRH3Tei",
                                 "tto": "XRHhoSe",
+                            },
+                            lang
+                        )}
+                        main="Find the pronunciation of a Chinese character in multiple languages and dialects."
+                        toLink={domain + "hanpoly"}
+                    />
+
+                    <PostCard
+                        image={picFolder + "three-body.png"}
+                        alt="Three-Body Problem"
+                        title={getLocaleText(
+                            {
+                                "en": "The Three-Body Problem",
+                                "zh-Hant": "三體问题",
+                                "zh-Hans": "三体问题",
+                                "tto-bro": "CRVmae2 VFH3D8ae",
+                                "tto": "ALCe7Z D AoKhFC Y-W",
+                                "ja": "三体問題",
+                                "de": "Das Dreikörperproblem"
                             },
                             lang
                         )}
