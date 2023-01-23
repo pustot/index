@@ -15,6 +15,7 @@ import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useTheme } from "@mui/material/styles";
 import { I18nText } from "../data/I18n";
+import { SiDuolingo } from "react-icons/si"
 
 export default function Home(props: { lang: keyof I18nText }) {
     const { lang } = props;
@@ -77,9 +78,14 @@ export default function Home(props: { lang: keyof I18nText }) {
                                     />
                                 </IconButton>
 
-                                <IconButton href="https://linktr.ee/smartdramo">
-                                    <img alt="Zhihu" src={picFolder + "LinkTree.webp"} height="24" width="24" />
+                                <IconButton href="https://www.duolingo.com/profile/yangchnx">
+                                    <SiDuolingo />
                                 </IconButton>
+
+                                {/* <IconButton href="https://linktr.ee/smartdramo">
+                                    <img alt="Linktree" src={picFolder + "LinkTree.webp"} height="24" width="24" />
+                                </IconButton> */}
+
                             </Grid>
                         </Stack>
                     </Stack>
