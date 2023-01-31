@@ -9,13 +9,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import ScatterPlotIcon from '@mui/icons-material/ScatterPlot';
+import ScatterPlotIcon from "@mui/icons-material/ScatterPlot";
 import SchoolIcon from "@mui/icons-material/School";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useTheme } from "@mui/material/styles";
 import { I18nText } from "../data/I18n";
-import { SiDuolingo } from "react-icons/si"
+import { SiDuolingo } from "react-icons/si";
 
 export default function Home(props: { lang: keyof I18nText }) {
     const { lang } = props;
@@ -85,7 +85,6 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 {/* <IconButton href="https://linktr.ee/smartdramo">
                                     <img alt="Linktree" src={picFolder + "LinkTree.webp"} height="24" width="24" />
                                 </IconButton> */}
-
                             </Grid>
                         </Stack>
                     </Stack>
@@ -151,8 +150,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                     "de": "https://de.tongji.edu.cn/",
                                 },
                                 lang
-                            )}
-                        >
+                            )}>
                             {getLocaleText(
                                 {
                                     "en": "Tongji University",
@@ -198,9 +196,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                         <IconButton href={domain + "love"}>
                             <FavoriteIcon />
                         </IconButton>
+                        <IconButton href={domain + "alpha-beats"}>א</IconButton>
                         <IconButton href={domain + "cantonese-flashcard"}>粵</IconButton>
-                        <IconButton href={domain + "khmer-starter"}>ក</IconButton>
                         <IconButton href={domain + "hanpoly"}>漢</IconButton>
+                        <IconButton href={domain + "khmer-starter"}>ក</IconButton>
                         <IconButton href={domain + "three-body"}>
                             <ScatterPlotIcon />
                         </IconButton>
@@ -221,12 +220,30 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "tto-bro": "Eei2 X87 Zei2HMeaH DaA SvaH3Oie3 Yd3Se7A",
                                 "tto": "Re",
                                 "ja": "然たんとの愛の物語",
-                                "de": "Blogs meiner Liebe mit Yuran He"
+                                "de": "Blogs meiner Liebe mit Yuran He",
                             },
                             lang
                         )}
                         main="Recording what we have experienced together."
                         toLink={domain + "love"}
+                    />
+
+                    <PostCard
+                        image={picFolder + "alpha-beats.png"}
+                        alt="Alpha Beats Screenshot"
+                        title={getLocaleText(
+                            {
+                                "en": "Alpha Beats",
+                                "zh-Hant": "字母跳動",
+                                "zh-Hans": "字母跳动",
+                                "tto": "rSNr be7",
+                                "tto-bro": "98d3VF2 maF3D8FZ2",
+                                "ja": "アルファ ビーツ"
+                            },
+                            lang
+                        )}
+                        main="Training on different kinds of alphabet or other kinds of writing systems."
+                        toLink={domain + "alpha-beats"}
                     />
 
                     <PostCard
@@ -243,23 +260,6 @@ export default function Home(props: { lang: keyof I18nText }) {
                         )}
                         main="Display flashcards with Chinese characters and Jyutping with your comfortable speed."
                         toLink={domain + "cantonese-flashcard"}
-                    />
-
-                    <PostCard
-                        image={picFolder + "khmer-starter.png"}
-                        alt="Ethan Yang"
-                        title={getLocaleText(
-                            {
-                                "en": "Khmer Starter",
-                                "zh-Hant": "高棉語啟輝器",
-                                "zh-Hans": "高棉语启辉器",
-                                "tto-bro": "YRFVeaHZei2 Aae2XFeAQe3",
-                                "tto": "AVRa Aae",
-                            },
-                            lang
-                        )}
-                        main="Split Khmer sentences into words and then look up its romanization, pronunciation and meaning (later) in Wiktionary."
-                        toLink={domain + "khmer-starter"}
                     />
 
                     <PostCard
@@ -280,6 +280,23 @@ export default function Home(props: { lang: keyof I18nText }) {
                     />
 
                     <PostCard
+                        image={picFolder + "khmer-starter.png"}
+                        alt="Ethan Yang"
+                        title={getLocaleText(
+                            {
+                                "en": "Khmer Starter",
+                                "zh-Hant": "高棉語啟輝器",
+                                "zh-Hans": "高棉语启辉器",
+                                "tto-bro": "YRFVeaHZei2 Aae2XFeAQe3",
+                                "tto": "AVRa Aae",
+                            },
+                            lang
+                        )}
+                        main="Split Khmer sentences into words and then look up its romanization, pronunciation and meaning (later) in Wiktionary."
+                        toLink={domain + "khmer-starter"}
+                    />
+
+                    <PostCard
                         image={picFolder + "three-body.png"}
                         alt="Three-Body Problem"
                         title={getLocaleText(
@@ -290,7 +307,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "tto-bro": "CRVmae2 VFH3D8ae",
                                 "tto": "ALCe7Z D AoKhFC Y-W",
                                 "ja": "三体問題",
-                                "de": "Das Dreikörperproblem"
+                                "de": "Das Dreikörperproblem",
                             },
                             lang
                         )}
