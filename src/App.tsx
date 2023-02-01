@@ -77,7 +77,7 @@ export default function App() {
                         <footer>
                             <Typography align="center">
                                 Chenxi Yang <br />
-                                <a href="https://github.com/yangchnx">
+                                <a href="https://github.com/yangchnx/alpha-beats">
                                     <img
                                         src={
                                             "https://img.shields.io/badge/-@yangchnx-" +

@@ -83,10 +83,12 @@ export default function BlogList(props: { lang: keyof I18nText }) {
                             "en": "Blog List",
                             "zh-Hant": "文章目錄",
                             "zh-Hans": "文章目录",
-                            "tto-bro": "VFHTeRZ VeFASe7A",
-                            "tto": "SeCm D bS7Y",
+                            "tto-bro": "VnHTerZ VenASemA",
+                            "tto": "SeCL D bSmY",
                             "ja": "ブログリスト",
                             "de": "Blogliste",
+                            "ko": "블로그 목록",
+                            "fr": "Liste de Blogs"
                         },
                         lang
                     )}

@@ -74,6 +74,8 @@ export default function BlogListItem(props: {
                                     "(Nicht auf die aktuelle Sprache. Der Originaltitel (auf " +
                                     targetLanguageLocale +
                                     "): ",
+                                "ko": "(지금의 언어가 아닙니다. 원래 제목 (" + targetLanguageLocale + "로) :",
+                                "fr": "(Pas dans la langue actuelle. Titre original (en " + targetLanguageLocale + "): ",
                             },
                             lang
                         )}
@@ -87,6 +89,8 @@ export default function BlogListItem(props: {
                             "tto": ")",
                             "ja": "）",
                             "de": ")",
+                            "ko": ")",
+                            "fr": ")",
                         },
                         lang
                     )}
@@ -113,6 +117,8 @@ export default function BlogListItem(props: {
                             "tto": "(Ve SRHM aHaH)",
                             "ja": "（今の言語ではありません）",
                             "de": "(Nicht auf die aktuelle Sprache)",
+                            "ko": "지금의 언어가 아닙니다.",
+                            "fr": "Pas dans la langue actuelle.",
                         },
                         lang
                     )}

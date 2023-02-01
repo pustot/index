@@ -22,7 +22,7 @@ import "purecss/build/pure.css";
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { ColorModeContext, LangContext } from "../App";
-import { getLocaleText, LangCode } from "../data/I18n";
+import { getLocaleText, LangCode, languageCodeToLocale } from "../data/I18n";
 import "../styles.scss";
 
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -90,10 +90,12 @@ export default function NavBarAndMenu(props: {
                                     "en": "Chenxi Yang",
                                     "zh-Hant": "楊晨曦",
                                     "zh-Hans": "杨晨曦",
-                                    "tto-bro": "EeRZ T8eHXQea",
-                                    "tto": "hFCmo mRFKRHm",
+                                    "tto-bro": "EerZ T8eHXQea",
+                                    "tto": "hnCLo LrnKrHL",
                                     "ja": "楊晨曦",
                                     "de": "Chenxi Yang",
+                                    "ko": "양신희",
+                                    "fr": "Chenxi Yang",
                                 },
                                 lang
                             )}
@@ -110,10 +112,12 @@ export default function NavBarAndMenu(props: {
                                 "en": "Home",
                                 "zh-Hant": "首頁",
                                 "zh-Hans": "首页",
-                                "tto-bro": "6dF2X8am",
+                                "tto-bro": "6dn2X8aL",
                                 "tto": "XoV",
                                 "ja": "ホーム",
                                 "de": "Startseite",
+                                "ko": "대문",
+                                "fr": "Accueil"
                             },
                             lang
                         )}
@@ -130,10 +134,12 @@ export default function NavBarAndMenu(props: {
                                 "en": "About",
                                 "zh-Hant": "關於",
                                 "zh-Hans": "关于",
-                                "tto-bro": "YQFRHOei",
-                                "tto": "aCmqSqv",
+                                "tto-bro": "YQnrHOei",
+                                "tto": "aCLqSqv",
                                 "ja": "私について",
                                 "de": "Über Mich",
+                                "ko": "나에 대해서",
+                                "fr": "À propos de moi"
                             },
                             lang
                         )}
@@ -150,10 +156,12 @@ export default function NavBarAndMenu(props: {
                                 "en": "Blog",
                                 "zh-Hant": "博客",
                                 "zh-Hans": "博客",
-                                "tto-bro": "b8Q7A",
-                                "tto": "bS7Y",
+                                "tto-bro": "b8QmA",
+                                "tto": "bSmY",
                                 "ja": "ブログ",
                                 "de": "Blog",
+                                "ko": "블로그",
+                                "fr": "Blog"
                             },
                             lang
                         )}
@@ -171,9 +179,11 @@ export default function NavBarAndMenu(props: {
                                 "zh-Hant": "愛",
                                 "zh-Hans": "爱",
                                 "tto-bro": "Oie3",
-                                "tto": "Re",
+                                "tto": "re",
                                 "ja": "愛",
                                 "de": "Liebe",
+                                "ko": "사랑",
+                                "fr": "L'amour"
                             },
                             lang
                         )}
@@ -198,6 +208,8 @@ export default function NavBarAndMenu(props: {
                                 "tto": "VvaH",
                                 "ja": "テーマ",
                                 "de": "Farbthema",
+                                "ko": "주제",
+                                "fr": "Thème"
                             },
                             lang
                         )}
@@ -214,15 +226,10 @@ export default function NavBarAndMenu(props: {
                         id="demo-simple-select"
                         value={lang}
                         label="Language"
-                        onChange={handleLangChange}
-                    >
-                        <MenuItem value={"en"}>English</MenuItem>
-                        <MenuItem value={"zh-Hans"}>简体中文</MenuItem>
-                        <MenuItem value={"zh-Hant"}>繁體中文</MenuItem>
-                        <MenuItem value={"ja"}>日本語</MenuItem>
-                        <MenuItem value={"de"}>Deutsch</MenuItem>
-                        <MenuItem value={"tto-bro"}>b8Q7Z2D.</MenuItem>
-                        <MenuItem value={"tto"}>mim</MenuItem>
+                        onChange={handleLangChange}>
+                        {["en", "zh-Hans", "zh-Hant", "ja", "de", "tto-bro", "tto", "ko", "fr"].map(s => (
+                            <MenuItem value={s as LangCode}>{languageCodeToLocale(s, s)}</MenuItem>
+                        ))}
                     </Select>
                 </ListItem>
             </List>
@@ -239,8 +246,7 @@ export default function NavBarAndMenu(props: {
                         color="inherit"
                         aria-label="menu"
                         sx={{ mr: 2 }}
-                        onClick={toggleDrawer(true)}
-                    >
+                        onClick={toggleDrawer(true)}>
                         <MenuIcon />
                     </IconButton>
 
@@ -255,17 +261,18 @@ export default function NavBarAndMenu(props: {
                                 fontSize: 16,
                             }}
                             component={Link}
-                            to="/"
-                        >
+                            to="/">
                             {getLocaleText(
                                 {
                                     "en": "Home",
                                     "zh-Hant": "首頁",
                                     "zh-Hans": "首页",
-                                    "tto-bro": "6dF2X8am",
+                                    "tto-bro": "6dn2X8aL",
                                     "tto": "XoV",
                                     "ja": "ホーム",
                                     "de": "Startseite",
+                                    "ko": "대문",
+                                    "fr": "Accueil"
                                 },
                                 lang
                             )}
@@ -280,17 +287,18 @@ export default function NavBarAndMenu(props: {
                                 fontSize: 16,
                             }}
                             component={Link}
-                            to="/about"
-                        >
+                            to="/about">
                             {getLocaleText(
                                 {
                                     "en": "About",
                                     "zh-Hant": "關於",
                                     "zh-Hans": "关于",
-                                    "tto-bro": "YQFRHOei",
-                                    "tto": "aCmqSqv",
+                                    "tto-bro": "YQnrHOei",
+                                    "tto": "aCLqSqv",
                                     "ja": "私について",
                                     "de": "Über Mich",
+                                    "ko": "나에 대해서",
+                                    "fr": "À propos de moi"
                                 },
                                 lang
                             )}
@@ -305,17 +313,18 @@ export default function NavBarAndMenu(props: {
                                 fontSize: 16,
                             }}
                             component={Link}
-                            to="/blog"
-                        >
+                            to="/blog">
                             {getLocaleText(
                                 {
                                     "en": "Blog",
                                     "zh-Hant": "博客",
                                     "zh-Hans": "博客",
-                                    "tto-bro": "b8Q7A",
-                                    "tto": "bS7Y",
+                                    "tto-bro": "b8QmA",
+                                    "tto": "bSmY",
                                     "ja": "ブログ",
                                     "de": "Blog",
+                                    "ko": "블로그",
+                                    "fr": "Blog"
                                 },
                                 lang
                             )}
@@ -330,17 +339,18 @@ export default function NavBarAndMenu(props: {
                                 fontSize: 16,
                             }}
                             component={MuiLink}
-                            href="https://yangchnx.com/love/"
-                        >
+                            href="https://yangchnx.com/love/">
                             {getLocaleText(
                                 {
                                     "en": "Love",
                                     "zh-Hant": "愛",
                                     "zh-Hans": "爱",
                                     "tto-bro": "Oie3",
-                                    "tto": "Re",
+                                    "tto": "re",
                                     "ja": "愛",
                                     "de": "Liebe",
+                                    "ko": "사랑",
+                                    "fr": "L'amour"
                                 },
                                 lang
                             )}
@@ -352,8 +362,7 @@ export default function NavBarAndMenu(props: {
                             flexGrow: 0,
                             display: { xs: "block", md: "flex" },
                             overflow: "hidden",
-                        }}
-                    >
+                        }}>
                         <IconButton onClick={colorMode.toggleColorMode} color="inherit">
                             {theme.palette.mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
                         </IconButton>
@@ -364,8 +373,7 @@ export default function NavBarAndMenu(props: {
                             aria-controls={isLangMenuOpen ? "account-menu" : undefined}
                             aria-haspopup="true"
                             aria-expanded={isLangMenuOpen ? "true" : undefined}
-                            color="inherit"
-                        >
+                            color="inherit">
                             <LanguageIcon />
                         </IconButton>
                         <Menu
@@ -373,57 +381,15 @@ export default function NavBarAndMenu(props: {
                             id="account-menu"
                             open={isLangMenuOpen}
                             onClose={handleLangMenuClose}
-                            onClick={handleLangMenuClose}
-                        >
-                            <MenuItem
-                                onClick={() => {
-                                    handleLangMenuItemClick("en");
-                                }}
-                            >
-                                English
-                            </MenuItem>
-                            <MenuItem
-                                onClick={() => {
-                                    handleLangMenuItemClick("zh-Hans");
-                                }}
-                            >
-                                简体中文
-                            </MenuItem>
-                            <MenuItem
-                                onClick={() => {
-                                    handleLangMenuItemClick("zh-Hant");
-                                }}
-                            >
-                                繁體中文
-                            </MenuItem>
-                            <MenuItem
-                                onClick={() => {
-                                    handleLangMenuItemClick("ja");
-                                }}
-                            >
-                                日本語
-                            </MenuItem>
-                            <MenuItem
-                                onClick={() => {
-                                    handleLangMenuItemClick("de");
-                                }}
-                            >
-                                Deutsch
-                            </MenuItem>
-                            <MenuItem
-                                onClick={() => {
-                                    handleLangMenuItemClick("tto-bro");
-                                }}
-                            >
-                                b8Q7Z2D.
-                            </MenuItem>
-                            <MenuItem
-                                onClick={() => {
-                                    handleLangMenuItemClick("tto");
-                                }}
-                            >
-                                mim
-                            </MenuItem>
+                            onClick={handleLangMenuClose}>
+                            {["en", "zh-Hans", "zh-Hant", "ja", "de", "tto-bro", "tto", "ko", "fr"].map(s => (
+                                <MenuItem
+                                    onClick={() => {
+                                        handleLangMenuItemClick(s as LangCode);
+                                    }}>
+                                    {languageCodeToLocale(s, s)}
+                                </MenuItem>
+                            ))}
                         </Menu>
                     </Box>
                 </Toolbar>
