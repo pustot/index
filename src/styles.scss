@@ -19,3 +19,7 @@ body {
     font-language-override: "KOR";
   }
 }
+
+h1, h2 {
+  word-break: break-all;
+}

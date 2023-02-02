@@ -75,7 +75,8 @@ export default function BlogListItem(props: {
                                     targetLanguageLocale +
                                     "): ",
                                 "ko": "(지금의 언어가 아닙니다. 원래 제목 (" + targetLanguageLocale + "로) :",
-                                "fr": "(Pas dans la langue actuelle. Titre original (en " + targetLanguageLocale + "): ",
+                                "fr":
+                                    "(Pas dans la langue actuelle. Titre original (en " + targetLanguageLocale + "): ",
                             },
                             lang
                         )}

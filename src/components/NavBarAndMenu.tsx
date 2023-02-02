@@ -33,6 +33,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
+import Stack from "@mui/material/Stack";
 
 export default function NavBarAndMenu(props: {
     theme: Theme;
@@ -117,7 +118,7 @@ export default function NavBarAndMenu(props: {
                                 "ja": "ホーム",
                                 "de": "Startseite",
                                 "ko": "대문",
-                                "fr": "Accueil"
+                                "fr": "Accueil",
                             },
                             lang
                         )}
@@ -139,7 +140,7 @@ export default function NavBarAndMenu(props: {
                                 "ja": "私について",
                                 "de": "Über Mich",
                                 "ko": "나에 대해서",
-                                "fr": "À propos de moi"
+                                "fr": "À propos de moi",
                             },
                             lang
                         )}
@@ -161,7 +162,7 @@ export default function NavBarAndMenu(props: {
                                 "ja": "ブログ",
                                 "de": "Blog",
                                 "ko": "블로그",
-                                "fr": "Blog"
+                                "fr": "Blog",
                             },
                             lang
                         )}
@@ -183,7 +184,7 @@ export default function NavBarAndMenu(props: {
                                 "ja": "愛",
                                 "de": "Liebe",
                                 "ko": "사랑",
-                                "fr": "L'amour"
+                                "fr": "L'amour",
                             },
                             lang
                         )}
@@ -209,7 +210,7 @@ export default function NavBarAndMenu(props: {
                                 "ja": "テーマ",
                                 "de": "Farbthema",
                                 "ko": "주제",
-                                "fr": "Thème"
+                                "fr": "Thème",
                             },
                             lang
                         )}
@@ -250,15 +251,16 @@ export default function NavBarAndMenu(props: {
                         <MenuIcon />
                     </IconButton>
 
-                    <Box sx={{ flexGrow: 1, display: "flex", overflow: "auto" }}>
+                    <Box sx={{ flexGrow: 1, display: "flex", overflow: "auto", }}>
                         <Button
                             variant="text"
                             sx={{
-                                my: 2,
                                 color: "white",
                                 display: "block",
                                 textTransform: "none",
                                 fontSize: 16,
+                                margin: 1,
+                                flexShrink: 0,
                             }}
                             component={Link}
                             to="/">
@@ -272,7 +274,7 @@ export default function NavBarAndMenu(props: {
                                     "ja": "ホーム",
                                     "de": "Startseite",
                                     "ko": "대문",
-                                    "fr": "Accueil"
+                                    "fr": "Accueil",
                                 },
                                 lang
                             )}
@@ -280,11 +282,12 @@ export default function NavBarAndMenu(props: {
                         <Button
                             variant="text"
                             sx={{
-                                my: 2,
                                 color: "white",
                                 display: "block",
                                 textTransform: "none",
                                 fontSize: 16,
+                                margin: 1,
+                                flexShrink: 0,
                             }}
                             component={Link}
                             to="/about">
@@ -298,7 +301,7 @@ export default function NavBarAndMenu(props: {
                                     "ja": "私について",
                                     "de": "Über Mich",
                                     "ko": "나에 대해서",
-                                    "fr": "À propos de moi"
+                                    "fr": "À propos de moi",
                                 },
                                 lang
                             )}
@@ -306,11 +309,12 @@ export default function NavBarAndMenu(props: {
                         <Button
                             variant="text"
                             sx={{
-                                my: 2,
                                 color: "white",
                                 display: "block",
                                 textTransform: "none",
                                 fontSize: 16,
+                                margin: 1,
+                                flexShrink: 0,
                             }}
                             component={Link}
                             to="/blog">
@@ -324,7 +328,7 @@ export default function NavBarAndMenu(props: {
                                     "ja": "ブログ",
                                     "de": "Blog",
                                     "ko": "블로그",
-                                    "fr": "Blog"
+                                    "fr": "Blog",
                                 },
                                 lang
                             )}
@@ -332,11 +336,12 @@ export default function NavBarAndMenu(props: {
                         <Button
                             variant="text"
                             sx={{
-                                my: 2,
                                 color: "white",
                                 display: "block",
                                 textTransform: "none",
                                 fontSize: 16,
+                                margin: 1,
+                                flexShrink: 0,
                             }}
                             component={MuiLink}
                             href="https://yangchnx.com/love/">
@@ -350,7 +355,7 @@ export default function NavBarAndMenu(props: {
                                     "ja": "愛",
                                     "de": "Liebe",
                                     "ko": "사랑",
-                                    "fr": "L'amour"
+                                    "fr": "L'amour",
                                 },
                                 lang
                             )}

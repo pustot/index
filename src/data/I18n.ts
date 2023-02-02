@@ -35,7 +35,7 @@ const langNames: I18nI18n = {
         "tto": "SrHM-aZYSeW",
         "tto-bro": "OQecZZei2",
         "ko": "영어",
-        "fr": "anglais"
+        "fr": "anglais",
     },
     "zh-Hans": {
         "en": "Simplified Chinese",
@@ -46,7 +46,7 @@ const langNames: I18nI18n = {
         "tto": "SrHM-YQaHLaeDenZVnH",
         "tto-bro": "YQaH2Lae2 DlenZVnH",
         "ko": "중국어 간체",
-        "fr": "chinois simplifié"
+        "fr": "chinois simplifié",
     },
     "zh-Hant": {
         "en": "Traditional Chinese",
@@ -57,7 +57,7 @@ const langNames: I18nI18n = {
         "tto": "SrHM-bvoHLaeDenZVnH",
         "tto-bro": "b8voHLae2 DlenZVnH",
         "ko": "중국어 번체",
-        "fr": "chinois traditionnel"
+        "fr": "chinois traditionnel",
     },
     "ja": {
         "en": "Japanese",
@@ -68,7 +68,7 @@ const langNames: I18nI18n = {
         "tto": "SrHM-HeXoZYo",
         "tto-bro": "HMeLZei2",
         "ko": "일본어",
-        "fr": "japonais"
+        "fr": "japonais",
     },
     "de": {
         "en": "German",
@@ -79,7 +79,7 @@ const langNames: I18nI18n = {
         "tto": "SrHM-DmvJ",
         "tto-bro": "DiAZei2",
         "ko": "독일어",
-        "fr": "allemand"
+        "fr": "allemand",
     },
     "tto": {
         "en": "Ttomni",
@@ -90,7 +90,7 @@ const langNames: I18nI18n = {
         "tto": "SrHM-LiL",
         "tto-bro": "Y8dLnZZei2",
         "ko": "기통어",
-        "fr": "ttomni"
+        "fr": "ttomni",
     },
     "tto-bro": {
         "en": "Ttomni Brongduk",
@@ -101,7 +101,7 @@ const langNames: I18nI18n = {
         "tto": "SrHM-bQmZDnA",
         "tto-bro": "Y8db8QmZ2Zei2",
         "ko": "기봉어",
-        "fr": "Ttomni Brondouque"
+        "fr": "Ttomni Brondouque",
     },
     "ko": {
         "en": "Korean",
@@ -112,7 +112,7 @@ const langNames: I18nI18n = {
         "tto": "SrHM-XrHYnYm",
         "tto-bro": "X8rHZei2",
         "ko": "한국어",
-        "fr": "coréen"
+        "fr": "coréen",
     },
     "fr": {
         "en": "French",
@@ -123,8 +123,8 @@ const langNames: I18nI18n = {
         "tto": "SrHM-NkrZCc",
         "tto-bro": "bvohZei2",
         "ko": "프랑스어",
-        "fr": "français"
-    }
+        "fr": "français",
+    },
 };
 
 export const languageCodeToLocale = (langCode: string, pageLang: string): string => {

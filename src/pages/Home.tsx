@@ -14,8 +14,8 @@ import SchoolIcon from "@mui/icons-material/School";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useTheme } from "@mui/material/styles";
-import { I18nText } from "../data/I18n";
 import { SiDuolingo } from "react-icons/si";
+import { I18nText } from "../data/I18n";
 
 export default function Home(props: { lang: keyof I18nText }) {
     const { lang } = props;
@@ -47,7 +47,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                         "ja": "楊　晨曦（よう　しんぎ）",
                                         "de": "Chenxi Yang",
                                         "ko": "양신희",
-                                        "fr": "Chenxi Yang"
+                                        "fr": "Chenxi Yang",
                                     },
                                     lang
                                 )}
@@ -103,7 +103,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "ja": "",
                                 "de": "MSc Informatik in ",
                                 "ko": "",
-                                "fr": "Master en sciences en informatique à l'"
+                                "fr": "Master en sciences en informatique à l'",
                             },
                             lang
                         )}
@@ -118,7 +118,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                     "ja": "エディンバラ大学",
                                     "de": "Universität Edinburgh",
                                     "ko": "에든버러 대학교",
-                                    "fr": "Université d'Edimbourg"
+                                    "fr": "Université d'Edimbourg",
                                 },
                                 lang
                             )}
@@ -129,7 +129,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "zh-Hant": " 計算機科學理學碩士",
                                 "zh-Hans": " 计算机科学理学硕士",
                                 "ja": "　情報工学修士（理学）",
-                                "ko": " 컴퓨터 과학 석사"
+                                "ko": " 컴퓨터 과학 석사",
                             },
                             lang
                         )}
@@ -146,7 +146,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "ja": "",
                                 "de": "BEng Fahrzeugtechnik in ",
                                 "ko": "",
-                                "fr": "Baccalauréat en ingénierie en génie des véhicules à l'"
+                                "fr": "Baccalauréat en ingénierie en génie des véhicules à l'",
                             },
                             lang
                         )}
@@ -170,7 +170,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                     "ja": "同済大学",
                                     "de": "Tongji-Universität",
                                     "ko": "퉁지 대학",
-                                    "fr": "Université Tongji"
+                                    "fr": "Université Tongji",
                                 },
                                 lang
                             )}
@@ -183,7 +183,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 // "tto": "Fab RhSe"
                                 "ja": "　自動車工程学士（工学）",
                                 "de": "",
-                                "ko": " 자동차공학과 학사"
+                                "ko": " 자동차공학과 학사",
                             },
                             lang
                         )}
@@ -200,7 +200,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "ja": "Webアプリ",
                                 "de": "Webanwendungen",
                                 "ko": "웹 앱",
-                                "fr": "Applications Web"
+                                "fr": "Applications Web",
                             },
                             lang
                         )}
@@ -236,7 +236,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "ja": "然たんとの愛の物語",
                                 "de": "Blogs meiner Liebe mit Yuran He",
                                 "ko": "하어연과의 사랑 이야기",
-                                "fr": "Blogs de mon amour avec Yuran He"
+                                "fr": "Blogs de mon amour avec Yuran He",
                             },
                             lang
                         )}
@@ -254,7 +254,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "zh-Hans": "字母跳动",
                                 "tto": "rSNr be7",
                                 "tto-bro": "98d3VF2 maF3D8FZ2",
-                                "ja": "アルファ ビーツ"
+                                "ja": "アルファ ビーツ",
                             },
                             lang
                         )}

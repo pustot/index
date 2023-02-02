@@ -88,7 +88,7 @@ export default function BlogList(props: { lang: keyof I18nText }) {
                             "ja": "ブログリスト",
                             "de": "Blogliste",
                             "ko": "블로그 목록",
-                            "fr": "Liste de Blogs"
+                            "fr": "Liste de Blogs",
                         },
                         lang
                     )}
