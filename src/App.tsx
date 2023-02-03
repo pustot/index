@@ -1,16 +1,22 @@
-import { CssBaseline, Divider, PaletteMode, Typography } from "@mui/material";
+import { CssBaseline, PaletteMode } from "@mui/material";
 import { createTheme, Theme, ThemeProvider } from "@mui/material/styles";
 import "purecss/build/pure.css";
 import * as React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./styles.scss";
 
-import NavBarAndMenu from "./components/NavBarAndMenu";
+import NavBarAndMenu, { NavItem } from "./components/NavBarAndMenu";
 import { I18nText } from "./data/I18n";
 import About from "./pages/About";
 import BlogArticle from "./pages/BlogArticle";
 import BlogList from "./pages/BlogList";
 import Home from "./pages/Home";
+
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FeedIcon from "@mui/icons-material/Feed";
+import HomeIcon from "@mui/icons-material/Home";
+import InfoIcon from "@mui/icons-material/Info";
+import Footer from "./components/Footer";
 
 export const ColorModeContext = React.createContext({
     toggleColorMode: () => {},
@@ -49,13 +55,90 @@ export default function App() {
         setLang(tar);
     };
 
+    const title: I18nText = {
+        "en": "Chenxi Yang's Homepage",
+        "zh-Hant": "楊晨曦的個人主頁",
+        "zh-Hans": "杨晨曦的个人主页",
+        "tto-bro": "EerZ T8eHXQea DaA Ym3HMeH Tvo2X8aL",
+        "tto": "XoVhaeG D hnCLo LrnKrHL",
+        "ja": "楊晨曦のホームページ",
+        "de": "Homepage von Chenxi Yang",
+        "ko": "양신희 홈페이지",
+        "fr": "Page d'Accueil de Chenxi Yang",
+    };
+
+    const navItems: NavItem[] = [
+        {
+            name: {
+                "en": "Home",
+                "zh-Hant": "首頁",
+                "zh-Hans": "首页",
+                "tto-bro": "6dn2X8aL",
+                "tto": "XoV",
+                "ja": "ホーム",
+                "de": "Startseite",
+                "ko": "대문",
+                "fr": "Accueil",
+            },
+            link: "/",
+            icon: <HomeIcon />,
+        },
+        {
+            name: {
+                "en": "About",
+                "zh-Hant": "關於",
+                "zh-Hans": "关于",
+                "tto-bro": "YQnrHOei",
+                "tto": "aCLqSqv",
+                "ja": "私について",
+                "de": "Über Mich",
+                "ko": "나에 대해서",
+                "fr": "À propos de moi",
+            },
+            link: "/about",
+            icon: <InfoIcon />,
+        },
+        {
+            name: {
+                "en": "Blog",
+                "zh-Hant": "博客",
+                "zh-Hans": "博客",
+                "tto-bro": "b8QmA",
+                "tto": "bSmY",
+                "ja": "ブログ",
+                "de": "Blog",
+                "ko": "블로그",
+                "fr": "Blog",
+            },
+            link: "/blog",
+            icon: <FeedIcon />,
+        },
+        {
+            name: {
+                "en": "Love",
+                "zh-Hant": "愛",
+                "zh-Hans": "爱",
+                "tto-bro": "Oie3",
+                "tto": "re",
+                "ja": "愛",
+                "de": "Liebe",
+                "ko": "사랑",
+                "fr": "L'amour",
+            },
+            link: "https://yangchnx.com/love/",
+            icon: <FavoriteIcon />,
+        },
+    ];
+
+    const repoLink = "https://github.com/yangchnx/index";
+
     return (
         <ColorModeContext.Provider value={colorMode}>
             <LangContext.Provider value={lang}>
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
                     <BrowserRouter>
-                        <NavBarAndMenu theme={theme} langSetter={langSetter} />
+                        <NavBarAndMenu theme={theme} langSetter={langSetter} title={title} navItems={navItems} />
 
                         <br />
                         <br />
@@ -72,24 +155,7 @@ export default function App() {
                         <br />
                         <br />
 
-                        <Divider />
-                        <br />
-                        <footer>
-                            <Typography align="center">
-                                Chenxi Yang <br />
-                                <a href="https://github.com/yangchnx/alpha-beats">
-                                    <img
-                                        src={
-                                            "https://img.shields.io/badge/-@yangchnx-" +
-                                            (theme.palette.mode === "dark" ? "000000" : "ffffff") +
-                                            "?style=flat-square&logo=github&logoColor=" +
-                                            (theme.palette.mode === "dark" ? "white" : "black")
-                                        }
-                                    />
-                                </a>
-                            </Typography>
-                        </footer>
-                        <br />
+                        <Footer repoLink={repoLink} theme={theme} />
                     </BrowserRouter>
                 </ThemeProvider>
             </LangContext.Provider>
