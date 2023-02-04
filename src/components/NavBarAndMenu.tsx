@@ -21,7 +21,6 @@ import { Theme } from "@mui/material/styles";
 import "purecss/build/pure.css";
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { ColorModeContext, LangContext } from "../App";
 import { getLocaleText, I18nText, LangCode, languageCodeToLocale } from "../data/I18n";
 import "../styles.scss";
 
@@ -38,13 +37,14 @@ export interface NavItem {
 
 export default function NavBarAndMenu(props: {
     theme: Theme;
+    toggleColorMode: () => void;
+    lang: keyof I18nText;
     langSetter: React.Dispatch<React.SetStateAction<LangCode>>;
     title: I18nText;
     navItems: NavItem[];
 }) {
-    const { theme, langSetter, title, navItems } = props;
-    const colorMode = React.useContext(ColorModeContext);
-    const lang = React.useContext(LangContext);
+    const { theme, toggleColorMode, lang, langSetter, title, navItems } = props;
+    // const colorMode = React.useContext(ColorModeContext);
 
     const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
     const [anchorEl, setAnchorEl] = React.useState<(EventTarget & HTMLElement) | undefined>();
@@ -104,7 +104,7 @@ export default function NavBarAndMenu(props: {
 
             <List>
                 <ListItem key="theme" disablePadding>
-                    <ListItemButton onClick={colorMode.toggleColorMode}>
+                    <ListItemButton onClick={toggleColorMode}>
                         <ListItemIcon>
                             {theme.palette.mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
                         </ListItemIcon>
@@ -209,7 +209,7 @@ export default function NavBarAndMenu(props: {
                             flexGrow: 0,
                             display: "flex",
                         }}>
-                        <IconButton onClick={colorMode.toggleColorMode} color="inherit">
+                        <IconButton onClick={toggleColorMode} color="inherit">
                             {theme.palette.mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
                         </IconButton>
                         <IconButton
