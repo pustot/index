@@ -2,7 +2,7 @@ import { Link as MuiLink, Typography } from "@mui/material";
 import * as OpenCC from "opencc-js";
 import "purecss/build/pure.css";
 import * as React from "react";
-import { getFallbackLanguage, getLocaleText, LangCode, languageCodeToLocale } from "../data/I18n";
+import { getFallbackLanguage, getLocaleText, LangCode, languageCodeToLocale } from "../utils/I18n";
 import { Lang2FNID, TitleTranslationsResp } from "../pages/BlogList";
 import "../styles.scss";
 

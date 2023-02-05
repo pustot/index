@@ -3,7 +3,7 @@ import "purecss/build/pure.css";
 import * as React from "react";
 import { useEffect, useState } from "react";
 import BlogListItem from "../components/BlogListItem";
-import { getLocaleText, I18nText, LangCode } from "../data/I18n";
+import { getLocaleText, I18nText, LangCode } from "../utils/I18n";
 import "../styles.scss";
 
 interface GithubContentsResp {

@@ -21,7 +21,7 @@ import { Theme } from "@mui/material/styles";
 import "purecss/build/pure.css";
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { getLocaleText, I18nText, LangCode, languageCodeToLocale } from "../data/I18n";
+import { getLocaleText, I18nText, LangCode, languageCodeToLocale } from "../utils/I18n";
 import "../styles.scss";
 
 import Brightness4Icon from "@mui/icons-material/Brightness4";

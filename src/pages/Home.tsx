@@ -15,7 +15,7 @@ import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useTheme } from "@mui/material/styles";
 import { SiDuolingo } from "react-icons/si";
-import { I18nText } from "../data/I18n";
+import { I18nText } from "../utils/I18n";
 
 export default function Home(props: { lang: keyof I18nText }) {
     const { lang } = props;

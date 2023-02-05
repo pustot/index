@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./styles.scss";
 
 import NavBarAndMenu, { NavItem } from "./components/NavBarAndMenu";
-import { I18nText } from "./data/I18n";
+import { I18nText } from "./utils/I18n";
 import About from "./pages/About";
 import BlogArticle from "./pages/BlogArticle";
 import BlogList from "./pages/BlogList";

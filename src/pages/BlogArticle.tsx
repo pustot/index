@@ -5,7 +5,7 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MyMuiMarkdown from "../components/MyMuiMarkdown";
-import { LangCode } from "../data/I18n";
+import { LangCode } from "../utils/I18n";
 import "../styles.scss";
 
 export default function BlogArticle(props: { lang: LangCode }) {
