@@ -42,8 +42,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                         "en": "Chenxi Yang",
                                         "zh-Hant": "楊晨曦",
                                         "zh-Hans": "杨晨曦",
-                                        "tto-bro": "EeRZ T8eHXQea",
-                                        "tto": "hFCmo mRFKRHm",
+                                        "tto-bro": "EerZ T8eHXQea",
+                                        "tto": "hnCLo LrnKrHL",
                                         "ja": "楊　晨曦（よう　しんぎ）",
                                         "de": "Chenxi Yang",
                                         "ko": "양신희",
@@ -98,8 +98,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "en": "MSc Computer Science at ",
                                 "zh-Hant": "",
                                 "zh-Hans": "",
-                                "tto-bro": "Yae3CFRH3Yde AF7X8Q7A Sd2X8Q7A T8eLAG8d2, bemZeih Oei ",
-                                // "tto": "Fab RhSe"
+                                "tto-bro": "",
+                                // "tto": ""
                                 "ja": "",
                                 "de": "MSc Informatik in ",
                                 "ko": "",
@@ -113,8 +113,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                     "en": " the University of Edinburgh ",
                                     "zh-Hant": "愛丁堡大學",
                                     "zh-Hans": "爱丁堡大学",
-                                    "tto-bro": "Oae3D8aH D8RQ3X8Q7A",
-                                    // "tto": "Fab RhSe"
+                                    "tto-bro": "Oae3D8aH D8rQ3X8QmA",
+                                    // "tto": ""
                                     "ja": "エディンバラ大学",
                                     "de": "Universität Edinburgh",
                                     "ko": "에든버러 대학교",
@@ -128,6 +128,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "en": "",
                                 "zh-Hant": " 計算機科學理學碩士",
                                 "zh-Hans": " 计算机科学理学硕士",
+                                "tto-bro": "Yae3CnrH3Yde AnmX8QmA Sd2X8QmA T8ecAG8d2",
                                 "ja": "　情報工学修士（理学）",
                                 "ko": " 컴퓨터 과학 석사",
                             },
@@ -141,8 +142,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "en": "BEng Vehicle Engineering at ",
                                 "zh-Hant": "",
                                 "zh-Hans": "",
-                                "tto-bro": "BeRSeRZ3 YFZD8leLZ YFZX8Q7A X8Q7AG8d2, bemZeih Oei ",
-                                // "tto": "Fab RhSe"
+                                "tto-bro": "",
+                                // "tto": ""
                                 "ja": "",
                                 "de": "BEng Fahrzeugtechnik in ",
                                 "ko": "",
@@ -165,8 +166,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                     "en": "Tongji University",
                                     "zh-Hant": "同濟大學",
                                     "zh-Hans": "同济大学",
-                                    "tto-bro": "D8FZ9ae3 D8RQ3X8Q7A",
-                                    // "tto": "Fab RhSe"
+                                    "tto-bro": "D8nZ9ae3 D8rQ3X8QmA",
+                                    // "tto": ""
                                     "ja": "同済大学",
                                     "de": "Tongji-Universität",
                                     "ko": "퉁지 대학",
@@ -181,6 +182,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "zh-Hant": " 車輛工程工學學士",
                                 "zh-Hans": " 车辆工程工学学士",
                                 // "tto": "Fab RhSe"
+                                "tto-bro": "BerSerZ3 YnZD8lecZ YnZX8QmA X8QmAG8d2",
                                 "ja": "　自動車工程学士（工学）",
                                 "de": "",
                                 "ko": " 자동차공학과 학사",
@@ -195,8 +197,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "en": "Web Apps",
                                 "zh-Hant": "Web 應用",
                                 "zh-Hans": "Web 应用",
-                                "tto-bro": "Fab OeZ3Ee7Z3",
-                                "tto": "Fab RhSe",
+                                "tto-bro": "Fab OeZ3EemZ3",
+                                "tto": "nab rhSe",
                                 "ja": "Webアプリ",
                                 "de": "Webanwendungen",
                                 "ko": "웹 앱",
@@ -231,8 +233,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "en": "Blogs of my love with Yuran He",
                                 "zh-Hant": "與然小姐姐的戀愛記錄",
                                 "zh-Hans": "与然小姐姐的恋爱记录",
-                                "tto-bro": "Eei2 X87 Zei2HMeaH DaA SvaH3Oie3 Yd3Se7A",
-                                "tto": "Re",
+                                "tto-bro": "Eei2 X8m Zei2HMeaH DaA SvaH3Oie3 Yd3SemA",
+                                "tto": "re",
                                 "ja": "然たんとの愛の物語",
                                 "de": "Blogs meiner Liebe mit Yuran He",
                                 "ko": "하어연과의 사랑 이야기",
@@ -253,7 +255,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "zh-Hant": "字母跳動",
                                 "zh-Hans": "字母跳动",
                                 "tto": "rSNr be7",
-                                "tto-bro": "98d3VF2 maF3D8FZ2",
+                                "tto-bro": "98d3Vn2 Lan3D8nZ2",
                                 "ja": "アルファ ビーツ",
                             },
                             lang
@@ -286,8 +288,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "en": "HanPoly",
                                 "zh-Hant": "漢諸",
                                 "zh-Hans": "汉诸",
-                                "tto-bro": "XRH3Tei",
-                                "tto": "XRHhoSe",
+                                "tto-bro": "XrH3Tei",
+                                "tto": "XrHhoSe",
                             },
                             lang
                         )}
@@ -303,8 +305,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "en": "Khmer Starter",
                                 "zh-Hant": "高棉語啟輝器",
                                 "zh-Hans": "高棉语启辉器",
-                                "tto-bro": "YRFVeaHZei2 Aae2XFeAQe3",
-                                "tto": "AVRa Aae",
+                                "tto-bro": "YrnVeaHZei2 Aae2XneAQe3",
+                                "tto": "AVra Aae",
                             },
                             lang
                         )}
@@ -320,8 +322,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "en": "The Three-Body Problem",
                                 "zh-Hant": "三體问题",
                                 "zh-Hans": "三体问题",
-                                "tto-bro": "CRVmae2 VFH3D8ae",
-                                "tto": "ALCe7Z D AoKhFC Y-W",
+                                "tto-bro": "CrVLae2 VnH3D8ae",
+                                "tto": "AcCemZ D AoKhnC Y-W",
                                 "ja": "三体問題",
                                 "de": "Das Dreikörperproblem",
                             },
@@ -354,8 +356,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "en": "Qieyun Autoderiver with Ttomni Rimduk",
                                 "zh-Hant": "切韻音系自動推導器（含丌通語音讀）",
                                 "zh-Hans": "切韵音系自动推导器（含丌通语音读）",
-                                "tto-bro": "camFH3 OQeVX8ae3 98e3D8FZ2 moeD8RF3AQe3 (X8iV Y8dmFZZei2 OQeVD8FA)",
-                                // "tto": "Fab RhSe"
+                                "tto-bro": "7aLnH3 OQeVX8ae3 98e3D8nZ2 LoeD8rn3AQe3 (X8iV Y8dLnZZei2 OQeVD8nA)",
+                                // "tto": ""
                             },
                             lang
                         )}
