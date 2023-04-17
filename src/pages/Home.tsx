@@ -33,21 +33,21 @@ export default function Home(props: { lang: keyof I18nText }) {
             <Container maxWidth="md">
                 <Stack spacing={4} px={2} pb={4}>
                     <Stack direction="row" spacing={2}>
-                        <img alt="Ethan Yang Chenxi" src={picFolder + "my-avatar.jpg"} width="72" height="72" />
+                        <img alt="TwaqNgu" src={picFolder + "my-avatar.jpg"} width="72" height="72" />
 
                         <Stack>
                             <Typography variant="h5">
                                 {getLocaleText(
                                     {
-                                        "en": "Chenxi Yang",
-                                        "zh-Hant": "楊晨曦",
-                                        "zh-Hans": "杨晨曦",
-                                        "tto-bro": "EerZ T8eHXQea",
+                                        "en": "Twaq-Ngu",
+                                        "zh-Hant": "朵牛",
+                                        "zh-Hans": "朵牛",
+                                        "tto-bro": "Dnr2Zu",
                                         "tto": "hnCLo LrnKrHL",
-                                        "ja": "楊　晨曦（よう　しんぎ）",
-                                        "de": "Chenxi Yang",
-                                        "ko": "양신희",
-                                        "fr": "Chenxi Yang",
+                                        "ja": "朵牛（だぎゅう）",
+                                        "de": "Twaq-Ngu",
+                                        "ko": "타우",
+                                        "fr": "Twaq-Ngu",
                                     },
                                     lang
                                 )}

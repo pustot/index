@@ -46,15 +46,15 @@ export default function App() {
     };
 
     const title: I18nText = {
-        "en": "Chenxi Yang's Homepage",
-        "zh-Hant": "楊晨曦的個人主頁",
-        "zh-Hans": "杨晨曦的个人主页",
-        "tto-bro": "EerZ T8eHXQea DaA Ym3HMeH Tvo2X8aL",
+        "en": "TwaqNgu's Homepage",
+        "zh-Hant": "朵牛的個人主頁",
+        "zh-Hans": "朵牛的个人主页",
+        "tto-bro": "Dnr2Zu DaA Ym3HMeH Tvo2X8aL",
         "tto": "XoVhaeG D hnCLo LrnKrHL",
-        "ja": "楊晨曦のホームページ",
-        "de": "Homepage von Chenxi Yang",
-        "ko": "양신희 홈페이지",
-        "fr": "Page d'Accueil de Chenxi Yang",
+        "ja": "朵牛のホームページ",
+        "de": "Homepage von TwaqNgu",
+        "ko": "타우 홈페이지",
+        "fr": "Page d'Accueil de TwaqNgu",
     };
 
     const navItems: NavItem[] = [
