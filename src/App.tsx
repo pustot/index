@@ -53,7 +53,7 @@ export default function App() {
         "tto": "XoVhaeG D hnCLo LrnKrHL",
         "ja": "朵牛のホームページ",
         "de": "Homepage von TwaqNgu",
-        "ko": "타우 홈페이지",
+        "ko": "타우(朵牛) 홈페이지",
         "fr": "Page d'Accueil de TwaqNgu",
     };
 

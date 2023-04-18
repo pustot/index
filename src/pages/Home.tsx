@@ -46,7 +46,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                         "tto": "hnCLo LrnKrHL",
                                         "ja": "朵牛（だぎゅう）",
                                         "de": "Twaq-Ngu",
-                                        "ko": "타우",
+                                        "ko": "타우(朵牛)",
                                         "fr": "Twaq-Ngu",
                                     },
                                     lang
