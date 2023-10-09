@@ -54,16 +54,16 @@ export default function Home(props: { lang: keyof I18nText }) {
                             </Typography>
 
                             <Grid>
-                                <IconButton href="https://github.com/yangchnx">
+                                <IconButton href="https://github.com/twaqngu">
                                     <GitHubIcon />
                                 </IconButton>
                                 <IconButton href="https://www.linkedin.com/in/yang-chenxi/">
                                     <LinkedInIcon />
                                 </IconButton>
-                                <IconButton href="https://twitter.com/yangchnx">
+                                <IconButton href="https://twitter.com/twaqngu">
                                     <TwitterIcon />
                                 </IconButton>
-                                <IconButton href="https://www.instagram.com/yangchnx">
+                                <IconButton href="https://www.instagram.com/twaqngu">
                                     <InstagramIcon />
                                 </IconButton>
 
@@ -80,7 +80,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                     />
                                 </IconButton>
 
-                                <IconButton href="https://www.duolingo.com/profile/yangchnx">
+                                <IconButton href="https://www.duolingo.com/profile/twaqngu">
                                     <SiDuolingo />
                                 </IconButton>
 

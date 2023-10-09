@@ -20,14 +20,14 @@ import Footer from "./components/Footer";
 
 export default function App() {
     const [lang, setLang] = React.useState<keyof I18nText>(
-        (localStorage.getItem("yangchnx/0.1/lang") as keyof I18nText) || ("en" as keyof I18nText)
+        (localStorage.getItem("twaqngu/0.1/lang") as keyof I18nText) || ("en" as keyof I18nText)
     );
 
     const systemColor: string =
         window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    const [mode, setMode] = React.useState<string>(localStorage.getItem("yangchnx/0.1/mode") || systemColor);
+    const [mode, setMode] = React.useState<string>(localStorage.getItem("twaqngu/0.1/mode") || systemColor);
     const toggleColorMode = () => {
-        localStorage.setItem("yangchnx/0.1/mode", mode === "light" ? "dark" : "light");
+        localStorage.setItem("twaqngu/0.1/mode", mode === "light" ? "dark" : "light");
         setMode(prevMode => (prevMode === "light" ? "dark" : "light"));
     };
 
@@ -120,7 +120,7 @@ export default function App() {
         },
     ];
 
-    const repoLink = "https://github.com/yangchnx/index";
+    const repoLink = "https://github.com/twaqngu/index";
 
     return (
         <ThemeProvider theme={theme}>

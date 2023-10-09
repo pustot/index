@@ -21,7 +21,7 @@ export default function About(props: { lang: keyof I18nText }) {
 
     const fetchAbout = async () => {
         const text = await (
-            await fetch("https://raw.githubusercontent.com/yangchnx/blog/main/" + getLocaleText(fileName, lang))
+            await fetch("https://raw.githubusercontent.com/twaqngu/blog/main/" + getLocaleText(fileName, lang))
         ).text();
         setMarkdown(text);
         console.log("Markdown got");

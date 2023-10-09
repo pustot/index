@@ -73,13 +73,13 @@ export default function NavBarAndMenu(props: {
     const handleLangChange = (event: SelectChangeEvent) => {
         console.log(event.target);
         langSetter(event.target.value as LangCode);
-        localStorage.setItem("yangchnx/0.1/lang", event.target.value);
+        localStorage.setItem("twaqngu/0.1/lang", event.target.value);
     };
 
     const handleLangMenuItemClick = (tar: LangCode) => {
         console.log(tar);
         langSetter(tar);
-        localStorage.setItem("yangchnx/0.1/lang", tar);
+        localStorage.setItem("twaqngu/0.1/lang", tar);
     };
 
     const IndexDrawer = () => (

@@ -16,9 +16,9 @@ export default function BlogArticle(props: { lang: LangCode }) {
     const [title, setTitle] = useState((fileName || "").split(".")[2].replaceAll("_", " "));
 
     const fetchContent = async () => {
-        let text = await (await fetch("https://raw.githubusercontent.com/yangchnx/blog/main/" + fileName)).text();
+        let text = await (await fetch("https://raw.githubusercontent.com/twaqngu/blog/main/" + fileName)).text();
         if (text == "") return;
-        text = text.replaceAll("](./pic/", "](https://raw.githubusercontent.com/yangchnx/blog/main/pic/");
+        text = text.replaceAll("](./pic/", "](https://raw.githubusercontent.com/twaqngu/blog/main/pic/");
         let title = (fileName || "").split(".")[2].replaceAll("_", " ");
 
         // TODO: Skip Filenames and CJKVs not in Chinese
