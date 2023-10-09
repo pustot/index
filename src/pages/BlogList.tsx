@@ -80,9 +80,10 @@ export default function BlogList(props: { lang: keyof I18nText }) {
                 <Typography variant="h3">
                     {getLocaleText(
                         {
-                            "en": "Blog List",
+                            "eo": "Bloga Listo",
                             "zh-Hant": "文章目錄",
                             "zh-Hans": "文章目录",
+                            "en": "Blog List",
                             "tto-bro": "VnHTerZ VenASemA",
                             "tto": "SeCL D bSmY",
                             "ja": "ブログリスト",

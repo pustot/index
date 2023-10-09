@@ -39,9 +39,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                             <Typography variant="h5">
                                 {getLocaleText(
                                     {
-                                        "en": "Twaq-Ngu",
+                                        "eo": "TvaNiu",
                                         "zh-Hant": "朵牛",
                                         "zh-Hans": "朵牛",
+                                        "en": "Twaq-Ngu",
                                         "tto-bro": "Dnr2Zu",
                                         "tto": "hnCLo LrnKrHL",
                                         "ja": "朵牛（だぎゅう）",
@@ -95,9 +96,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                         <SchoolIcon />{" "}
                         {getLocaleText(
                             {
-                                "en": "MSc Computer Science at ",
+                                "eo": "MSc Informadiko de la ",
                                 "zh-Hant": "",
                                 "zh-Hans": "",
+                                "en": "MSc Computer Science at ",
                                 "tto-bro": "",
                                 // "tto": ""
                                 "ja": "",
@@ -110,9 +112,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                         <MuiLink href="https://www.ed.ac.uk/">
                             {getLocaleText(
                                 {
-                                    "en": " the University of Edinburgh ",
+                                    "eo": "Universitato de Edinburgo",
                                     "zh-Hant": "愛丁堡大學",
                                     "zh-Hans": "爱丁堡大学",
+                                    "en": " the University of Edinburgh ",
                                     "tto-bro": "Oae3D8aH D8rQ3X8QmA",
                                     // "tto": ""
                                     "ja": "エディンバラ大学",
@@ -125,9 +128,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                         </MuiLink>
                         {getLocaleText(
                             {
-                                "en": "",
+                                "eo": "",
                                 "zh-Hant": " 計算機科學理學碩士",
                                 "zh-Hans": " 计算机科学理学硕士",
+                                "en": "",
                                 "tto-bro": "Yae3CnrH3Yde AnmX8QmA Sd2X8QmA T8ecAG8d2",
                                 "ja": "　情報工学修士（理学）",
                                 "ko": " 컴퓨터 과학 석사",
@@ -139,6 +143,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                         <SchoolIcon />{" "}
                         {getLocaleText(
                             {
+                                "eo": "Bakalaŭro pri Inĝenieristiko, Veturila Inĝenierado, ",
                                 "en": "BEng Vehicle Engineering at ",
                                 "zh-Hant": "",
                                 "zh-Hans": "",
@@ -163,9 +168,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                             )}>
                             {getLocaleText(
                                 {
-                                    "en": "Tongji University",
+                                    "eo": "Tongji Universitato",
                                     "zh-Hant": "同濟大學",
                                     "zh-Hans": "同济大学",
+                                    "en": "Tongji University",
                                     "tto-bro": "D8nZ9ae3 D8rQ3X8QmA",
                                     // "tto": ""
                                     "ja": "同済大学",
@@ -178,9 +184,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                         </MuiLink>
                         {getLocaleText(
                             {
-                                "en": "",
+                                "eo": "",
                                 "zh-Hant": " 車輛工程工學學士",
                                 "zh-Hans": " 车辆工程工学学士",
+                                "en": "",
                                 // "tto": "Fab RhSe"
                                 "tto-bro": "BerSerZ3 YnZD8lecZ YnZX8QmA X8QmAG8d2",
                                 "ja": "　自動車工程学士（工学）",
@@ -194,9 +201,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                     <Typography variant="h2">
                         {getLocaleText(
                             {
-                                "en": "Web Apps",
+                                "eo": "Retaj Aplikoj",
                                 "zh-Hant": "Web 應用",
                                 "zh-Hans": "Web 应用",
+                                "en": "Web Apps",
                                 "tto-bro": "Fab OeZ3EemZ3",
                                 "tto": "nab rhSe",
                                 "ja": "Webアプリ",
@@ -230,15 +238,16 @@ export default function Home(props: { lang: keyof I18nText }) {
                         alt="Ethan Yang"
                         title={getLocaleText(
                             {
-                                "en": "Blogs of my love with Yuran He",
-                                "zh-Hant": "與然小姐姐的戀愛記錄",
-                                "zh-Hans": "与然小姐姐的恋爱记录",
+                                "eo": "La Amrilatoj Kun Fraŭlino TsraewMaeq",
+                                "zh-Hant": "與抓馬小姐的戀愛記錄",
+                                "zh-Hans": "与抓马小姐的恋爱记录",
+                                "en": "Blogs of my love with TsraewMaeq",
                                 "tto-bro": "Eei2 X8m Zei2HMeaH DaA SvaH3Oie3 Yd3SemA",
                                 "tto": "re",
-                                "ja": "然たんとの愛の物語",
-                                "de": "Blogs meiner Liebe mit Yuran He",
-                                "ko": "하어연과의 사랑 이야기",
-                                "fr": "Blogs de mon amour avec Yuran He",
+                                "ja": "ドラマたんとの愛の物語",
+                                "de": "Blogs meiner Liebe mit TsraewMaeq",
+                                "ko": "드라마과의 사랑 이야기",
+                                "fr": "Blogs de mon amour avec TsraewMaeq",
                             },
                             lang
                         )}
@@ -251,9 +260,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                         alt="Alpha Beats Screenshot"
                         title={getLocaleText(
                             {
-                                "en": "Alpha Beats",
+                                "eo": "Alfa Salteto",
                                 "zh-Hant": "字母跳動",
                                 "zh-Hans": "字母跳动",
+                                "en": "Alpha Beats",
                                 "tto": "rSNr be7",
                                 "tto-bro": "98d3Vn2 Lan3D8nZ2",
                                 "ja": "アルファ ビーツ",
@@ -269,9 +279,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                         alt="Cantonese Flashcard Screenshot"
                         title={getLocaleText(
                             {
-                                "en": "Cantonese Flashcard",
+                                "eo": "Kantona Memkartaro",
                                 "zh-Hant": "粵語字卡",
                                 "zh-Hans": "粤语字卡",
+                                "en": "Cantonese Flashcard",
                                 "tto": "vmv ARD",
                             },
                             lang
@@ -285,9 +296,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                         alt="Ethan Yang"
                         title={getLocaleText(
                             {
-                                "en": "HanPoly",
+                                "eo": "HanPoli",
                                 "zh-Hant": "漢諸",
                                 "zh-Hans": "汉诸",
+                                "en": "HanPoly",
                                 "tto-bro": "XrH3Tei",
                                 "tto": "XrHhoSe",
                             },
@@ -302,9 +314,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                         alt="Ethan Yang"
                         title={getLocaleText(
                             {
-                                "en": "Khmer Starter",
+                                "eo": "Khmer Lanterno",
                                 "zh-Hant": "高棉語啟輝器",
                                 "zh-Hans": "高棉语启辉器",
+                                "en": "Khmer Starter",
                                 "tto-bro": "YrnVeaHZei2 Aae2XneAQe3",
                                 "tto": "AVra Aae",
                             },
@@ -319,9 +332,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                         alt="Three-Body Problem"
                         title={getLocaleText(
                             {
-                                "en": "The Three-Body Problem",
+                                "eo": "La Problemo de la Tri Korpaj",
                                 "zh-Hant": "三體问题",
                                 "zh-Hans": "三体问题",
+                                "en": "The Three-Body Problem",
                                 "tto-bro": "CrVLae2 VnH3D8ae",
                                 "tto": "AcCemZ D AoKhnC Y-W",
                                 "ja": "三体問題",
@@ -338,9 +352,10 @@ export default function Home(props: { lang: keyof I18nText }) {
                         alt="Screenshot of Word Lookup"
                         title={getLocaleText(
                             {
-                                "en": "Word Lookup",
+                                "eo": "Vortaro Konsulto",
                                 "zh-Hant": "查詞",
                                 "zh-Hans": "查词",
+                                "en": "Word Lookup",
                             },
                             lang
                         )}
@@ -353,10 +368,11 @@ export default function Home(props: { lang: keyof I18nText }) {
                         alt="Ethan Yang"
                         title={getLocaleText(
                             {
+                                "eo": "Qieyun Memderivilo Kun Dzwietthoungika Jimduk",
+                                "zh-Hant": "切韻音系自動推導器（含絕通語音讀）",
+                                "zh-Hans": "切韵音系自动推导器（含绝通语音读）",
                                 "en": "Qieyun Autoderiver with Ttomni Rimduk",
-                                "zh-Hant": "切韻音系自動推導器（含丌通語音讀）",
-                                "zh-Hans": "切韵音系自动推导器（含丌通语音读）",
-                                "tto-bro": "7aLnH3 OQeVX8ae3 98e3D8nZ2 LoeD8rn3AQe3 (X8iV Y8dLnZZei2 OQeVD8nA)",
+                                "tto-bro": "7aLnH3 OQeVX8ae3 98e3D8nZ2 LoeD8rn3AQe3 (X8iV 9vaLLnZZei2 OQeVD8nA)",
                                 // "tto": ""
                             },
                             lang

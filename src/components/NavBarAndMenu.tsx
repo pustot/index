@@ -110,9 +110,10 @@ export default function NavBarAndMenu(props: {
                         </ListItemIcon>
                         {getLocaleText(
                             {
-                                "en": "Colour Theme",
+                                "eo": "Kolora Temo",
                                 "zh-Hant": "主題",
                                 "zh-Hans": "主题",
+                                "en": "Colour Theme",
                                 "tto-bro": "Tvo2D8ae",
                                 "tto": "VvaH",
                                 "ja": "テーマ",
@@ -136,7 +137,7 @@ export default function NavBarAndMenu(props: {
                         value={lang}
                         label="Language"
                         onChange={handleLangChange}>
-                        {["en", "zh-Hans", "zh-Hant", "ja", "de", "tto-bro", "tto", "ko", "fr"].map((s, idx) => (
+                        {["eo", "zh-Hans", "zh-Hant", "en", "ja", "de", "tto-bro", "tto", "ko", "fr"].map((s, idx) => (
                             <MenuItem key={idx} value={s as LangCode}>
                                 {languageCodeToLocale(s, s)}
                             </MenuItem>
@@ -150,9 +151,10 @@ export default function NavBarAndMenu(props: {
                             inset
                             primary={getLocaleText(
                                 {
-                                    "en": "Twaq-Ngu",
+                                    "eo": "Tva-Niu",
                                     "zh-Hant": "朵牛",
                                     "zh-Hans": "朵牛",
+                                    "en": "Twaq-Ngu",
                                     "tto-bro": "Dnr2Zu",
                                     "tto": "hnCLo LrnKrHL",
                                     "ja": "朵牛（だぎゅう）",

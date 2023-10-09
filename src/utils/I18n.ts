@@ -1,4 +1,4 @@
-export type LangCode = "en" | "zh-Hans" | "zh-Hant" | "ja" | "de" | "tto" | "tto-bro" | "ko" | "fr";
+export type LangCode = "eo" | "zh-Hans" | "zh-Hant" | "en" | "ja" | "de" | "tto" | "tto-bro" | "ko" | "fr";
 
 export type I18nT<T> = {
     [key in LangCode]?: T;
@@ -8,7 +8,10 @@ export type I18nText = I18nT<string>;
 
 type I18nI18n = I18nT<I18nText>;
 
-const fallbackLanguages: string[] = ["en", "zh-Hans", "zh-Hant", "ja", "de", "tto", "tto-bro", "ko", "fr"];
+// 优先世界语，但其后便尝试英语，当前无奈之举
+// After eo, first try en for the needs of more people,
+// for now
+const fallbackLanguages: string[] = ["eo", "en", "zh-Hans", "zh-Hant", "ja", "de", "tto", "tto-bro", "ko", "fr"];
 
 export const getFallbackLanguage = (i18nText: I18nT<any>, pageLang: string): LangCode => {
     if (pageLang in i18nText) {
@@ -26,21 +29,23 @@ export const getLocaleText = (i18nText: I18nText, pageLang: string): string => {
 };
 
 const langNames: I18nI18n = {
-    "en": {
-        "en": "English",
-        "zh-Hans": "英语",
-        "zh-Hant": "英語",
-        "ja": "英語",
-        "de": "Englisch",
-        "tto": "SrHM-aZYSeW",
-        "tto-bro": "OQecZZei2",
-        "ko": "영어",
-        "fr": "anglais",
+    "eo": {
+        "eo": "Esperanto",
+        "zh-Hans": "世界语（希望语）",
+        "zh-Hant": "世界語（希望語）",
+        "en": "Esperanto",
+        "ja": "エスペラント",
+        "de": "Esperanto",
+        "tto": "SrHM-aChaKrHLo",
+        "tto-bro": "XyeVurZ3Zyo2",
+        "ko": "에스페란토",
+        "fr": "espéranto",
     },
     "zh-Hans": {
-        "en": "Simplified Chinese",
+        "eo": "Ĉina Simpligita",
         "zh-Hans": "简体中文",
         "zh-Hant": "簡體中文",
+        "en": "Simplified Chinese",
         "ja": "簡体字中国語",
         "de": "Vereinfachtes Chinesisch",
         "tto": "SrHM-YQaHLaeDenZVnH",
@@ -49,9 +54,10 @@ const langNames: I18nI18n = {
         "fr": "chinois simplifié",
     },
     "zh-Hant": {
-        "en": "Traditional Chinese",
+        "eo": "Ĉina Tradicia",
         "zh-Hans": "繁体中文",
         "zh-Hant": "繁體中文",
+        "en": "Traditional Chinese",
         "ja": "繁体字中国語",
         "de": "Traditionelles Chinesisch",
         "tto": "SrHM-bvoHLaeDenZVnH",
@@ -59,10 +65,23 @@ const langNames: I18nI18n = {
         "ko": "중국어 번체",
         "fr": "chinois traditionnel",
     },
+    "en": {
+        "eo": "Angla",
+        "zh-Hans": "英语",
+        "zh-Hant": "英語",
+        "en": "English",
+        "ja": "英語",
+        "de": "Englisch",
+        "tto": "SrHM-aZYSeW",
+        "tto-bro": "OQecZZei2",
+        "ko": "영어",
+        "fr": "anglais",
+    },
     "ja": {
-        "en": "Japanese",
+        "eo": "Japana",
         "zh-Hans": "日语",
         "zh-Hant": "日語",
+        "en": "Japanese",
         "ja": "日本語",
         "de": "Japanisch",
         "tto": "SrHM-HeXoZYo",
@@ -71,9 +90,10 @@ const langNames: I18nI18n = {
         "fr": "japonais",
     },
     "de": {
-        "en": "German",
+        "eo": "Germana",
         "zh-Hans": "德语",
         "zh-Hant": "德語",
+        "en": "German",
         "ja": "ドイツ語",
         "de": "Deutsch",
         "tto": "SrHM-DmvJ",
@@ -82,31 +102,34 @@ const langNames: I18nI18n = {
         "fr": "allemand",
     },
     "tto": {
-        "en": "Ttomni",
-        "zh-Hans": "丌通语",
-        "zh-Hant": "丌通語",
-        "ja": "丌通語",
-        "de": "Ttomni",
-        "tto": "SrHM-LiL",
-        "tto-bro": "Y8dLnZZei2",
-        "ko": "기통어",
-        "fr": "ttomni",
+        "eo": "Dzwietthoungika",
+        "zh-Hans": "绝通语",
+        "zh-Hant": "絕通語",
+        "en": "Dzwietthoungic",
+        "ja": "絶通語",
+        "de": "Dzwietthoungica",
+        "tto": "SrHM-9vaLLnZ",
+        "tto-bro": "9vaLLnZZei2",
+        "ko": "절통어",
+        "fr": "dzwietthoungica",
     },
     "tto-bro": {
-        "en": "Ttomni Brongduk",
-        "zh-Hans": "丌棒语",
-        "zh-Hant": "丌棒語",
-        "ja": "丌棒語",
-        "de": "Ttomni Brongduk",
+        "eo": "Dzwiet Brongduk",
+        "zh-Hans": "絶棒语",
+        "zh-Hant": "絶棒語",
+        "en": "Dzwiet Brongduk",
+        "ja": "絶棒語",
+        "de": "Dzwiet Brongduk",
         "tto": "SrHM-bQmZDnA",
-        "tto-bro": "Y8db8QmZ2Zei2",
-        "ko": "기봉어",
-        "fr": "Ttomni Brondouque",
+        "tto-bro": "9vaLb8QmZ2Zei2",
+        "ko": "절봉어",
+        "fr": "Dzwiet Brondouque",
     },
     "ko": {
-        "en": "Korean",
+        "eo": "Korea",
         "zh-Hans": "韩语",
         "zh-Hant": "韓語",
+        "en": "Korean",
         "ja": "韓国語",
         "de": "Koreanisch",
         "tto": "SrHM-XrHYnYm",
@@ -115,9 +138,10 @@ const langNames: I18nI18n = {
         "fr": "coréen",
     },
     "fr": {
-        "en": "French",
+        "eo": "Franca",
         "zh-Hans": "法语",
         "zh-Hant": "法語",
+        "en": "French",
         "ja": "仏語",
         "de": "Französisch",
         "tto": "SrHM-NkrZCc",

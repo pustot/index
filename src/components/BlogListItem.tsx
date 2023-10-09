@@ -63,10 +63,11 @@ export default function BlogListItem(props: {
                         ") " +
                         getLocaleText(
                             {
-                                "en":
-                                    "(Not in the current language. Original title (in " + targetLanguageLocale + "): ",
+                                "eo": "(Ne en la nuna lingvo. Originala titolo (en" + targetLanguageLocale + "): ",
                                 "zh-Hant": "（非當前語言。原標題（" + targetLanguageLocale + "）：",
                                 "zh-Hans": "（非当前语言。原标题（" + targetLanguageLocale + "）：",
+                                "en":
+                                    "(Not in the current language. Original title (in " + targetLanguageLocale + "): ",
                                 "tto-bro": "(bFe DRZ98aH Zei2ZeiH. ZvoH beaFD8ae (" + targetLanguageLocale + "): ",
                                 "tto": "(Ve SRHM aHaH. beaFDae aH eSSa (" + targetLanguageLocale + "): ",
                                 "ja": "（今の言語ではありません。元の題名（" + targetLanguageLocale + "で）：",
@@ -83,9 +84,10 @@ export default function BlogListItem(props: {
                     {targetFile?.title}
                     {getLocaleText(
                         {
-                            "en": ")",
+                            "eo": ")",
                             "zh-Hant": "）",
                             "zh-Hans": "）",
+                            "en": ")",
                             "tto-bro": ")",
                             "tto": ")",
                             "ja": "）",
@@ -111,9 +113,10 @@ export default function BlogListItem(props: {
                     ") " +
                     getLocaleText(
                         {
-                            "en": "(Not in the current language)",
+                            "eo": "(Ne en la nuna lingvo)",
                             "zh-Hant": "（非當前語言）",
                             "zh-Hans": "（非当前语言）",
+                            "en": "(Not in the current language)",
                             "tto-bro": "(bFe DRZ98aH Zei2ZeiH)",
                             "tto": "(Ve SRHM aHaH)",
                             "ja": "（今の言語ではありません）",

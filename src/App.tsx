@@ -46,9 +46,10 @@ export default function App() {
     };
 
     const title: I18nText = {
-        "en": "TwaqNgu's Homepage",
+        "eo": "Hejmpaĝo de TvaNiu",
         "zh-Hant": "朵牛的個人主頁",
         "zh-Hans": "朵牛的个人主页",
+        "en": "TwaqNgu's Homepage",
         "tto-bro": "Dnr2Zu DaA Ym3HMeH Tvo2X8aL",
         "tto": "XoVhaeG D hnCLo LrnKrHL",
         "ja": "朵牛のホームページ",
@@ -60,9 +61,10 @@ export default function App() {
     const navItems: NavItem[] = [
         {
             name: {
-                "en": "Home",
+                "eo": "Ĉefpaĝo",
                 "zh-Hant": "首頁",
                 "zh-Hans": "首页",
+                "en": "Home",
                 "tto-bro": "6dn2X8aL",
                 "tto": "XoV",
                 "ja": "ホーム",
@@ -75,9 +77,10 @@ export default function App() {
         },
         {
             name: {
-                "en": "About",
+                "eo": "Pri mi",
                 "zh-Hant": "關於",
                 "zh-Hans": "关于",
+                "en": "About",
                 "tto-bro": "YQnrHOei",
                 "tto": "aCLqSqv",
                 "ja": "私について",
@@ -90,9 +93,10 @@ export default function App() {
         },
         {
             name: {
-                "en": "Blog",
+                "eo": "Blogo",
                 "zh-Hant": "博客",
                 "zh-Hans": "博客",
+                "en": "Blog",
                 "tto-bro": "b8QmA",
                 "tto": "bSmY",
                 "ja": "ブログ",
@@ -105,9 +109,10 @@ export default function App() {
         },
         {
             name: {
-                "en": "Love",
+                "eo": "Amo",
                 "zh-Hant": "愛",
                 "zh-Hans": "爱",
+                "en": "Love",
                 "tto-bro": "Oie3",
                 "tto": "re",
                 "ja": "愛",
