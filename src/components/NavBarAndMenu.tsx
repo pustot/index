@@ -229,7 +229,7 @@ export default function NavBarAndMenu(props: {
                             open={isLangMenuOpen}
                             onClose={handleLangMenuClose}
                             onClick={handleLangMenuClose}>
-                            {["en", "zh-Hans", "zh-Hant", "ja", "de", "tto-bro", "tto", "ko", "fr"].map((s, idx) => (
+                            {["eo", "zh-Hans", "zh-Hant", "en", "ja", "de", "tto-bro", "tto", "ko", "fr"].map((s, idx) => (
                                 <MenuItem
                                     key={idx}
                                     onClick={() => {
