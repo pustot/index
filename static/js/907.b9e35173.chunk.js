@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktwaqngu=self.webpackChunktwaqngu||[]).push([[907],{6305:function(t,n,u){u.r(n),u.d(n,{default:function(){return e.Z},getTypographyUtilityClass:function(){return r.f},typographyClasses:function(){return r.Z}});var e=u(6312),r=u(6664)}}]);
