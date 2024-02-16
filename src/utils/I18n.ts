@@ -8,8 +8,8 @@ export type I18nText = I18nT<string>;
 
 type I18nI18n = I18nT<I18nText>;
 
-// 优先世界语，但其后便尝试英语，当前无奈之举
-// After eo, first try en for the needs of more people,
+// 优先尝试英语，当前无奈之举
+// first try en for the needs of more people,
 // for now
 const fallbackLanguages: string[] = ["zh-Hans", "zh-Hant", "en", "ja", "de", "ko", "ko-Han", "eo", "fr", "vi", "vi-Han", "es", "tto", "tto-bro"];
 

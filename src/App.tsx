@@ -19,6 +19,9 @@ import InfoIcon from "@mui/icons-material/Info";
 import Footer from "./components/Footer";
 
 export default function App() {
+    // Prepare global states: 
+    // `lang` for I18n languages
+    // `theme` for color themes (dark or light)
     const [lang, setLang] = React.useState<keyof I18nText>(
         (localStorage.getItem("twaqngu/0.1/lang") as keyof I18nText) || ("en" as keyof I18nText)
     );
@@ -45,6 +48,7 @@ export default function App() {
         setLang(tar);
     };
 
+    // Prepare items and subpages used in NavBar, SideDrawer and Footer
     const title: I18nText = {
         "zh-Hans": "浦司图的个人主页",
         "zh-Hant": "浦司圖的個人主頁",
