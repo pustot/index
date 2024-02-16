@@ -13,6 +13,7 @@ import ScatterPlotIcon from "@mui/icons-material/ScatterPlot";
 import SchoolIcon from "@mui/icons-material/School";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
 import { useTheme } from "@mui/material/styles";
 import { SiDuolingo } from "react-icons/si";
 import { I18nText, getLocaleText } from "../utils/I18n";
@@ -100,48 +101,82 @@ export default function Home(props: { lang: keyof I18nText }) {
                     </Stack>
 
                     <Typography variant="body1">
+                        <EmojiPeopleIcon />{" "}
+                        {getLocaleText(
+                            {
+                                "zh-Hans": "你好，我是浦司图 Pusto，一枚喜欢语言的程序员",
+                                "zh-Hant": "",
+                                "en": "Hello, I'm Pusto (浦司圖), a linguaphile programmer.",
+                                "ja": "こんにちは、浦司図（ほしと）と申します。言語が好きなプログラマーです。",
+                                "de": "Hallo, ich bin Pusto (浦司圖), ein Programmierer, der Sprachen und Sprachwissenschaft liebt.",
+                                "ko": "안녕하세요, 저는 포사도(浦司圖)라고 합니다. 언어를 좋아하는 프로그래머예요.",
+                                //"ko-Han": "",
+                                "eo": "Saluton, mi estas Pusto (浦司圖), programisto kiu ŝatas lingvojn.",
+                                "fr": "Bonjour, je suis Pusto (浦司圖), un programmeur qui aime les langues.",
+                                "vi": "Xin chào, tôi là Phổ Ti Đồ (浦司圖), một lập trình viên yêu thích ngôn ngữ.",
+                                //"vi-Han": "",
+                                "es": "Hola, soy Pusto (浦司圖), un programador a quien le gustan los idiomas.",
+                                "tto-bro": "",
+                                // "tto": ""
+                            },
+                            lang
+                        )}
+
+                    
+                    </Typography>
+                    <Typography variant="body1">
                         <SchoolIcon />{" "}
                         {getLocaleText(
                             {
-                                "eo": "MSc Informadiko de la ",
                                 "zh-Hant": "",
                                 "zh-Hans": "",
                                 "en": "Master of Science - Computer Science, ",
-                                "tto-bro": "",
-                                // "tto": ""
                                 "ja": "",
                                 "de": "MSc Informatik, ",
                                 "ko": "",
+                                "ko-Han": "",
+                                "eo": "MSc Informadiko de la ",
                                 "fr": "Master en sciences en informatique à l'",
+                                "vi": "Thạc sĩ Khoa học - Khoa học Máy tính, ",
+                                "es": "Maestría en Ciencias - Ciencias de la Computación, ",
+                                "tto-bro": "",
+                                // "tto": ""
                             },
                             lang
                         )}
                         <MuiLink href="https://www.ed.ac.uk/">
                             {getLocaleText(
                                 {
-                                    "eo": "Universitato de Edinburgo",
                                     "zh-Hant": "愛丁堡大學",
                                     "zh-Hans": "爱丁堡大学",
                                     "en": " the University of Edinburgh ",
-                                    "tto-bro": "Oae3D8aH D8rQ3X8QmA",
-                                    // "tto": ""
                                     "ja": "エディンバラ大学",
                                     "de": "Universität Edinburgh",
                                     "ko": "에든버러 대학교",
+                                    "ko-Han": "에든버러 大學校",
+                                    "eo": "Universitato de Edinburgo",
                                     "fr": "Université d'Edimbourg",
+                                    "vi": "Đại học Edinburgh",
+                                    "vi-Han": "大學 Edinburgh",
+                                    "es": "Universidad de Edimburgo",
+                                    "tto-bro": "Oae3D8aH D8rQ3X8QmA",
+                                    // "tto": ""
                                 },
                                 lang
                             )}
                         </MuiLink>
                         {getLocaleText(
                             {
-                                "eo": "",
                                 "zh-Hant": " 計算機科學理學碩士",
                                 "zh-Hans": " 计算机科学理学硕士",
                                 "en": "",
-                                "tto-bro": "Yae3CnrH3Yde AnmX8QmA Sd2X8QmA T8ecAG8d2",
                                 "ja": "　情報工学修士（理学）",
                                 "ko": " 컴퓨터 과학 석사",
+                                "ko-Han": " 電算學 碩士",
+                                "eo": "",
+                                "vi": "",
+                                "es": "",
+                                "tto-bro": "Yae3CnrH3Yde AnmX8QmA Sd2X8QmA T8ecAG8d2",
                             },
                             lang
                         )}
@@ -150,16 +185,19 @@ export default function Home(props: { lang: keyof I18nText }) {
                         <SchoolIcon />{" "}
                         {getLocaleText(
                             {
-                                "eo": "Bakalaŭro pri Inĝenieristiko, Aŭtomobila elektroniko (Veturila Inĝenierado), ",
                                 "en": "Bachelor of Engeering - Automotive Electronics (Vehicle Engineering), ",
                                 "zh-Hant": "",
                                 "zh-Hans": "",
-                                "tto-bro": "",
-                                // "tto": ""
                                 "ja": "",
                                 "de": "BEng - Fahrzeugelektronik (Fahrzeugtechnik) in ",
                                 "ko": "",
+                                "ko-Han": "",
+                                "eo": "Bakalaŭro pri Inĝenieristiko, Aŭtomobila elektroniko (Veturila Inĝenierado), ",
                                 "fr": "Baccalauréat en ingénierie en électronique automobile (génie des véhicules) à l'",
+                                "vi": "Bằng Kỹ sư - Điện tử ô tô (Kỹ thuật xe hơi), ",
+                                "es": "Licenciatura en Ingeniería - Electrónica Automotriz (Ingeniería de Vehículos), ",
+                                "tto-bro": "",
+                                // "tto": ""
                             },
                             lang
                         )}
@@ -175,31 +213,38 @@ export default function Home(props: { lang: keyof I18nText }) {
                             )}>
                             {getLocaleText(
                                 {
-                                    "eo": "Tongji Universitato",
                                     "zh-Hant": "同濟大學",
                                     "zh-Hans": "同济大学",
                                     "en": "Tongji University",
-                                    "tto-bro": "D8nZ9ae3 D8rQ3X8QmA",
-                                    // "tto": ""
                                     "ja": "同済大学",
                                     "de": "Tongji-Universität",
-                                    "ko": "퉁지 대학",
+                                    "ko": "동제대학(同濟大學)",
+                                    "ko-Han": "同濟大學",
+                                    "eo": "Tongji Universitato",
                                     "fr": "Université Tongji",
+                                    "vi": "Đại học Đồng Tế",
+                                    "vi-Han": "大學同濟",
+                                    "es": "Universidad Tongji",
+                                    "tto-bro": "D8nZ9ae3 D8rQ3X8QmA",
+                                    // "tto": ""
                                 },
                                 lang
                             )}
                         </MuiLink>
                         {getLocaleText(
                             {
-                                "eo": "",
                                 "zh-Hant": " 汽車電子（車輛工程）工學學士",
                                 "zh-Hans": " 汽车电子（车辆工程）工学学士",
                                 "en": "",
-                                // "tto": "Fab RhSe"
-                                "tto-bro": "Aye3Bert DaH39y2 (BerSerZ3 YnZD8lecZ) YnZX8QmA X8QmAG8d2",
                                 "ja": "　自動車電子（自動車工程）学士（工学）",
                                 "de": "",
                                 "ko": " 자동차 전자 (자동차공학과) 학사",
+                                "ko-Han": " 自動車 電子 (自動車工學科) 學士",
+                                "eo": "",
+                                "vi": "",
+                                "es": "",
+                                // "tto": "Fab RhSe"
+                                "tto-bro": "Aye3Bert DaH39y2 (BerSerZ3 YnZD8lecZ) YnZX8QmA X8QmAG8d2",
                             },
                             lang
                         )}
@@ -208,16 +253,20 @@ export default function Home(props: { lang: keyof I18nText }) {
                     <Typography variant="h2">
                         {getLocaleText(
                             {
-                                "eo": "Retaj Aplikoj",
                                 "zh-Hant": "Web 應用",
                                 "zh-Hans": "Web 应用",
                                 "en": "Web Apps",
-                                "tto-bro": "Fab OeZ3EemZ3",
-                                "tto": "nab rhSe",
                                 "ja": "Webアプリ",
                                 "de": "Webanwendungen",
                                 "ko": "웹 앱",
+                                "ko-Han": "웹 앱",
+                                "eo": "Retaj Aplikoj",
                                 "fr": "Applications Web",
+                                "vi": "Ứng dụng web",
+                                "vi-Han": "應用 web",
+                                "es": "Aplicaciones web",
+                                "tto-bro": "Fab OeZ3EemZ3",
+                                "tto": "nab rhSe",
                             },
                             lang
                         )}
