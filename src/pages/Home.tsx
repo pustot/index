@@ -25,8 +25,11 @@ export default function Home(props: { lang: keyof I18nText }) {
         return language in i18nText ? i18nText[language] : i18nText["en"];
     };
 
-    const domain = "https://yangchnx.com/";
-    const picFolder = process.env.PUBLIC_URL + "pic/";
+    const domain = "https://twaqngu.com/";
+    const picFolder = "https://twaqngu.github.io/public/index/pic/";
+    const getMyProjectURL = (projname: string) => {
+        return `https://${projname}.twaqngu.com/`;
+    }
 
     return (
         <div>
@@ -99,11 +102,11 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "eo": "MSc Informadiko de la ",
                                 "zh-Hant": "",
                                 "zh-Hans": "",
-                                "en": "MSc Computer Science at ",
+                                "en": "Master of Science - Computer Science, ",
                                 "tto-bro": "",
                                 // "tto": ""
                                 "ja": "",
-                                "de": "MSc Informatik in ",
+                                "de": "MSc Informatik, ",
                                 "ko": "",
                                 "fr": "Master en sciences en informatique à l'",
                             },
@@ -143,16 +146,16 @@ export default function Home(props: { lang: keyof I18nText }) {
                         <SchoolIcon />{" "}
                         {getLocaleText(
                             {
-                                "eo": "Bakalaŭro pri Inĝenieristiko, Veturila Inĝenierado, ",
-                                "en": "BEng Vehicle Engineering at ",
+                                "eo": "Bakalaŭro pri Inĝenieristiko, Aŭtomobila elektroniko (Veturila Inĝenierado), ",
+                                "en": "Bachelor of Engeering - Automotive Electronics (Vehicle Engineering), ",
                                 "zh-Hant": "",
                                 "zh-Hans": "",
                                 "tto-bro": "",
                                 // "tto": ""
                                 "ja": "",
-                                "de": "BEng Fahrzeugtechnik in ",
+                                "de": "BEng - Fahrzeugelektronik (Fahrzeugtechnik) in ",
                                 "ko": "",
-                                "fr": "Baccalauréat en ingénierie en génie des véhicules à l'",
+                                "fr": "Baccalauréat en ingénierie en électronique automobile (génie des véhicules) à l'",
                             },
                             lang
                         )}
@@ -185,14 +188,14 @@ export default function Home(props: { lang: keyof I18nText }) {
                         {getLocaleText(
                             {
                                 "eo": "",
-                                "zh-Hant": " 車輛工程工學學士",
-                                "zh-Hans": " 车辆工程工学学士",
+                                "zh-Hant": " 汽車電子（車輛工程）工學學士",
+                                "zh-Hans": " 汽车电子（车辆工程）工学学士",
                                 "en": "",
                                 // "tto": "Fab RhSe"
-                                "tto-bro": "BerSerZ3 YnZD8lecZ YnZX8QmA X8QmAG8d2",
-                                "ja": "　自動車工程学士（工学）",
+                                "tto-bro": "Aye3Bert DaH39y2 (BerSerZ3 YnZD8lecZ) YnZX8QmA X8QmAG8d2",
+                                "ja": "　自動車電子（自動車工程）学士（工学）",
                                 "de": "",
-                                "ko": " 자동차공학과 학사",
+                                "ko": " 자동차 전자 (자동차공학과) 학사",
                             },
                             lang
                         )}
@@ -217,20 +220,20 @@ export default function Home(props: { lang: keyof I18nText }) {
                     </Typography>
 
                     <Grid>
-                        <IconButton href={domain + "love"}>
+                        <IconButton href={getMyProjectURL("love")}>
                             <FavoriteIcon />
                         </IconButton>
-                        <IconButton href={domain + "alpha-beats"}>א</IconButton>
-                        <IconButton href={domain + "cantonese-flashcard"}>粵</IconButton>
-                        <IconButton href={domain + "hanpoly"}>漢</IconButton>
-                        <IconButton href={domain + "khmer-starter"}>ក</IconButton>
-                        <IconButton href={domain + "three-body"}>
+                        <IconButton href={getMyProjectURL("alpha-beats")}>א</IconButton>
+                        <IconButton href={getMyProjectURL("cantonese-flashcard")}>粵</IconButton>
+                        <IconButton href={getMyProjectURL("hanpoly")}>漢</IconButton>
+                        <IconButton href={getMyProjectURL("khmer-starter")}>ក</IconButton>
+                        <IconButton href={getMyProjectURL("three-body")}>
                             <ScatterPlotIcon />
                         </IconButton>
-                        <IconButton href={domain + "word-lookuper"}>
+                        <IconButton href={getMyProjectURL("word-lookuper")}>
                             <TravelExploreIcon />
                         </IconButton>
-                        <IconButton href={domain + "qieyun-autoderiver"}>韻</IconButton>
+                        <IconButton href={getMyProjectURL("qieyun-autoderiver")}>韻</IconButton>
                     </Grid>
 
                     <PostCard
@@ -252,7 +255,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                             lang
                         )}
                         main="Recording what we have experienced together."
-                        toLink={domain + "love"}
+                        toLink={getMyProjectURL("love")}
                     />
 
                     <PostCard
@@ -271,7 +274,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                             lang
                         )}
                         main="Training on different kinds of alphabet or other kinds of writing systems."
-                        toLink={domain + "alpha-beats"}
+                        toLink={getMyProjectURL("alpha-beats")}
                     />
 
                     <PostCard
@@ -288,7 +291,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                             lang
                         )}
                         main="Display flashcards with Chinese characters and Jyutping with your comfortable speed."
-                        toLink={domain + "cantonese-flashcard"}
+                        toLink={getMyProjectURL("cantonese-flashcard")}
                     />
 
                     <PostCard
@@ -306,7 +309,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                             lang
                         )}
                         main="Find the pronunciation of a Chinese character in multiple languages and dialects."
-                        toLink={domain + "hanpoly"}
+                        toLink={getMyProjectURL("hanpoly")}
                     />
 
                     <PostCard
@@ -324,7 +327,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                             lang
                         )}
                         main="Split Khmer sentences into words and then look up its romanization, pronunciation and meaning (later) in Wiktionary."
-                        toLink={domain + "khmer-starter"}
+                        toLink={getMyProjectURL("khmer-starter")}
                     />
 
                     <PostCard
@@ -344,7 +347,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                             lang
                         )}
                         main="Simulation of the three-body problem. Help the aliens with your findings!"
-                        toLink={domain + "three-body"}
+                        toLink={getMyProjectURL("three-body")}
                     />
 
                     <PostCard
@@ -360,7 +363,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                             lang
                         )}
                         main="Look up the word in Wiktionary with some additional functionalities."
-                        toLink={domain + "word-lookuper"}
+                        toLink={getMyProjectURL("word-lookuper")}
                     />
 
                     <PostCard
@@ -379,7 +382,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                         )}
                         main="Forked from https://github.com/nk2028/qieyun-autoderiver, with my own
                   Ttomni Rimduk (OQeVD8FA), which is used by my own Ttomni language."
-                        toLink={domain + "qieyun-autoderiver"}
+                        toLink={getMyProjectURL("qieyun-autoderiver")}
                     />
                 </Stack>
             </Container>

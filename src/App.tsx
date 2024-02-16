@@ -2,7 +2,7 @@ import { CssBaseline, PaletteMode } from "@mui/material";
 import { createTheme, Theme, ThemeProvider } from "@mui/material/styles";
 import "purecss/build/pure.css";
 import * as React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import "./styles.scss";
 
 import NavBarAndMenu, { NavItem } from "./components/NavBarAndMenu";
@@ -120,7 +120,7 @@ export default function App() {
                 "ko": "사랑",
                 "fr": "L'amour",
             },
-            link: "https://yangchnx.com/love/",
+            link: "https://love.twaqngu.com/",
             icon: <FavoriteIcon />,
         },
     ];
@@ -130,7 +130,7 @@ export default function App() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <BrowserRouter>
+            <HashRouter>
                 <NavBarAndMenu
                     theme={theme}
                     toggleColorMode={toggleColorMode}
@@ -156,7 +156,7 @@ export default function App() {
                 <br />
 
                 <Footer repoLink={repoLink} theme={theme} />
-            </BrowserRouter>
+            </HashRouter>
         </ThemeProvider>
     );
 }

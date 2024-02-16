@@ -146,7 +146,7 @@ export default function NavBarAndMenu(props: {
                 </ListItem>
 
                 <ListItem key="nameLogo" disablePadding>
-                    <ListItemButton component={MuiLink} href="https://yangchnx.com/">
+                    <ListItemButton component={MuiLink} href="https://twaqngu.com/">
                         <ListItemText
                             inset
                             primary={getLocaleText(
