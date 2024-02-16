@@ -104,19 +104,19 @@ export default function Home(props: { lang: keyof I18nText }) {
                         <EmojiPeopleIcon />{" "}
                         {getLocaleText(
                             {
-                                "zh-Hans": "你好，我是浦司图 Pusto，一枚喜欢语言的程序员",
-                                "zh-Hant": "",
+                                "zh-Hans": "你好，我是浦司图 Pusto，一枚喜欢语言的程序员。",
+                                "zh-Hant": "你好，我是浦司圖 Pusto，一枚喜歡語言的程序員。",
                                 "en": "Hello, I'm Pusto (浦司圖), a linguaphile programmer.",
                                 "ja": "こんにちは、浦司図（ほしと）と申します。言語が好きなプログラマーです。",
                                 "de": "Hallo, ich bin Pusto (浦司圖), ein Programmierer, der Sprachen und Sprachwissenschaft liebt.",
                                 "ko": "안녕하세요, 저는 포사도(浦司圖)라고 합니다. 언어를 좋아하는 프로그래머예요.",
-                                //"ko-Han": "",
+                                "ko-Han": "安寧하세요, 저는 浦司圖(포사도)라고 합니다. 言語를 좋아하는 프로그래머예요.",
                                 "eo": "Saluton, mi estas Pusto (浦司圖), programisto kiu ŝatas lingvojn.",
                                 "fr": "Bonjour, je suis Pusto (浦司圖), un programmeur qui aime les langues.",
                                 "vi": "Xin chào, tôi là Phổ Ti Đồ (浦司圖), một lập trình viên yêu thích ngôn ngữ.",
-                                //"vi-Han": "",
+                                "vi-Han": "吀嘲，碎羅浦司圖（Phổ Ti Đồ），𠬠立程員𢞅適言語。",
                                 "es": "Hola, soy Pusto (浦司圖), un programador a quien le gustan los idiomas.",
-                                "tto-bro": "",
+                                //"tto-bro": "",
                                 // "tto": ""
                             },
                             lang
@@ -138,6 +138,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "eo": "MSc Informadiko de la ",
                                 "fr": "Master en sciences en informatique à l'",
                                 "vi": "Thạc sĩ Khoa học - Khoa học Máy tính, ",
+                                "vi-Han": "碩士科學 - 科學𢵯省，",
                                 "es": "Maestría en Ciencias - Ciencias de la Computación, ",
                                 "tto-bro": "",
                                 // "tto": ""
@@ -175,6 +176,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "ko-Han": " 電算學 碩士",
                                 "eo": "",
                                 "vi": "",
+                                "vi-Han": "",
                                 "es": "",
                                 "tto-bro": "Yae3CnrH3Yde AnmX8QmA Sd2X8QmA T8ecAG8d2",
                             },
@@ -194,7 +196,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "ko-Han": "",
                                 "eo": "Bakalaŭro pri Inĝenieristiko, Aŭtomobila elektroniko (Veturila Inĝenierado), ",
                                 "fr": "Baccalauréat en ingénierie en électronique automobile (génie des véhicules) à l'",
-                                "vi": "Bằng Kỹ sư - Điện tử ô tô (Kỹ thuật xe hơi), ",
+                                "vi": "Cử nhân Kỹ sư - Điện tử ô tô (Kỹ thuật xe hơi), ",
+                                "vi-Han": "舉人技師 - 電子車唏（技術車唏），",
                                 "es": "Licenciatura en Ingeniería - Electrónica Automotriz (Ingeniería de Vehículos), ",
                                 "tto-bro": "",
                                 // "tto": ""

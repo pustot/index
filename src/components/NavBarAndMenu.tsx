@@ -83,7 +83,7 @@ export default function NavBarAndMenu(props: {
     };
 
     const IndexDrawer = () => (
-        <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
+        <Box sx={{ width: 275 }} role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
             <Toolbar>{getLocaleText(title, lang)}</Toolbar>
             <Divider />
             <List>

@@ -36,8 +36,8 @@ export const getLocaleText = (i18nText: I18nText, pageLang: string): string => {
 
 const langNames: I18nI18n = {
     "zh-Hans": {
-        "zh-Hans": "简体中文",
-        "zh-Hant": "簡體中文",
+        "zh-Hans": "中文（简体）",
+        "zh-Hant": "中文（簡體）",
         "en": "Simplified Chinese",
         "ja": "簡体字中国語",
         "de": "Vereinfachtes Chinesisch",
@@ -52,8 +52,8 @@ const langNames: I18nI18n = {
         "tto-bro": "YQaH2Lae2 DlenZVnH",
     },
     "zh-Hant": {
-        "zh-Hans": "繁体中文",
-        "zh-Hant": "繁體中文",
+        "zh-Hans": "中文（繁体）",
+        "zh-Hant": "中文（繁體）",
         "en": "Traditional Chinese",
         "ja": "繁体字中国語",
         "de": "Traditionelles Chinesisch",
@@ -138,7 +138,7 @@ const langNames: I18nI18n = {
         "ja": "韓国語（漢字ハングル混じり文）",
         "de": "Koreanisch (Hanja)",
         "ko": "한국어 (국한문혼용)",
-        "ko-Han": "韓国語 (國漢文混用)",
+        "ko-Han": "韓国語 (國漢文)",
         "eo": "Korea (Hanja)",
         "fr": "coréen (Hanja)",
         "vi": "tiếng Hàn (Hán tự hỗn dụng)",
