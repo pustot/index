@@ -16,9 +16,10 @@ const fallbackLanguages: string[] = ["zh-Hans", "zh-Hant", "en", "ja", "de", "ko
 export const getFallbackLanguage = (i18nText: I18nT<any>, pageLang: string): LangCode => {
     if (pageLang in i18nText) {
         return pageLang as LangCode;
-    } else if (pageLang == "ko-Han" || pageLang == "vi-Han") {
-        if (pageLang == "ko-Han" && "ko" in i18nText) return "ko" as LangCode;
-        if (pageLang == "vi-Han" && "vi" in i18nText) return "vi" as LangCode;
+    } else if (pageLang == "ko-Han" && "ko" in i18nText) {
+        return "ko" as LangCode;
+    } else if (pageLang == "vi-Han" && "vi" in i18nText) {
+        return "vi" as LangCode;
     } else {
         if ("en" in i18nText) return "en" as LangCode;
         for (let lang of fallbackLanguages) {
