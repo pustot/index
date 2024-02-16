@@ -15,15 +15,15 @@ import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useTheme } from "@mui/material/styles";
 import { SiDuolingo } from "react-icons/si";
-import { I18nText } from "../utils/I18n";
+import { I18nText, getLocaleText } from "../utils/I18n";
 
 export default function Home(props: { lang: keyof I18nText }) {
     const { lang } = props;
     const theme = useTheme();
 
-    const getLocaleText = (i18nText: I18nText, language: keyof I18nText) => {
-        return language in i18nText ? i18nText[language] : i18nText["en"];
-    };
+    // const getLocaleText = (i18nText: I18nText, language: keyof I18nText) => {
+    //     return language in i18nText ? i18nText[language] : i18nText["en"];
+    // };
 
     const domain = "https://twaqngu.com/";
     const picFolder = "https://twaqngu.github.io/public/index/pic/";
@@ -42,16 +42,20 @@ export default function Home(props: { lang: keyof I18nText }) {
                             <Typography variant="h5">
                                 {getLocaleText(
                                     {
-                                        "eo": "TvaNiu",
-                                        "zh-Hant": "朵牛",
-                                        "zh-Hans": "朵牛",
-                                        "en": "Twaq-Ngu",
-                                        "tto-bro": "Dnr2Zu",
-                                        "tto": "hnCLo LrnKrHL",
-                                        "ja": "朵牛（だぎゅう）",
-                                        "de": "Twaq-Ngu",
-                                        "ko": "타우(朵牛)",
-                                        "fr": "Twaq-Ngu",
+                                        "zh-Hans": "浦司图",
+                                        "zh-Hant": "浦司圖",
+                                        "en": "Pusto (浦司圖)",
+                                        "ja": "浦司図（ほしと）",
+                                        "de": "Pusto (浦司圖)",
+                                        "ko": "포사도(浦司圖)",
+                                        "ko-Han": "浦司圖(포사도)",
+                                        "eo": "Pusto (浦司圖)",
+                                        "fr": "Pusto (浦司圖)",
+                                        "vi": "Phổ Ti Đồ (浦司圖)",
+                                        "vi-Han": "浦司圖（Phổ Ti Đồ）",
+                                        "es": "Pusto (浦司圖)",
+                                        "tto-bro": "ho2CwD8o (浦司圖)",
+                                        "tto": "hnCLo LrnKrHL (浦司圖)",
                                     },
                                     lang
                                 )}

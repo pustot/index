@@ -110,16 +110,20 @@ export default function NavBarAndMenu(props: {
                         </ListItemIcon>
                         {getLocaleText(
                             {
-                                "eo": "Kolora Temo",
-                                "zh-Hant": "主題",
                                 "zh-Hans": "主题",
+                                "zh-Hant": "主題",
                                 "en": "Colour Theme",
-                                "tto-bro": "Tvo2D8ae",
-                                "tto": "VvaH",
                                 "ja": "テーマ",
                                 "de": "Farbthema",
                                 "ko": "주제",
+                                "ko-Han": "主題",
+                                "eo": "Kolora Temo",
                                 "fr": "Thème",
+                                "vi": "Chủ đề",
+                                "vi-Han": "主題",
+                                "es": "Tema",
+                                "tto-bro": "Tvo2D8ae",
+                                "tto": "VvaH",
                             },
                             lang
                         )}
@@ -137,7 +141,7 @@ export default function NavBarAndMenu(props: {
                         value={lang}
                         label="Language"
                         onChange={handleLangChange}>
-                        {["eo", "zh-Hans", "zh-Hant", "en", "ja", "de", "tto-bro", "tto", "ko", "fr"].map((s, idx) => (
+                        {["zh-Hans", "zh-Hant", "en", "ja", "de", "ko", "ko-Han", "eo", "fr", "vi", "vi-Han", "es", "tto", "tto-bro"].map((s, idx) => (
                             <MenuItem key={idx} value={s as LangCode}>
                                 {languageCodeToLocale(s, s)}
                             </MenuItem>
@@ -151,16 +155,20 @@ export default function NavBarAndMenu(props: {
                             inset
                             primary={getLocaleText(
                                 {
-                                    "eo": "Tva-Niu",
-                                    "zh-Hant": "朵牛",
-                                    "zh-Hans": "朵牛",
-                                    "en": "Twaq-Ngu",
-                                    "tto-bro": "Dnr2Zu",
-                                    "tto": "hnCLo LrnKrHL",
-                                    "ja": "朵牛（だぎゅう）",
-                                    "de": "Twaq-Ngu",
-                                    "ko": "타우(朵牛)",
-                                    "fr": "Twaq-Ngu",
+                                    "zh-Hans": "浦司图",
+                                    "zh-Hant": "浦司圖",
+                                    "en": "Pusto (浦司圖)",
+                                    "ja": "浦司図（ほしと）",
+                                    "de": "Pusto (浦司圖)",
+                                    "ko": "포사도(浦司圖)",
+                                    "ko-Han": "浦司圖(포사도)",
+                                    "eo": "Pusto (浦司圖)",
+                                    "fr": "Pusto (浦司圖)",
+                                    "vi": "Phổ Ti Đồ (浦司圖)",
+                                    "vi-Han": "浦司圖（Phổ Ti Đồ）",
+                                    "es": "Pusto (浦司圖)",
+                                    "tto-bro": "ho2CwD8o (浦司圖)",
+                                    "tto": "hnCLo LrnKrHL (浦司圖)",
                                 },
                                 lang
                             )}
@@ -229,7 +237,7 @@ export default function NavBarAndMenu(props: {
                             open={isLangMenuOpen}
                             onClose={handleLangMenuClose}
                             onClick={handleLangMenuClose}>
-                            {["eo", "zh-Hans", "zh-Hant", "en", "ja", "de", "tto-bro", "tto", "ko", "fr"].map((s, idx) => (
+                            {["zh-Hans", "zh-Hant", "en", "ja", "de", "ko", "ko-Han", "eo", "fr", "vi", "vi-Han", "es", "tto", "tto-bro"].map((s, idx) => (
                                 <MenuItem
                                     key={idx}
                                     onClick={() => {
