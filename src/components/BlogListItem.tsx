@@ -22,7 +22,7 @@ export default function BlogListItem(props: {
     if (blogs.get(id)![lang]) {
         return (
             <div>
-                <MuiLink key={id} href={"/blog/" + blogs.get(id)![lang]!.fileName}>
+                <MuiLink key={id} href={"/#/blog/" + blogs.get(id)![lang]!.fileName}>
                     {blogs.get(id)![lang]!.title}
                 </MuiLink>
                 <Typography variant="caption">{" (" + date + ")"}</Typography>
@@ -38,7 +38,7 @@ export default function BlogListItem(props: {
             lang == "zh-Hant" ? OpenCC.Converter({ from: "cn", to: "hk" }) : OpenCC.Converter({ from: "hk", to: "cn" });
         return (
             <div>
-                <MuiLink key={id} href={"/blog/" + blogs.get(id)![blogLang]!.fileName}>
+                <MuiLink key={id} href={"/#/blog/" + blogs.get(id)![blogLang]!.fileName}>
                     {converter(blogs.get(id)![blogLang]!.title)}
                 </MuiLink>
                 <Typography variant="caption">{" (" + date + ")"}</Typography>
@@ -54,7 +54,7 @@ export default function BlogListItem(props: {
     if (titleTranslations && lang in titleTranslations[titleId]!) {
         return (
             <div>
-                <MuiLink key={id} href={"/blog/" + targetFile?.fileName}>
+                <MuiLink key={id} href={"/#/blog/" + targetFile?.fileName}>
                     {titleTranslations[titleId]![lang]}
                 </MuiLink>
                 <Typography variant="caption">
@@ -104,7 +104,7 @@ export default function BlogListItem(props: {
 
     return (
         <div>
-            <MuiLink key={id} href={"/blog/" + targetFile?.fileName}>
+            <MuiLink key={id} href={"/#/blog/" + targetFile?.fileName}>
                 {targetFile?.title}
             </MuiLink>
             <Typography variant="caption">
