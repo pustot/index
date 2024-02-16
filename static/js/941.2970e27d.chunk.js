@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktwaqngu=self.webpackChunktwaqngu||[]).push([[941],{7941:function(t,e,n){n.r(e),n.d(e,{default:function(){return u.Z},getListItemTextUtilityClass:function(){return s.L},listItemTextClasses:function(){return s.Z}});var u=n(8884),s=n(655)}}]);
