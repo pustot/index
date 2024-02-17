@@ -40,7 +40,7 @@ export default function BlogList(props: { lang: keyof I18nText }) {
     let [titleTranslations, setTitleTranslations] = useState<TitleTranslationsResp>();
 
     const fetchBlogList = async () => {
-        const text = await (await fetch("https://api.github.com/repos/twaqngu/blog/contents/")).text();
+        const text = await (await fetch("https://api.github.com/repos/pustot/blog/contents/")).text();
         let dataResp: GithubContentsResp[] = JSON.parse(text);
         let data: string[] = dataResp.map(info => info.name);
         let res = new Map<string, Lang2FNID>();
@@ -64,7 +64,7 @@ export default function BlogList(props: { lang: keyof I18nText }) {
 
     const fetchTitleTranslations = async () => {
         const text = await (
-            await fetch("https://raw.githubusercontent.com/twaqngu/blog/main/title-translations.json")
+            await fetch("https://raw.githubusercontent.com/pustot/blog/main/title-translations.json")
         ).text();
         setTitleTranslations(JSON.parse(text));
     };

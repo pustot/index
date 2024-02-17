@@ -26,10 +26,10 @@ export default function Home(props: { lang: keyof I18nText }) {
     //     return language in i18nText ? i18nText[language] : i18nText["en"];
     // };
 
-    const domain = "https://twaqngu.com/";
-    const picFolder = "https://twaqngu.github.io/public/index/pic/";
+    const domain = "https://pustot.com/";
+    const picFolder = "https://pustot.github.io/public/index/pic/";
     const getMyProjectURL = (projname: string) => {
-        return `https://${projname}.twaqngu.com/`;
+        return `https://${projname}.pustot.com/`;
     }
 
     return (
@@ -37,7 +37,7 @@ export default function Home(props: { lang: keyof I18nText }) {
             <Container maxWidth="md">
                 <Stack spacing={4} px={2} pb={4}>
                     <Stack direction="row" spacing={2}>
-                        <img alt="TwaqNgu" src={picFolder + "my-avatar.jpg"} width="72" height="72" />
+                        <img alt="Pusto" src={picFolder + "my-avatar.jpg"} width="72" height="72" />
 
                         <Stack>
                             <Typography variant="h5">
@@ -63,16 +63,16 @@ export default function Home(props: { lang: keyof I18nText }) {
                             </Typography>
 
                             <Grid>
-                                <IconButton href="https://github.com/twaqngu">
+                                <IconButton href="https://github.com/pustot">
                                     <GitHubIcon />
                                 </IconButton>
                                 <IconButton href="https://www.linkedin.com/in/yang-chenxi/">
                                     <LinkedInIcon />
                                 </IconButton>
-                                <IconButton href="https://twitter.com/twaqngu">
+                                <IconButton href="https://twitter.com/pustot">
                                     <TwitterIcon />
                                 </IconButton>
-                                <IconButton href="https://www.instagram.com/twaqngu">
+                                <IconButton href="https://www.instagram.com/pustot">
                                     <InstagramIcon />
                                 </IconButton>
 
@@ -89,7 +89,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                     />
                                 </IconButton>
 
-                                <IconButton href="https://www.duolingo.com/profile/twaqngu">
+                                <IconButton href="https://www.duolingo.com/profile/pustot">
                                     <SiDuolingo />
                                 </IconButton>
 

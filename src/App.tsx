@@ -23,14 +23,14 @@ export default function App() {
     // `lang` for I18n languages
     // `theme` for color themes (dark or light)
     const [lang, setLang] = React.useState<keyof I18nText>(
-        (localStorage.getItem("twaqngu/0.1/lang") as keyof I18nText) || ("en" as keyof I18nText)
+        (localStorage.getItem("pustot/0.1/lang") as keyof I18nText) || ("en" as keyof I18nText)
     );
 
     const systemColor: string =
         window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    const [mode, setMode] = React.useState<string>(localStorage.getItem("twaqngu/0.1/mode") || systemColor);
+    const [mode, setMode] = React.useState<string>(localStorage.getItem("pustot/0.1/mode") || systemColor);
     const toggleColorMode = () => {
-        localStorage.setItem("twaqngu/0.1/mode", mode === "light" ? "dark" : "light");
+        localStorage.setItem("pustot/0.1/mode", mode === "light" ? "dark" : "light");
         setMode(prevMode => (prevMode === "light" ? "dark" : "light"));
     };
 
@@ -144,12 +144,12 @@ export default function App() {
                 "tto-bro": "Oie3",
                 "tto": "re",
             },
-            link: "https://love.twaqngu.com/",
+            link: "https://love.pustot.com/",
             icon: <FavoriteIcon />,
         },
     ];
 
-    const repoLink = "https://github.com/twaqngu/index";
+    const repoLink = "https://github.com/pustot/index";
 
     return (
         <ThemeProvider theme={theme}>
