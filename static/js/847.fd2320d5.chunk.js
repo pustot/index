@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktwaqngu=self.webpackChunktwaqngu||[]).push([[847],{2847:(a,s,t)=>{t.r(s),t.d(s,{default:()=>e.A,getTypographyUtilityClass:()=>p.y,typographyClasses:()=>p.A});var e=t(2946),p=t(1923)}}]);
