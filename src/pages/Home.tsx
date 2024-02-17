@@ -37,7 +37,7 @@ export default function Home(props: { lang: keyof I18nText }) {
             <Container maxWidth="md">
                 <Stack spacing={4} px={2} pb={4}>
                     <Stack direction="row" spacing={2}>
-                        <img alt="Pusto" src={picFolder + "my-avatar.jpg"} width="72" height="72" />
+                        <img alt="Pusto" src={picFolder + "logo-de-pusto.webp"} width="72" height="72" />
 
                         <Stack>
                             <Typography variant="h5">
