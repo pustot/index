@@ -52,7 +52,7 @@ const WebAppGridItem = (props: { appName: string, displayName?: string }) => {
                 {/* 将宽度限制为图片的宽度，并水平居中 */}
                 <Typography variant="body2" align="center" color="textPrimary"
                     style={{ width: 96, margin: '0 auto', whiteSpace: 'pre-line' }} >
-                    {formatAppName(appName)}
+                    {displayName || formatAppName(appName)}
                 </Typography>
             </a>
         </Grid>
