@@ -24,8 +24,15 @@ const getMyProjectURL = (projname: string) => {
     return `https://${projname}.pustot.com/`;
 };
 
-const WebAppGridItem = (props: { appName: string }) => {
-    const { appName } = props;
+function formatAppName(appName: string): string {
+    return appName
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+}
+
+const WebAppGridItem = (props: { appName: string, displayName?: string }) => {
+    const { appName, displayName } = props;
     return (
         <Grid item>
             <a href={getMyProjectURL(appName)} style={{ textDecoration: "none" }}>
@@ -41,6 +48,10 @@ const WebAppGridItem = (props: { appName: string }) => {
                         margin: "0 auto", // 居中显示图片
                     }}
                 />
+                <Typography variant="body2" align="center" color="textPrimary" 
+                        sx={{ marginTop: 0.25 }}>{
+                    displayName || formatAppName(appName)
+                }</Typography>
             </a>
         </Grid>
     );
@@ -295,11 +306,11 @@ export default function Home(props: { lang: keyof I18nText }) {
                         <WebAppGridItem appName={"love"} />
                         <WebAppGridItem appName={"hanpoly"} />
                         <WebAppGridItem appName={"alpha-beats"} />
-                        <WebAppGridItem appName={"cantonese-flashcard"} />
+                        <WebAppGridItem appName={"cantonese-flashcard"} displayName={"CantonCard"} />
                         <WebAppGridItem appName={"khmer-starter"} />
                         <WebAppGridItem appName={"three-body"} />
-                        <WebAppGridItem appName={"word-lookuper"} />
-                        <WebAppGridItem appName={"qieyun-autoderiver"} />
+                        <WebAppGridItem appName={"word-lookuper"} displayName={"Word Lookup"} />
+                        <WebAppGridItem appName={"qieyun-autoderiver"} displayName={"QieDeriver"} />
                     </Grid>
 
                     <PostCard
