@@ -13,24 +13,42 @@ import ScatterPlotIcon from "@mui/icons-material/ScatterPlot";
 import SchoolIcon from "@mui/icons-material/School";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import EmojiPeopleIcon from '@mui/icons-material/EmojiPeople';
+import EmojiPeopleIcon from "@mui/icons-material/EmojiPeople";
 import { useTheme } from "@mui/material/styles";
 import { SiDuolingo } from "react-icons/si";
 import { I18nText, getLocaleText } from "../utils/I18n";
 
+const domain = "https://pustot.com/";
+const picFolder = "https://pustot.github.io/public/index/pic/";
+const getMyProjectURL = (projname: string) => {
+    return `https://${projname}.pustot.com/`;
+};
+
+const WebAppGridItem = (props: { appName: string }) => {
+    const { appName } = props;
+    return (
+        <Grid item>
+            <a href={getMyProjectURL(appName)} style={{ textDecoration: "none" }}>
+                <img
+                    alt={appName + "Logo"}
+                    src={picFolder + "logo-" + appName + ".webp"}
+                    width="96"
+                    height="96"
+                    style={{
+                        borderRadius: "20%", // 圆角
+                        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // 阴影
+                        display: "block", // 将图片设置为块级元素，以便应用样式
+                        margin: "0 auto", // 居中显示图片
+                    }}
+                />
+            </a>
+        </Grid>
+    );
+};
+
 export default function Home(props: { lang: keyof I18nText }) {
     const { lang } = props;
     const theme = useTheme();
-
-    // const getLocaleText = (i18nText: I18nText, language: keyof I18nText) => {
-    //     return language in i18nText ? i18nText[language] : i18nText["en"];
-    // };
-
-    const domain = "https://pustot.com/";
-    const picFolder = "https://pustot.github.io/public/index/pic/";
-    const getMyProjectURL = (projname: string) => {
-        return `https://${projname}.pustot.com/`;
-    }
 
     return (
         <div>
@@ -58,7 +76,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                         "tto-bro": "ho2CwD8o (浦司圖)",
                                         "tto": "hnCLo LrnKrHL (浦司圖)",
                                     },
-                                    lang
+                                    lang,
                                 )}
                             </Typography>
 
@@ -119,10 +137,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 //"tto-bro": "",
                                 // "tto": ""
                             },
-                            lang
+                            lang,
                         )}
-
-                    
                     </Typography>
                     <Typography variant="body1">
                         <SchoolIcon />{" "}
@@ -143,7 +159,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "tto-bro": "",
                                 // "tto": ""
                             },
-                            lang
+                            lang,
                         )}
                         <MuiLink href="https://www.ed.ac.uk/">
                             {getLocaleText(
@@ -163,7 +179,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                     "tto-bro": "Oae3D8aH D8rQ3X8QmA",
                                     // "tto": ""
                                 },
-                                lang
+                                lang,
                             )}
                         </MuiLink>
                         {getLocaleText(
@@ -180,7 +196,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "es": "",
                                 "tto-bro": "Yae3CnrH3Yde AnmX8QmA Sd2X8QmA T8ecAG8d2",
                             },
-                            lang
+                            lang,
                         )}
                     </Typography>
                     <Typography variant="body1">
@@ -202,7 +218,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "tto-bro": "",
                                 // "tto": ""
                             },
-                            lang
+                            lang,
                         )}
                         <MuiLink
                             href={getLocaleText(
@@ -212,7 +228,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                     "zh-Hans": "https://www.tongji.edu.cn/",
                                     "de": "https://de.tongji.edu.cn/",
                                 },
-                                lang
+                                lang,
                             )}>
                             {getLocaleText(
                                 {
@@ -231,7 +247,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                     "tto-bro": "D8nZ9ae3 D8rQ3X8QmA",
                                     // "tto": ""
                                 },
-                                lang
+                                lang,
                             )}
                         </MuiLink>
                         {getLocaleText(
@@ -249,7 +265,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 // "tto": "Fab RhSe"
                                 "tto-bro": "Aye3Bert DaH39y2 (BerSerZ3 YnZD8lecZ) YnZX8QmA X8QmAG8d2",
                             },
-                            lang
+                            lang,
                         )}
                     </Typography>
 
@@ -271,42 +287,19 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "tto-bro": "Fab OeZ3EemZ3",
                                 "tto": "nab rhSe",
                             },
-                            lang
+                            lang,
                         )}
                     </Typography>
 
-                    <Grid>
-                        <IconButton href={getMyProjectURL("love")}>
-                            <img alt="Love Logo" src={picFolder + "logo-love.webp"} width="96" height="96" />
-                        </IconButton>
-
-                        <IconButton href={getMyProjectURL("alpha-beats")}>
-                            <img alt="alpha-beats Logo" src={picFolder + "logo-alpha-beats.webp"} width="96" height="96" />
-                        </IconButton>
-
-                        <IconButton href={getMyProjectURL("cantonese-flashcard")}>
-                        <img alt="cantonese-flashcard Logo" src={picFolder + "logo-cantonese-flashcard.webp"} width="96" height="96" />
-                        </IconButton>
-
-                        <IconButton href={getMyProjectURL("hanpoly")}>
-                        <img alt="hanpoly Logo" src={picFolder + "logo-hanpoly.webp"} width="96" height="96" />
-                        </IconButton>
-
-                        <IconButton href={getMyProjectURL("khmer-starter")}>
-                        <img alt="khmer-starter Logo" src={picFolder + "logo-khmer-starter.webp"} width="96" height="96" />
-                        </IconButton>
-
-                        <IconButton href={getMyProjectURL("three-body")}>
-                        <img alt="three-body Logo" src={picFolder + "logo-three-body.webp"} width="96" height="96" />
-                        </IconButton>
-
-                        <IconButton href={getMyProjectURL("word-lookuper")}>
-                        <img alt="word-lookuper Logo" src={picFolder + "logo-word-lookuper.webp"} width="96" height="96" />
-                        </IconButton>
-
-                        <IconButton href={getMyProjectURL("qieyun-autoderiver")}>
-                        <img alt="qieyun-autoderiver Logo" src={picFolder + "logo-qieyun-autoderiver.webp"} width="96" height="96" />
-                        </IconButton>
+                    <Grid container spacing={2} justifyContent="left">
+                        <WebAppGridItem appName={"love"} />
+                        <WebAppGridItem appName={"hanpoly"} />
+                        <WebAppGridItem appName={"alpha-beats"} />
+                        <WebAppGridItem appName={"cantonese-flashcard"} />
+                        <WebAppGridItem appName={"khmer-starter"} />
+                        <WebAppGridItem appName={"three-body"} />
+                        <WebAppGridItem appName={"word-lookuper"} />
+                        <WebAppGridItem appName={"qieyun-autoderiver"} />
                     </Grid>
 
                     <PostCard
@@ -325,7 +318,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "ko": "드라마과의 사랑 이야기",
                                 "fr": "Blogs de mon amour avec TsraewMaeq",
                             },
-                            lang
+                            lang,
                         )}
                         main="Recording what we have experienced together."
                         toLink={getMyProjectURL("love")}
@@ -344,7 +337,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "tto-bro": "98d3Vn2 Lan3D8nZ2",
                                 "ja": "アルファ ビーツ",
                             },
-                            lang
+                            lang,
                         )}
                         main="Training on different kinds of alphabet or other kinds of writing systems."
                         toLink={getMyProjectURL("alpha-beats")}
@@ -361,7 +354,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "en": "Cantonese Flashcard",
                                 "tto": "vmv ARD",
                             },
-                            lang
+                            lang,
                         )}
                         main="Display flashcards with Chinese characters and Jyutping with your comfortable speed."
                         toLink={getMyProjectURL("cantonese-flashcard")}
@@ -379,7 +372,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "tto-bro": "XrH3Tei",
                                 "tto": "XrHhoSe",
                             },
-                            lang
+                            lang,
                         )}
                         main="Find the pronunciation of a Chinese character in multiple languages and dialects."
                         toLink={getMyProjectURL("hanpoly")}
@@ -397,7 +390,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "tto-bro": "YrnVeaHZei2 Aae2XneAQe3",
                                 "tto": "AVra Aae",
                             },
-                            lang
+                            lang,
                         )}
                         main="Split Khmer sentences into words and then look up its romanization, pronunciation and meaning (later) in Wiktionary."
                         toLink={getMyProjectURL("khmer-starter")}
@@ -417,7 +410,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "ja": "三体問題",
                                 "de": "Das Dreikörperproblem",
                             },
-                            lang
+                            lang,
                         )}
                         main="Simulation of the three-body problem. Help the aliens with your findings!"
                         toLink={getMyProjectURL("three-body")}
@@ -433,7 +426,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "zh-Hans": "查词",
                                 "en": "Word Lookup",
                             },
-                            lang
+                            lang,
                         )}
                         main="Look up the word in Wiktionary with some additional functionalities."
                         toLink={getMyProjectURL("word-lookuper")}
@@ -451,7 +444,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                                 "tto-bro": "7aLnH3 OQeVX8ae3 98e3D8nZ2 LoeD8rn3AQe3 (X8iV 9vaLLnZZei2 OQeVD8nA)",
                                 // "tto": ""
                             },
-                            lang
+                            lang,
                         )}
                         main="Forked from https://github.com/nk2028/qieyun-autoderiver, with my own
                   Ttomni Rimduk (OQeVD8FA), which is used by my own Ttomni language."
