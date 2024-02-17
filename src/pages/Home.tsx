@@ -277,19 +277,36 @@ export default function Home(props: { lang: keyof I18nText }) {
 
                     <Grid>
                         <IconButton href={getMyProjectURL("love")}>
-                            <FavoriteIcon />
+                            <img alt="Love Logo" src={picFolder + "logo-love.webp"} width="96" height="96" />
                         </IconButton>
-                        <IconButton href={getMyProjectURL("alpha-beats")}>א</IconButton>
-                        <IconButton href={getMyProjectURL("cantonese-flashcard")}>粵</IconButton>
-                        <IconButton href={getMyProjectURL("hanpoly")}>漢</IconButton>
-                        <IconButton href={getMyProjectURL("khmer-starter")}>ក</IconButton>
+
+                        <IconButton href={getMyProjectURL("alpha-beats")}>
+                            <img alt="alpha-beats Logo" src={picFolder + "logo-alpha-beats.webp"} width="96" height="96" />
+                        </IconButton>
+
+                        <IconButton href={getMyProjectURL("cantonese-flashcard")}>
+                        <img alt="cantonese-flashcard Logo" src={picFolder + "logo-cantonese-flashcard.webp"} width="96" height="96" />
+                        </IconButton>
+
+                        <IconButton href={getMyProjectURL("hanpoly")}>
+                        <img alt="hanpoly Logo" src={picFolder + "logo-hanpoly.webp"} width="96" height="96" />
+                        </IconButton>
+
+                        <IconButton href={getMyProjectURL("khmer-starter")}>
+                        <img alt="khmer-starter Logo" src={picFolder + "logo-khmer-starter.webp"} width="96" height="96" />
+                        </IconButton>
+
                         <IconButton href={getMyProjectURL("three-body")}>
-                            <ScatterPlotIcon />
+                        <img alt="three-body Logo" src={picFolder + "logo-three-body.webp"} width="96" height="96" />
                         </IconButton>
+
                         <IconButton href={getMyProjectURL("word-lookuper")}>
-                            <TravelExploreIcon />
+                        <img alt="word-lookuper Logo" src={picFolder + "logo-word-lookuper.webp"} width="96" height="96" />
                         </IconButton>
-                        <IconButton href={getMyProjectURL("qieyun-autoderiver")}>韻</IconButton>
+
+                        <IconButton href={getMyProjectURL("qieyun-autoderiver")}>
+                        <img alt="qieyun-autoderiver Logo" src={picFolder + "logo-qieyun-autoderiver.webp"} width="96" height="96" />
+                        </IconButton>
                     </Grid>
 
                     <PostCard
