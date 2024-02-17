@@ -3,7 +3,7 @@ import * as React from "react";
 import PostCard from "../components/PostCard";
 import "../styles.scss";
 
-import { Container, Grid, IconButton, Link as MuiLink, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, IconButton, Link as MuiLink, Stack, Typography } from "@mui/material";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -26,16 +26,17 @@ const getMyProjectURL = (projname: string) => {
 
 function formatAppName(appName: string): string {
     return appName
-      .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
 }
 
 const WebAppGridItem = (props: { appName: string, displayName?: string }) => {
     const { appName, displayName } = props;
     return (
         <Grid item>
-            <a href={getMyProjectURL(appName)} style={{ textDecoration: "none" }}>
+            <a href={getMyProjectURL(appName)}
+                style={{ textDecoration: "none", display: 'block' }}>
                 <img
                     alt={appName + "Logo"}
                     src={picFolder + "logo-" + appName + ".webp"}
@@ -45,13 +46,14 @@ const WebAppGridItem = (props: { appName: string, displayName?: string }) => {
                         borderRadius: "20%", // 圆角
                         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)", // 阴影
                         display: "block", // 将图片设置为块级元素，以便应用样式
-                        margin: "0 auto", // 居中显示图片
+                        margin: "0 auto 4px", // 居中显示图片
                     }}
                 />
-                <Typography variant="body2" align="center" color="textPrimary" 
-                        sx={{ marginTop: 0.25 }}>{
-                    displayName || formatAppName(appName)
-                }</Typography>
+                {/* 将宽度限制为图片的宽度，并水平居中 */}
+                <Typography variant="body2" align="center" color="textPrimary"
+                    style={{ width: 96, margin: '0 auto', whiteSpace: 'pre-line' }} >
+                    {formatAppName(appName)}
+                </Typography>
             </a>
         </Grid>
     );
@@ -306,11 +308,11 @@ export default function Home(props: { lang: keyof I18nText }) {
                         <WebAppGridItem appName={"love"} />
                         <WebAppGridItem appName={"hanpoly"} />
                         <WebAppGridItem appName={"alpha-beats"} />
-                        <WebAppGridItem appName={"cantonese-flashcard"} displayName={"CantonCard"} />
+                        <WebAppGridItem appName={"cantonese-flashcard"} />
                         <WebAppGridItem appName={"khmer-starter"} />
                         <WebAppGridItem appName={"three-body"} />
                         <WebAppGridItem appName={"word-lookuper"} displayName={"Word Lookup"} />
-                        <WebAppGridItem appName={"qieyun-autoderiver"} displayName={"QieDeriver"} />
+                        <WebAppGridItem appName={"qieyun-autoderiver"} />
                     </Grid>
 
                     <PostCard
