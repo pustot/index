@@ -21,7 +21,7 @@ import { Theme } from "@mui/material/styles";
 import "purecss/build/pure.css";
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { getLocaleText, I18nText, LangCode, languageCodeToLocale } from "../utils/I18n";
+import { getLocaleText, I18nText, LangCode, languageCodeToIcon, languageCodeToLocale } from "../utils/I18n";
 import "../styles.scss";
 
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -143,7 +143,7 @@ export default function NavBarAndMenu(props: {
                         onChange={handleLangChange}>
                         {["zh-Hans", "zh-Hant", "en", "ja", "de", "ko", "ko-Han", "eo", "fr", "vi", "vi-Han", "es", "tto", "tto-bro"].map((s, idx) => (
                             <MenuItem key={idx} value={s as LangCode}>
-                                {languageCodeToLocale(s, s)}
+                                {languageCodeToIcon(s) + ' ' + languageCodeToLocale(s, s)}
                             </MenuItem>
                         ))}
                     </Select>
@@ -243,7 +243,7 @@ export default function NavBarAndMenu(props: {
                                     onClick={() => {
                                         handleLangMenuItemClick(s as LangCode);
                                     }}>
-                                    {languageCodeToLocale(s, s)}
+                                    {languageCodeToIcon(s) + ' ' + languageCodeToLocale(s, s)}
                                 </MenuItem>
                             ))}
                         </Menu>

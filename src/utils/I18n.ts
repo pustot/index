@@ -264,3 +264,24 @@ const langNames: I18nI18n = {
 export const languageCodeToLocale = (langCode: string, pageLang: string): string => {
     return langNames[langCode as LangCode]![pageLang as LangCode] || "";
 };
+
+const langIcons : I18nText = {
+    "zh-Hans": "🇨🇳",
+    "zh-Hant": "🇨🇳",
+    "en": "🇺🇸",
+    "ja": "🇯🇵",
+    "de": "🇩🇪",
+    "ko": "🇰🇷",
+    "ko-Han": "🇰🇷",
+    "eo": "🕊️",
+    "fr": "🇫🇷",
+    "vi": "🇻🇳",
+    "vi-Han": "🇻🇳",
+    "es": "🇪🇸",
+    "tto": "🌌",
+    "tto-bro": "🌌",
+};
+
+export const languageCodeToIcon = (langCode: string): string => {
+    return langIcons[langCode as LangCode] || "📜";
+};
