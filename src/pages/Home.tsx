@@ -353,7 +353,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                             lang,
                         )}
                         main="Help Mandarin speakers learn Cantonese by highlighting which parts of each Hanzi can be converted directly from Putonghua with simple rules and which parts not."
-                        toLink={getMyProjectURL("love")}
+                        toLink={getMyProjectURL("mancan")}
                     />
 
                     <PostCard
