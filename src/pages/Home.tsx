@@ -307,6 +307,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                     <Grid container spacing={2} justifyContent="left">
                         <WebAppGridItem appName={"love"} />
                         <WebAppGridItem appName={"hanpoly"} />
+                        <WebAppGridItem appName={"mancan"} />
                         <WebAppGridItem appName={"alpha-beats"} />
                         <WebAppGridItem appName={"cantonese-flashcard"} />
                         <WebAppGridItem appName={"khmer-starter"} />
@@ -334,6 +335,24 @@ export default function Home(props: { lang: keyof I18nText }) {
                             lang,
                         )}
                         main="Recording what we have experienced together."
+                        toLink={getMyProjectURL("love")}
+                    />
+
+                    <PostCard
+                        image={picFolder + "mancan.png"}
+                        alt="Mancan: Mandarin speaker can study Cantonese easier"
+                        title={getLocaleText(
+                            {
+                                "eo": "Mancan",
+                                "zh-Hant": "普通粵",
+                                "zh-Hans": "普通粤",
+                                "en": "Mancan",
+                                "ja": "マンカン",
+                                "ko": "맨캔",
+                            },
+                            lang,
+                        )}
+                        main="Help Mandarin speakers learn Cantonese by highlighting which parts of each Hanzi can be converted directly from Putonghua with simple rules and which parts not."
                         toLink={getMyProjectURL("love")}
                     />
 
