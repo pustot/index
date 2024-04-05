@@ -66,7 +66,7 @@ export default function Home(props: { lang: keyof I18nText }) {
     return (
         <div>
             <Container maxWidth="md">
-                <Stack spacing={4} px={2} pb={4}>
+                <Stack spacing={2} px={0} pb={4}>
                     <Stack direction="row" spacing={2}>
                         <img alt="Pusto" src={picFolder + "logo-de-pusto.webp"} width="72" height="72" />
 
@@ -282,7 +282,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                         )}
                     </Typography>
 
-                    <Typography variant="h4">
+                    <Typography variant="h4" pt={2}>
                         {getLocaleText(
                             {
                                 "zh-Hant": "Web 應用",
@@ -316,10 +316,14 @@ export default function Home(props: { lang: keyof I18nText }) {
                         )}
                     </Typography>
 
-                    <Grid container spacing={2} justifyContent="left">
-                        <WebAppGridItem appName={"studling"} displayName={"甪端 Studling"} />
-                        <WebAppGridItem appName={"love"} />
-                    </Grid>
+                    {/* This outer <div> see 
+                    https://stackoverflow.com/questions/67693677/material-ui-grid-how-only-space-between-elements-on-the-inside-not-outside */}
+                    <div>
+                        <Grid container spacing={2}>
+                            <WebAppGridItem appName={"studling"} displayName={"甪端 Studling"} />
+                            <WebAppGridItem appName={"love"} />
+                        </Grid>
+                    </div>
 
                     <Typography variant="h6">
                         {getLocaleText(
@@ -333,17 +337,19 @@ export default function Home(props: { lang: keyof I18nText }) {
                         )}
                     </Typography>
 
-                    <Grid container spacing={2} justifyContent="left">
-                        <WebAppGridItem appName={"map-compare"} />
-                        <WebAppGridItem appName={"hanpoly"} />
-                        <WebAppGridItem appName={"mancan"} />
-                        <WebAppGridItem appName={"alpha-beats"} />
-                        <WebAppGridItem appName={"cantonese-flashcard"} />
-                        <WebAppGridItem appName={"khmer-starter"} />
-                        <WebAppGridItem appName={"three-body"} />
-                        <WebAppGridItem appName={"word-lookuper"} displayName={"Word Lookup"} />
-                        <WebAppGridItem appName={"qieyun-autoderiver"} />
-                    </Grid>
+                    <div>
+                        <Grid container spacing={2} justifyContent="begin">
+                            <WebAppGridItem appName={"map-compare"} />
+                            <WebAppGridItem appName={"hanpoly"} />
+                            <WebAppGridItem appName={"mancan"} />
+                            <WebAppGridItem appName={"alpha-beats"} />
+                            <WebAppGridItem appName={"cantonese-flashcard"} />
+                            <WebAppGridItem appName={"khmer-starter"} />
+                            <WebAppGridItem appName={"three-body"} />
+                            <WebAppGridItem appName={"word-lookuper"} displayName={"Word Lookup"} />
+                            <WebAppGridItem appName={"qieyun-autoderiver"} />
+                        </Grid>
+                    </div>
 
                     <PostCard
                         image={picFolder + "love.png"}
@@ -367,7 +373,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                         toLink={getMyProjectURL("love")}
                     />
 
-<PostCard
+                    <PostCard
                         image={picFolder + "studling.png"}
                         alt="stud ling"
                         title={getLocaleText(
