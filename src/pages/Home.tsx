@@ -317,7 +317,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                     </Typography>
 
                     <Grid container spacing={2} justifyContent="left">
-                        <WebAppGridItem appName={"studling"} />
+                        <WebAppGridItem appName={"studling"} displayName={"甪端 Studling"} />
                         <WebAppGridItem appName={"love"} />
                     </Grid>
 
