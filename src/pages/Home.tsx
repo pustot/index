@@ -3,7 +3,7 @@ import * as React from "react";
 import PostCard from "../components/PostCard";
 import "../styles.scss";
 
-import { Box, Container, Grid, IconButton, Link as MuiLink, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, IconButton, Link as MuiLink, Stack, Typography, useMediaQuery } from "@mui/material";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -62,6 +62,8 @@ const WebAppGridItem = (props: { appName: string, displayName?: string }) => {
 export default function Home(props: { lang: keyof I18nText }) {
     const { lang } = props;
     const theme = useTheme();
+
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <div>
@@ -282,7 +284,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                         )}
                     </Typography>
 
-                    <Typography variant="h4" pt={2}>
+                    <Typography variant="h4" pt={2} align={isSmallScreen ? "center" : "left"}>
                         {getLocaleText(
                             {
                                 "zh-Hant": "Web 應用",
@@ -304,7 +306,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                         )}
                     </Typography>
 
-                    <Typography variant="h6">
+                    <Typography variant="h6" align={isSmallScreen ? "center" : "left"}>
                         {getLocaleText(
                             {
                                 "zh-Hant": "精選應用",
@@ -319,13 +321,13 @@ export default function Home(props: { lang: keyof I18nText }) {
                     {/* This outer <div> see 
                     https://stackoverflow.com/questions/67693677/material-ui-grid-how-only-space-between-elements-on-the-inside-not-outside */}
                     <div>
-                        <Grid container spacing={2} justifyContent="left">
+                        <Grid container spacing={2} justifyContent={isSmallScreen ? "center" : "left"}>
                             <WebAppGridItem appName={"studling"} displayName={"甪端 Studling"} />
                             <WebAppGridItem appName={"love"} />
                         </Grid>
                     </div>
 
-                    <Typography variant="h6">
+                    <Typography variant="h6" align={isSmallScreen ? "center" : "left"}>
                         {getLocaleText(
                             {
                                 "zh-Hant": "其他應用",
@@ -338,7 +340,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                     </Typography>
 
                     <div>
-                        <Grid container spacing={2} justifyContent="left">
+                        <Grid container spacing={2} justifyContent={isSmallScreen ? "center" : "left"}>
                             <WebAppGridItem appName={"map-compare"} />
                             <WebAppGridItem appName={"hanpoly"} />
                             <WebAppGridItem appName={"mancan"} />
