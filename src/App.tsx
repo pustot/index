@@ -28,9 +28,30 @@ export default function App() {
 
     const systemColor: string =
         window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    const [mode, setMode] = React.useState<string>(localStorage.getItem("pustot/0.1/mode") || systemColor);
+
+    // 获取 localStorage 中的 mode 和时间戳
+    let storedMode = localStorage.getItem("pustot/0.1/mode");
+    let storedTimestamp = localStorage.getItem("pustot/0.1/timestamp");
+
+    // 检查时间戳是否在一小时内
+    const isWithinHour = (timestamp: number | null) => {
+        if (!timestamp) return false;
+        const hourInMillis = 60 * 60 * 1000; // 一小时的毫秒数
+        return Date.now() - Number(timestamp) <= hourInMillis;
+    };
+
+    // 如果时间戳超过一小时，则恢复到系统颜色
+    if (storedTimestamp && !isWithinHour(Number(storedTimestamp))) {
+        storedMode = systemColor;
+    }
+
+    const [mode, setMode] = React.useState<string>(storedMode || systemColor);
+
     const toggleColorMode = () => {
+        // 保存设置的时间戳
+        const timestamp = Date.now().toString();
         localStorage.setItem("pustot/0.1/mode", mode === "light" ? "dark" : "light");
+        localStorage.setItem("pustot/0.1/timestamp", timestamp);
         setMode(prevMode => (prevMode === "light" ? "dark" : "light"));
     };
 

@@ -282,7 +282,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                         )}
                     </Typography>
 
-                    <Typography variant="h2">
+                    <Typography variant="h4">
                         {getLocaleText(
                             {
                                 "zh-Hant": "Web 應用",
