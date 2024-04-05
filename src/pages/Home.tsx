@@ -319,7 +319,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                     {/* This outer <div> see 
                     https://stackoverflow.com/questions/67693677/material-ui-grid-how-only-space-between-elements-on-the-inside-not-outside */}
                     <div>
-                        <Grid container spacing={2}>
+                        <Grid container spacing={2} justifyContent="left">
                             <WebAppGridItem appName={"studling"} displayName={"甪端 Studling"} />
                             <WebAppGridItem appName={"love"} />
                         </Grid>
@@ -338,7 +338,7 @@ export default function Home(props: { lang: keyof I18nText }) {
                     </Typography>
 
                     <div>
-                        <Grid container spacing={2} justifyContent="begin">
+                        <Grid container spacing={2} justifyContent="left">
                             <WebAppGridItem appName={"map-compare"} />
                             <WebAppGridItem appName={"hanpoly"} />
                             <WebAppGridItem appName={"mancan"} />
