@@ -304,8 +304,37 @@ export default function Home(props: { lang: keyof I18nText }) {
                         )}
                     </Typography>
 
+                    <Typography variant="h6">
+                        {getLocaleText(
+                            {
+                                "zh-Hant": "精選應用",
+                                "zh-Hans": "精选应用",
+                                "en": "Featured Apps",
+                                "eo": "Elektitaj Aplikoj",
+                            },
+                            lang,
+                        )}
+                    </Typography>
+
                     <Grid container spacing={2} justifyContent="left">
+                        <WebAppGridItem appName={"studling"} />
                         <WebAppGridItem appName={"love"} />
+                    </Grid>
+
+                    <Typography variant="h6">
+                        {getLocaleText(
+                            {
+                                "zh-Hant": "其他應用",
+                                "zh-Hans": "其他应用",
+                                "en": "Other Apps",
+                                "eo": "Aliaj Aplikoj",
+                            },
+                            lang,
+                        )}
+                    </Typography>
+
+                    <Grid container spacing={2} justifyContent="left">
+                        <WebAppGridItem appName={"map-compare"} />
                         <WebAppGridItem appName={"hanpoly"} />
                         <WebAppGridItem appName={"mancan"} />
                         <WebAppGridItem appName={"alpha-beats"} />
@@ -318,7 +347,7 @@ export default function Home(props: { lang: keyof I18nText }) {
 
                     <PostCard
                         image={picFolder + "love.png"}
-                        alt="Ethan Yang"
+                        alt="Love"
                         title={getLocaleText(
                             {
                                 "eo": "La Amrilatoj Kun Fraŭlino TsraewMaeq",
@@ -338,6 +367,22 @@ export default function Home(props: { lang: keyof I18nText }) {
                         toLink={getMyProjectURL("love")}
                     />
 
+<PostCard
+                        image={picFolder + "studling.png"}
+                        alt="stud ling"
+                        title={getLocaleText(
+                            {
+                                "eo": "甪端 Studling",
+                                "zh-Hant": "甪端 Studling",
+                                "zh-Hans": "甪端 Studling",
+                                "en": "甪端 Studling",
+                            },
+                            lang,
+                        )}
+                        main="Multiple languages, multiple learning capabilities, in one site."
+                        toLink={getMyProjectURL("studling")}
+                    />
+
                     <PostCard
                         image={picFolder + "mancan.png"}
                         alt="Mancan: Mandarin speaker can study Cantonese easier"
@@ -354,6 +399,24 @@ export default function Home(props: { lang: keyof I18nText }) {
                         )}
                         main="Help Mandarin speakers learn Cantonese by highlighting which parts of each Hanzi can be converted directly from Putonghua with simple rules and which parts not."
                         toLink={getMyProjectURL("mancan")}
+                    />
+
+                    <PostCard
+                        image={picFolder + "map-compare.png"}
+                        alt="MapCompare: Compare maps in the same scale"
+                        title={getLocaleText(
+                            {
+                                "eo": "MapKompari",
+                                "zh-Hant": "比圖",
+                                "zh-Hans": "比图",
+                                "en": "Mancan",
+                                "ja": "比圖",
+                                "ko": "비도",
+                            },
+                            lang,
+                        )}
+                        main="Compare maps using the same scale, so that you can know their sizes with more certainty."
+                        toLink={getMyProjectURL("map-compare")}
                     />
 
                     <PostCard
