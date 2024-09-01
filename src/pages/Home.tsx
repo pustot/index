@@ -1,21 +1,19 @@
-import "purecss/build/pure.css";
-import * as React from "react";
-import PostCard from "../components/PostCard";
-import "../styles.scss";
-
-import { Box, Container, Grid, IconButton, Link as MuiLink, Stack, Typography, useMediaQuery } from "@mui/material";
-
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import EmojiPeopleIcon from "@mui/icons-material/EmojiPeople";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import ScatterPlotIcon from "@mui/icons-material/ScatterPlot";
+import RefreshIcon from '@mui/icons-material/Refresh';
 import SchoolIcon from "@mui/icons-material/School";
-import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import EmojiPeopleIcon from "@mui/icons-material/EmojiPeople";
+import { Container, Grid, IconButton, Link as MuiLink, Stack, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import "purecss/build/pure.css";
+import * as React from "react";
+import { useState } from "react";
 import { SiDuolingo } from "react-icons/si";
+import PostCard from "../components/PostCard";
+import "../styles.scss";
+import { getDaoDeJingChapter } from "../utils/DaoDeJing";
 import { I18nText, getLocaleText } from "../utils/I18n";
 
 const domain = "https://pustot.com/";
@@ -64,6 +62,7 @@ export default function Home(props: { lang: keyof I18nText }) {
     const theme = useTheme();
 
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const [randomDaodejingChapterNo, setRandomDaodejingChapterNo] = useState(Math.floor(Math.random() * 81) + 1);
 
     return (
         <div>
@@ -553,6 +552,19 @@ export default function Home(props: { lang: keyof I18nText }) {
                   Ttomni Rimduk (OQeVD8FA), which is used by my own Ttomni language."
                         toLink={getMyProjectURL("qieyun-autoderiver")}
                     />
+
+                    <Typography pt={10} variant="body1">
+                        {getDaoDeJingChapter(randomDaodejingChapterNo)}
+                        <br />
+                        <br />
+                        ——《道德经》第{randomDaodejingChapterNo}章
+                        <IconButton
+                            onClick={() => setRandomDaodejingChapterNo(Math.floor(Math.random() * 81) + 1)}
+                            color="primary" aria-label="refresh chapter" style={{ marginTop: '0px' }}>
+                            <RefreshIcon />
+                        </IconButton>
+                    </Typography>
+
                 </Stack>
             </Container>
         </div>
