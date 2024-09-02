@@ -2,8 +2,8 @@ import EmojiPeopleIcon from "@mui/icons-material/EmojiPeople";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import RefreshIcon from '@mui/icons-material/Refresh';
 import SchoolIcon from "@mui/icons-material/School";
+import ShuffleIcon from '@mui/icons-material/Shuffle';
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Container, Grid, IconButton, Link as MuiLink, Stack, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -560,8 +560,8 @@ export default function Home(props: { lang: keyof I18nText }) {
                         ——《道德经》第{randomDaodejingChapterNo}章
                         <IconButton
                             onClick={() => setRandomDaodejingChapterNo(Math.floor(Math.random() * 81) + 1)}
-                            color="primary" aria-label="refresh chapter" style={{ marginTop: '0px' }}>
-                            <RefreshIcon />
+                            color="primary" aria-label="shuffle chapter">
+                            <ShuffleIcon />
                         </IconButton>
                     </Typography>
 
