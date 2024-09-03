@@ -536,20 +536,20 @@ export default function Home(props: { lang: keyof I18nText }) {
 
                     <PostCard
                         image={picFolder + "qieyun-autoderiver.png"}
-                        alt="Ethan Yang"
+                        alt="Qieyun Autoderiver"
                         title={getLocaleText(
                             {
                                 "eo": "Qieyun Memderivilo Kun Dzwietthoungika Jimduk",
-                                "zh-Hant": "切韻音系自動推導器（含絕通語音讀）",
-                                "zh-Hans": "切韵音系自动推导器（含绝通语音读）",
-                                "en": "Qieyun Autoderiver with Ttomni Rimduk",
-                                "tto-bro": "7aLnH3 OQeVX8ae3 98e3D8nZ2 LoeD8rn3AQe3 (X8iV 9vaLLnZZei2 OQeVD8nA)",
+                                "zh-Hant": "切韻音系自動推導器（浦司圖試驗fork）",
+                                "zh-Hans": "切韵音系自动推导器（浦司图试验fork）",
+                                "en": "Qieyun Autoderiver (Pusto test fork)",
+                                "tto-bro": "7aLnH3 OQeVX8ae3 98e3D8nZ2 LoeD8rn3AQe3",
                                 // "tto": ""
                             },
                             lang,
                         )}
                         main="Forked from https://github.com/nk2028/qieyun-autoderiver, with my own
-                  Ttomni Rimduk (OQeVD8FA), which is used by my own Ttomni language."
+                  schemas or adjustments."
                         toLink={getMyProjectURL("qieyun-autoderiver")}
                     />
 
